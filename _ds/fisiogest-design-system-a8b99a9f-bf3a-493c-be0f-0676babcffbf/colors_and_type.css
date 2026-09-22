@@ -1,0 +1,196 @@
+/* ============================================================
+   FisioGest — Design Tokens
+   Gestionale per fisioterapisti ed operatori della riabilitazione
+   Source of truth: FisioGest.fig › Design-System › Foundations
+   ============================================================ */
+
+/* Self-hosted Inter (brand font files uploaded by user) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/Inter_18pt-Bold.ttf") format("truetype");
+}
+
+:root {
+  /* ---------- COLOR · Brand ---------- */
+  --brand-primary:        #377D60;  /* rgb(55,125,96)  — core green, buttons, active */
+  --brand-primary-hover:  #0A6440;  /* rgb(10,100,64)  — hover / pressed / strong */
+  --brand-primary-soft:   #E0F3EA;  /* rgb(224,243,234)— soft fills, selected chips */
+  --brand-mint:           #A6DAC1;  /* rgb(166,218,193)— illustration accents, tracks */
+  --brand-sage:           #8BB8A5;  /* rgb(139,184,165)— muted brand fill */
+
+  /* ---------- COLOR · Neutrals / Surfaces ---------- */
+  --background-base:      #F5F5F7;  /* app canvas */
+  --surface-default:      #FFFFFF;  /* cards, sheets */
+  --surface-subtle:       #F0F2F4;  /* table headers, inset rows */
+  --border-default:       #E0E4EA;  /* hairlines, dividers, input borders */
+  --border-strong:        #C2C2C2;  /* heavier separators */
+
+  /* ---------- COLOR · Text ---------- */
+  --text-primary:         #1E2933;  /* rgb(30,41,51)  — headings, body */
+  --text-secondary:       #5B6470;  /* rgb(91,100,112)— labels, meta, captions */
+  --text-on-brand:        #F5F5F7;  /* text over green */
+  --text-disabled:        #97A0AB;
+
+  /* ---------- COLOR · Status ---------- */
+  --success-fg:           #0B7A4B;
+  --success-bg:           #E0F3EA;
+  --warning-fg:           #B95C00;
+  --warning-bg:           #FFF4DF;
+  --danger-fg:            #B42318;
+  --danger-bg:            #FFE5E5;
+  --info-fg:              #2B7FFF;  /* rgb(43,127,255) — links / info accents */
+
+  /* ---------- COLOR · Accent ---------- */
+  --accent-notification:  #FFB020;  /* badge dots, attention */
+
+  /* ---------- COLOR · Dark action ---------- */
+  --action-dark:          #1E2933;  /* near-black confirm buttons (mobile sticky CTA) */
+
+  /* ---------- COLOR · Illustration (hero backdrop) ---------- */
+  /* Soft green spot-illustration used behind the patient-page hero (light & dark). */
+  --illustration-circle-soft: #E0F3EA;        /* large mint circle */
+  --illustration-circle-mint: #A6DAC1;        /* inner mint ring */
+  --illustration-mark:        #0A6440;        /* plus / arrow marks on LIGHT hero */
+  --illustration-mark-dark:   #0D4332;        /* plus / arrow marks on DARK hero */
+  --illustration-glow:        rgba(55,125,96,0.20); /* brand-tinted glow under circle */
+
+  /* ---------- COLOR · Dark theme (raw values) ---------- */
+  /* Source: FisioGest.fig › Body_Pazienti-Dark / Body_Agenda-Dark / Dark.
+     Apply via [data-theme="dark"] below, or reference these directly. */
+  --dark-background-base: #1D2129;  /* rgb(29,33,41)   — app canvas (dark) */
+  --dark-surface-default: #171A21;  /* rgb(23,26,33)   — cards / KPI tiles / inset */
+  --dark-surface-subtle:  #1D2129;  /* rgb(29,33,41)   — table headers, raised rows */
+  --dark-border-default:  #2A2F3A;  /* rgb(42,47,58)   — hairlines / dividers */
+  --dark-border-strong:   #3A4150;  /* heavier separators (derived) */
+  --dark-text-primary:    #F5F7FA;  /* rgb(245,247,250)— headings, body on dark */
+  --dark-text-secondary:  #A7B0BE;  /* rgb(167,176,190)— labels, meta on dark */
+  --dark-brand-accent:    #45A07A;  /* rgb(69,160,122) — lighter green: KPI #, dots, links on dark */
+  --dark-brand-soft:      #14352A;  /* soft green fill on dark (derived from illustration green) */
+  --dark-success-bg:      #14352A;  /* darkened status tints (derived) */
+  --dark-warning-bg:      #3A2A12;
+  --dark-danger-bg:       #3A1A18;
+
+  /* ---------- SPACING · base-8 scale ---------- */
+  --space-0:   0px;
+  --space-1:   4px;   /* half-step */
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+
+  /* ---------- RADIUS ---------- */
+  --radius-xs:  2px;   /* frame edges */
+  --radius-sm:  6px;   /* chips, small controls */
+  --radius-md:  8px;   /* buttons, inputs, cards (default) */
+  --radius-lg:  12px;  /* large cards / sheets */
+  --radius-pill: 999px;/* status pills, segmented controls, avatars */
+
+  /* ---------- ELEVATION ---------- */
+  --shadow-xs:  0 1px 2px rgba(30,41,51,0.06);
+  --shadow-sm:  0 1px 3px rgba(30,41,51,0.08), 0 1px 2px rgba(30,41,51,0.04);
+  --shadow-md:  0 4px 12px rgba(30,41,51,0.08);
+  --shadow-lg:  0 8px 28px rgba(30,41,51,0.12);
+  /* brand-tinted illustration shadow */
+  --shadow-brand: -4px 3px 4px rgba(10,100,64,0.20);
+
+  /* ---------- TYPE · family ---------- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* ---------- TYPE · semantic roles (size / weight / line-height) ---------- */
+  /* h1 — page title */
+  --h1-size: 24px;   --h1-weight: 600; --h1-lh: 32px;
+  /* h2 — section title */
+  --h2-size: 20px;   --h2-weight: 600; --h2-lh: 28px;
+  /* h3 — card title */
+  --h3-size: 16px;   --h3-weight: 600; --h3-lh: 24px;
+  /* body-lg */
+  --body-lg-size: 16px; --body-lg-weight: 400; --body-lg-lh: 24px;
+  /* body — default UI text */
+  --body-size: 14px; --body-weight: 400; --body-lh: 20px;
+  /* body-bold */
+  --body-bold-weight: 700;
+  /* label / form labels */
+  --label-size: 12px; --label-weight: 500; --label-lh: 16px;
+  /* meta / caption */
+  --meta-size: 12px; --meta-weight: 500; --meta-lh: 16px;
+  /* button */
+  --button-size: 14px; --button-weight: 500; --button-lh: 20px;
+}
+
+/* ============================================================
+   Dark theme — remaps semantic tokens.
+   Apply with <html data-theme="dark"> or <body data-theme="dark">,
+   or any wrapper: <div data-theme="dark"> … </div>.
+   Source of truth: FisioGest.fig › Body_Pazienti-Dark / Body_Agenda-Dark.
+   ============================================================ */
+[data-theme="dark"] {
+  /* surfaces & neutrals */
+  --background-base:     var(--dark-background-base);
+  --surface-default:     var(--dark-surface-default);
+  --surface-subtle:      var(--dark-surface-subtle);
+  --border-default:      var(--dark-border-default);
+  --border-strong:       var(--dark-border-strong);
+
+  /* text */
+  --text-primary:        var(--dark-text-primary);
+  --text-secondary:      var(--dark-text-secondary);
+  --text-disabled:       #5B6470;
+  --text-on-brand:       #F5F7FA;
+
+  /* brand — accents lighten on dark for contrast (KPI numbers, dots, links) */
+  --brand-primary:       var(--dark-brand-accent);
+  --brand-primary-soft:  var(--dark-brand-soft);
+
+  /* status backgrounds darken; foregrounds keep their hue */
+  --success-bg:          var(--dark-success-bg);
+  --warning-bg:          var(--dark-warning-bg);
+  --danger-bg:           var(--dark-danger-bg);
+
+  /* illustration marks switch to the dark-green variant */
+  --illustration-mark:   var(--illustration-mark-dark);
+
+  /* elevation deepens on dark surfaces */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.40), 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.45);
+  --shadow-lg:  0 8px 28px rgba(0,0,0,0.55);
+}
+
+/* ============================================================
+   Semantic type helpers
+   ============================================================ */
+.fg-h1   { font: var(--h1-weight) var(--h1-size)/var(--h1-lh) var(--font-sans); color: var(--text-primary); letter-spacing: -0.01em; }
+.fg-h2   { font: var(--h2-weight) var(--h2-size)/var(--h2-lh) var(--font-sans); color: var(--text-primary); letter-spacing: -0.01em; }
+.fg-h3   { font: var(--h3-weight) var(--h3-size)/var(--h3-lh) var(--font-sans); color: var(--text-primary); }
+.fg-body-lg { font: var(--body-lg-weight) var(--body-lg-size)/var(--body-lg-lh) var(--font-sans); color: var(--text-primary); }
+.fg-body { font: var(--body-weight) var(--body-size)/var(--body-lh) var(--font-sans); color: var(--text-primary); }
+.fg-body-bold { font: var(--body-bold-weight) var(--body-size)/var(--body-lh) var(--font-sans); color: var(--text-primary); }
+.fg-label { font: var(--label-weight) var(--label-size)/var(--label-lh) var(--font-sans); color: var(--text-secondary); }
+.fg-meta { font: var(--meta-weight) var(--meta-size)/var(--meta-lh) var(--font-sans); color: var(--text-secondary); }
+.fg-button { font: var(--button-weight) var(--button-size)/var(--button-lh) var(--font-sans); }

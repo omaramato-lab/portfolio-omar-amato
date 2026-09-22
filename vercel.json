@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/((?!_ds|assets|case/kratera|favicon|apple-touch-icon|og-image|support\\.js|robots\\.txt|sitemap\\.xml).*)", "destination": "/index.html" }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "ui_kits/desktop-app/**",
+              "ui_kits/mobile-app/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter))/i]",
+        "message": "Font not provided by the design system. Available: Inter."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--accent-notification",
+      "--action-dark",
+      "--background-base",
+      "--body-bold-weight",
+      "--body-lg-lh",
+      "--body-lg-size",
+      "--body-lg-weight",
+      "--body-lh",
+      "--body-size",
+      "--body-weight",
+      "--border-default",
+      "--border-strong",
+      "--brand-mint",
+      "--brand-primary",
+      "--brand-primary-hover",
+      "--brand-primary-soft",
+      "--brand-sage",
+      "--button-lh",
+      "--button-size",
+      "--button-weight",
+      "--danger-bg",
+      "--danger-fg",
+      "--dark-background-base",
+      "--dark-border-default",
+      "--dark-border-strong",
+      "--dark-brand-accent",
+      "--dark-brand-soft",
+      "--dark-danger-bg",
+      "--dark-success-bg",
+      "--dark-surface-default",
+      "--dark-surface-subtle",
+      "--dark-text-primary",
+      "--dark-text-secondary",
+      "--dark-warning-bg",
+      "--font-sans",
+      "--h1-lh",
+      "--h1-size",
+      "--h1-weight",
+      "--h2-lh",
+      "--h2-size",
+      "--h2-weight",
+      "--h3-lh",
+      "--h3-size",
+      "--h3-weight",
+      "--illustration-circle-mint",
+      "--illustration-circle-soft",
+      "--illustration-glow",
+      "--illustration-mark",
+      "--illustration-mark-dark",
+      "--info-fg",
+      "--label-lh",
+      "--label-size",
+      "--label-weight",
+      "--meta-lh",
+      "--meta-size",
+      "--meta-weight",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xs",
+      "--shadow-brand",
+      "--shadow-lg",
+      "--shadow-md",
+      "--shadow-sm",
+      "--shadow-xs",
+      "--space-0",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--success-bg",
+      "--success-fg",
+      "--surface-default",
+      "--surface-subtle",
+      "--text-disabled",
+      "--text-on-brand",
+      "--text-primary",
+      "--text-secondary",
+      "--warning-bg",
+      "--warning-fg"
+    ],
+    "tokenKinds": {
+      "--brand-primary": "color",
+      "--brand-primary-hover": "color",
+      "--brand-primary-soft": "color",
+      "--brand-mint": "color",
+      "--brand-sage": "color",
+      "--background-base": "color",
+      "--surface-default": "color",
+      "--surface-subtle": "color",
+      "--border-default": "color",
+      "--border-strong": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-on-brand": "font",
+      "--text-disabled": "font",
+      "--success-fg": "color",
+      "--success-bg": "color",
+      "--warning-fg": "color",
+      "--warning-bg": "color",
+      "--danger-fg": "color",
+      "--danger-bg": "color",
+      "--info-fg": "color",
+      "--accent-notification": "color",
+      "--action-dark": "color",
+      "--illustration-circle-soft": "color",
+      "--illustration-circle-mint": "color",
+      "--illustration-mark": "color",
+      "--illustration-mark-dark": "color",
+      "--illustration-glow": "color",
+      "--dark-background-base": "color",
+      "--dark-surface-default": "color",
+      "--dark-surface-subtle": "color",
+      "--dark-border-default": "color",
+      "--dark-border-strong": "color",
+      "--dark-text-primary": "font",
+      "--dark-text-secondary": "font",
+      "--dark-brand-accent": "color",
+      "--dark-brand-soft": "color",
+      "--dark-success-bg": "color",
+      "--dark-warning-bg": "color",
+      "--dark-danger-bg": "color",
+      "--space-0": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--radius-xs": "radius",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-pill": "radius",
+      "--shadow-xs": "shadow",
+      "--shadow-sm": "shadow",
+      "--shadow-md": "shadow",
+      "--shadow-lg": "shadow",
+      "--shadow-brand": "shadow",
+      "--font-sans": "font",
+      "--h1-size": "spacing",
+      "--h1-weight": "font",
+      "--h1-lh": "spacing",
+      "--h2-size": "spacing",
+      "--h2-weight": "font",
+      "--h2-lh": "spacing",
+      "--h3-size": "spacing",
+      "--h3-weight": "font",
+      "--h3-lh": "spacing",
+      "--body-lg-size": "spacing",
+      "--body-lg-weight": "font",
+      "--body-lg-lh": "spacing",
+      "--body-size": "spacing",
+      "--body-weight": "font",
+      "--body-lh": "spacing",
+      "--body-bold-weight": "font",
+      "--label-size": "spacing",
+      "--label-weight": "font",
+      "--label-lh": "spacing",
+      "--meta-size": "spacing",
+      "--meta-weight": "font",
+      "--meta-lh": "spacing",
+      "--button-size": "spacing",
+      "--button-weight": "font",
+      "--button-lh": "spacing"
+    },
+    "fontFamilies": [
+      "Inter"
+    ]
+  }
+}
