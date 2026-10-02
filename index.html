@@ -3740,13 +3740,22 @@ class Component extends DCLogic {
     this._resolveAssets();
     this._initFx();
     this._fxRoute = this.state.route;
+    this._fxSig = this._fxSignature();
+    this._fxRetry = setTimeout(() => { if (this._fxSig !== this._fxSignature() || this._fxRoute !== this.state.route) this.forceUpdate(); }, 400);
   }
   componentDidUpdate() {
     this._icons();
     this._resolveAssets();
-    if (this._fxRoute !== this.state.route) { this._teardownFx(); this._initFx(); this._fxRoute = this.state.route; this._applyMeta(this.state.route); }
+    const routeChanged = this._fxRoute !== this.state.route;
+    if (routeChanged || this._fxSig !== this._fxSignature()) { this._teardownFx(); this._initFx(); this._fxRoute = this.state.route; this._fxSig = this._fxSignature(); if (routeChanged) this._applyMeta(this.state.route); }
+  }
+  _fxSignature() {
+    const root = this._activeRoot();
+    if (!root) return "none";
+    return this.state.route + ":" + root.className + ":" + root.querySelectorAll("[data-scrub-step],[data-wsplit],[data-kr-live],[data-acc]").length;
   }
   componentWillUnmount() {
+    clearTimeout(this._fxRetry);
     this._teardownFx();
     if (this._roGuard) { try { window.removeEventListener("error", this._roGuard); } catch (e) {} }
     if (this._onPop) { try { window.removeEventListener("popstate", this._onPop); } catch (e) {} }
