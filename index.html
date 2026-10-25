@@ -44,6 +44,15 @@
 <meta name="ext-resource-dependency" content="assets/kratera/k-stromboli-mappa.jpg">
 <meta name="ext-resource-dependency" content="assets/kratera/k-stromboli-mare.jpg">
 <meta name="ext-resource-dependency" content="case/kratera/dashboard.html">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-console-hero.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-landing-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-livello1-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-cue-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-cue-tel.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-trucco-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-livello6-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-libera-desk.jpg">
+<meta name="ext-resource-dependency" content="assets/djstart/dj-libera-tel.jpg">
 <meta name="ext-resource-dependency" content="assets/fgshot/m-agenda-v2.png">
 <meta name="ext-resource-dependency" content="assets/fgshot/m-search-v2.png">
 <meta name="ext-resource-dependency" content="assets/fgshot/m-modifica-v2.png">
@@ -856,6 +865,99 @@
     .cse [data-scrub-slide].pv,.cse [data-scrub-slide].nx{transform:none;filter:none;}
   }
 
+  /* ===== DJ START ===== */
+  .csd[data-lang="en"] [data-l="it"]{display:none;}
+  .csd[data-lang="en"] [data-l="en"]{display:revert;}
+  .csd .seg-btn{transition:color .14s,background .14s;background:transparent;color:rgba(255,255,255,0.55);}
+  .csd:not([data-lang="en"]) .seg-it{background:#1E8FB8;color:#fff;}
+  .csd[data-lang="en"] .seg-en{background:#1E8FB8;color:#fff;}
+  .csd a.backlink:hover{color:#3CCBF4;}
+  .csd{overflow-x:clip;}
+  .csd img{max-width:100%;}
+  .csd > section.csd-hero{padding-left:clamp(16px,3vw,40px)!important;padding-right:clamp(16px,3vw,40px)!important;}
+  .csd > section{padding-left:max(clamp(20px,6vw,88px), calc((100% - 1160px) / 2))!important;padding-right:max(clamp(20px,6vw,88px), calc((100% - 1160px) / 2))!important;}
+  .csd > header > div{max-width:1160px;}
+  .csd h2{text-wrap:pretty;}
+  .csd p{text-wrap:pretty;}
+  @media (max-width:880px){
+    .csd-2col{grid-template-columns:1fr!important;gap:20px!important;}
+    .csd-figs{grid-template-columns:1fr!important;}
+  }
+  /* ===== DJ Start case study — motion & disclosure ===== */
+  .csd .kr-live{display:none;}
+  @media (min-width:1000px) and (hover:hover) and (pointer:fine){
+    .csd .kr-live{display:block;}
+    .csd .kr-still{display:none;}
+  }
+  .csd .kr-veil{position:absolute;inset:0;z-index:2;display:grid;place-items:center;background:rgba(6,8,11,0.42);opacity:0;transition:opacity .16s ease;cursor:pointer;border:0;padding:0;font-family:inherit;}
+  .csd .kr-live:hover .kr-veil,.csd .kr-veil:focus-visible{opacity:1;}
+  .csd .kr-veil[hidden]{display:none;}
+  .csd .kr-veil-btn{display:inline-flex;align-items:center;gap:9px;background:#3F7A55;color:#fff;font-weight:600;font-size:14.5px;padding:13px 22px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.45);transform:translateY(6px);transition:transform .16s ease;}
+  .csd .kr-live:hover .kr-veil-btn{transform:none;}
+  .csd .kr-frame{opacity:0;transition:opacity .3s ease;}
+  .csd .kr-live.is-on .kr-frame{opacity:1;}
+  .csd .kr-poster{position:absolute;left:0;top:0;width:100%;height:auto;z-index:1;transition:opacity .3s ease;}
+  .csd .kr-live.is-on .kr-poster{opacity:0;pointer-events:none;}
+  .csd [data-wsplit]{transition:opacity .85s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1);}
+  .csd [data-wsplit].pre{opacity:0;transform:translateY(26px);}
+  .csd .tilt{transform-style:preserve-3d;transition:transform .55s cubic-bezier(.22,1,.36,1);will-change:transform;}
+  .csd #viste,.csd #deep{scroll-margin-top:84px;}
+  .csd [data-scrub-slide]{position:absolute;inset:0;overflow:hidden;pointer-events:none;will-change:transform,opacity;transition:transform .68s cubic-bezier(.16,1,.3,1),opacity .34s cubic-bezier(.4,0,.2,1),filter .5s ease;}
+  .csd [data-scrub-slide]:first-of-type{opacity:1;transform:none;}
+  .csd [data-scrub-slide].on{opacity:1;transform:translate3d(0,0,0) scale(1);filter:none;pointer-events:auto;}
+  .csd [data-scrub-slide].pv{opacity:0;transform:translate3d(-26%,0,0) scale(.92);filter:brightness(.7);}
+  .csd [data-scrub-slide].nx{opacity:0;transform:translate3d(26%,0,0) scale(.92);filter:brightness(.7);}
+  .csd [data-scrub-step]{opacity:.28;transition:opacity .55s ease;}
+  .csd [data-scrub-step].on{opacity:1;}
+  .csd [data-rail].on{width:22px!important;background:#3CCBF4!important;}
+  .csd .acc{border:1px solid #262A33;background:#14171C;border-radius:12px;overflow:hidden;transition:border-color .2s ease,box-shadow .3s ease;}
+  .csd .acc+.acc{margin-top:10px;}
+  .csd .acc:hover{border-color:rgba(60,203,244,0.45);}
+  .csd .acc.open{border-color:rgba(60,203,244,0.45);box-shadow:0 18px 40px rgba(0,0,0,.5);}
+  .csd .acc-head{width:100%;display:flex;align-items:center;gap:18px;padding:22px clamp(18px,2.4vw,28px);background:none;border:none;font-family:inherit;text-align:left;cursor:pointer;color:inherit;}
+  .csd .acc-head:hover .acc-chev{background:rgba(60,203,244,0.14);border-color:rgba(60,203,244,0.45);}
+  .csd .acc-chev{transition:transform .45s cubic-bezier(.22,1,.36,1),background .2s ease,border-color .2s ease;}
+  .csd .acc.open .acc-chev{transform:rotate(180deg);background:rgba(60,203,244,0.14);border-color:rgba(60,203,244,0.45);}
+  .csd .acc-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.22,1,.36,1);}
+  .csd .acc-inner{padding:2px clamp(18px,2.4vw,28px) clamp(24px,3vw,32px);opacity:0;transform:translateY(12px);transition:opacity .45s ease .1s,transform .55s cubic-bezier(.22,1,.36,1) .1s;}
+  .csd .acc.open .acc-inner{opacity:1;transform:none;}
+  .csd [data-acc-all]{transition:border-color .18s ease,background .18s ease;}
+  .csd [data-acc-all]:hover{border-color:rgba(60,203,244,0.45);background:rgba(60,203,244,0.14);}
+  .csd [data-zoom]{cursor:zoom-in;}
+  .csd .oa-lb{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;padding:clamp(16px,4vw,48px);background:rgba(11,13,17,0.92);backdrop-filter:blur(14px);opacity:0;pointer-events:none;transition:opacity .38s ease;}
+  .csd .oa-lb.open{opacity:1;pointer-events:auto;cursor:zoom-out;}
+  .csd .oa-lb img{max-width:min(1500px,95vw);max-height:88vh;border-radius:10px;box-shadow:0 40px 90px rgba(0,0,0,0.55);transform:scale(.96);transition:transform .5s cubic-bezier(.22,1,.36,1);}
+  .csd .oa-lb.open img{transform:none;}
+  .csd .oa-lb-close{position:absolute;top:clamp(14px,3vw,28px);right:clamp(14px,3vw,28px);width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.08);color:#fff;display:grid;place-items:center;cursor:pointer;}
+  .csd .oa-lb-close:hover{background:rgba(255,255,255,0.16);}
+  @media (max-width:980px){
+    .csd .csd-prov,.csd .csd-states{grid-template-columns:1fr!important;}
+    .csd .csd-meta{grid-template-columns:repeat(2,1fr)!important;}
+    .csd .csd-meta > div:last-child{grid-column:1 / -1;}
+  }
+  @media (max-width:880px){
+    .csd .csd-scrub{grid-template-columns:1fr!important;gap:0!important;}
+    .csd .csd-scrub .scrub-stage{top:64px!important;min-height:0!important;z-index:3;isolation:isolate;}
+    .csd .csd-scrub .scrub-stage::before{content:"";position:absolute;z-index:-1;left:-50vw;right:-50vw;top:-80px;bottom:0;background:#0B0D11;pointer-events:none;}
+    .csd .csd-scrub .scrub-stage::after{content:"";position:absolute;z-index:-1;left:-50vw;right:-50vw;top:100%;height:clamp(56px,11vh,110px);background:linear-gradient(180deg,#0B0D11 0%,rgba(11,13,17,.55) 42%,rgba(11,13,17,0) 100%);pointer-events:none;}
+    .csd .csd-scrub [data-scrub-step]{min-height:58vh!important;}
+    .csd .acc-meta{display:none!important;}
+    .csd .acc-head{gap:12px!important;padding:18px 16px!important;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .csd [data-wsplit].pre{opacity:1!important;transform:none!important;}
+    .csd [data-scrub-slide]{transition:opacity .2s ease;}
+    .csd [data-scrub-slide].pv,.csd [data-scrub-slide].nx{transform:none;filter:none;}
+  }
+  .csd #contesto,.csd #principi,.csd #percorso,.csd #decisioni{scroll-margin-top:84px;}
+  @media (max-width:980px){
+    .csd .csd-levels{grid-template-columns:repeat(3,1fr)!important;}
+    .csd .csd-pair,.csd .csd-dec{grid-template-columns:1fr!important;}
+    .csd .csd-pair .csd-phone{max-width:300px;}
+  }
+  @media (max-width:560px){ .csd .csd-levels{grid-template-columns:repeat(2,1fr)!important;} .csd .csd-meta{grid-template-columns:1fr!important;} }
+  body:has(.csd){background:#0B0D11;}
+
   /* merged: per-route body background */
   body:has(.port){background:#EAECEF;}
   body:has(.port[data-theme="dark"]){background:#070809;}
@@ -1308,6 +1410,38 @@
             <h3 style="margin:0;font-size:clamp(24px,2.9vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;">Kratera</h3>
             <p data-l="it" style="margin:20px 0 0;font-size:15px;line-height:1.62;color:var(--text2);">Un digital shadow per monitorare lo stato dei vulcani: sismicità, ordinanze e livello di allerta in tempo quasi reale, con ogni dato tracciato alla sua fonte.</p>
             <p data-l="en" style="margin:20px 0 0;font-size:15px;line-height:1.62;color:var(--text2);">A digital shadow for monitoring volcano status: seismicity, closure orders and alert level in near-real time, every value traced to its source.</p>
+            <div style="flex:1;min-height:24px;"></div>
+            <div style="display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-weight:600;font-size:15px;">
+              <span data-l="it">Leggi il case study</span><span data-l="en">Read case study</span>
+              <i data-lucide="arrow-up-right" class="feat-arrow" style="width:18px;height:18px;"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- DJ Start -->
+      <a href="/case/djstart" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;animation-delay:.08s;">
+        <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
+          <div style="background:linear-gradient(160deg, rgba(60,203,244,0.12), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at 40% 50%, rgba(60,203,244,0.16), transparent 60%),radial-gradient(circle at 62% 50%, rgba(255,154,74,0.12), transparent 60%);pointer-events:none;"></div>
+            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(60,203,244,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
+            <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
+            <div style="position:relative;display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#262A33,#14171C);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(60,203,244,0.18);">
+                <img src="assets/djstart/dj-console-hero.jpg" alt="DJ Start, console con due deck" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
+              </div>
+              <div style="position:absolute;top:-16px;right:2%;z-index:3;color:#FF9A4A;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
+              <div style="position:absolute;bottom:-2px;left:0;z-index:3;width:9px;height:9px;border-radius:999px;background:#3CCBF4;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
+            </div>
+          </div>
+          <div style="padding:clamp(30px,3.8vw,52px);display:flex;flex-direction:column;">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+              <span class="tag"><span data-l="it">Progetto personale</span><span data-l="en">Personal project</span></span>
+              <span class="tag"><span data-l="it">In test · 2026</span><span data-l="en">In testing · 2026</span></span>
+            </div>
+            <h3 style="margin:0;font-size:clamp(24px,2.9vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;">DJ Start</h3>
+            <p data-l="it" style="margin:20px 0 0;font-size:15px;line-height:1.62;color:var(--text2);">Un'app web per imparare a mixare da DJ nel browser, senza controller: sei livelli di esercizi corretti mentre si suona.</p>
+            <p data-l="en" style="margin:20px 0 0;font-size:15px;line-height:1.62;color:var(--text2);">A web app for learning to DJ-mix in the browser, no controller needed: six levels of exercises corrected as you play.</p>
             <div style="flex:1;min-height:24px;"></div>
             <div style="display:inline-flex;align-items:center;gap:10px;color:var(--accent);font-weight:600;font-size:15px;">
               <span data-l="it">Leggi il case study</span><span data-l="en">Read case study</span>
@@ -2893,6 +3027,474 @@
 </div>
 </sc-if>
 
+  <sc-if value="{{ isDj }}" hint-placeholder-val="{{ false }}">
+
+<div class="cs csd" data-lang="{{ lang }}" style="background:#0B0D11;color:#F2F4F7;font-family:'IBM Plex Sans',sans-serif;min-height:100vh;">
+
+  <div class="page-curtain enter">
+    <span class="pc-mark" style="color:#3CCBF4;display:grid;place-items:center;">
+      <svg width="46" height="46" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M18 4.7 A11.5 11.5 0 1 1 14 4.7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
+      </svg>
+    </span>
+  </div>
+
+  <div class="oa-cursor-ring"></div>
+
+  <div class="oa-lb" data-lb aria-hidden="true">
+    <button class="oa-lb-close" data-lb-close type="button" aria-label="Close"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    <img alt="" data-lb-img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+  </div>
+
+  <!-- DARK HEADER -->
+  <header style="position:sticky;top:0;z-index:40;background:rgba(11,13,17,0.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:15px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="/portfolio" class="backlink" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:rgba(255,255,255,0.78);font-size:14px;font-weight:500;">
+        <i data-lucide="arrow-left" style="width:17px;height:17px;"></i><span data-l="it">Tutti i lavori</span><span data-l="en">All work</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <span style="display:flex;align-items:center;gap:8px;color:#fff;font-size:14px;font-weight:600;"><span style="width:22px;height:22px;border-radius:6px;background:#1E8FB8;display:grid;place-items:center;font-size:11px;">D</span>DJ Start</span>
+        <div style="display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:3px;">
+          <button class="seg-btn seg-it" onClick="{{ setIt }}" style="border:none;cursor:pointer;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;font-family:inherit;">IT</button>
+          <button class="seg-btn seg-en" onClick="{{ setEn }}" style="border:none;cursor:pointer;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:600;font-family:inherit;">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO · centered, rising laptop -->
+  <section class="csd-hero" style="background:#0B0D11;color:#F2F4F7;position:relative;overflow:hidden;">
+    <div style="position:absolute;left:50%;top:-220px;width:900px;height:640px;transform:translateX(-50%);background:radial-gradient(ellipse at 35% 50%, rgba(60,203,244,.18), transparent 60%),radial-gradient(ellipse at 70% 50%, rgba(255,154,74,.14), transparent 60%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(52px,8vw,96px) 0 0;text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;color:#3CCBF4;font-weight:600;margin-bottom:24px;"><span data-l="it">CASE STUDY · PRODUCT DESIGN &amp; SVILUPPO CON AGENTI</span><span data-l="en">CASE STUDY · PRODUCT DESIGN &amp; AGENT-DRIVEN BUILD</span></div>
+      <h1 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.2vw,52px);line-height:1.06;letter-spacing:-.02em;margin:0 auto;max-width:20ch;text-wrap:balance;"><span data-l="it">DJ Start: imparare a mixare con chi ti corregge mentre suoni</span><span data-l="en">DJ Start: learning to mix with something that corrects you as you play</span></h1>
+      <p data-l="it" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#B9C0CC;">Un'app web per imparare a mixare da DJ nel browser, senza controller: due deck, mixer e crossfader, sei livelli di esercizi e una correzione immediata a ogni gesto. Progetto personale, in fase di test con cinque persone.</p>
+      <p data-l="en" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#B9C0CC;">A web app for learning to DJ-mix in the browser, no controller needed: two decks, a mixer and a crossfader, six levels of exercises and immediate correction on every move. A personal project, currently being tested with five people.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px;">
+        <a href="#percorso" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;background:#3CCBF4;color:#0B0D11;font-weight:600;font-size:14.5px;padding:13px 22px;border-radius:8px;"><span data-l="it">Guarda il percorso</span><span data-l="en">See the path</span><i data-lucide="arrow-down" style="width:16px;height:16px;"></i></a>
+        <a href="#deep" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;color:rgba(255,255,255,0.82);font-weight:600;font-size:14.5px;padding:13px 20px;border:1px solid rgba(255,255,255,0.16);border-radius:8px;"><span data-l="it">Dietro al progetto</span><span data-l="en">Behind the work</span></a>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:clamp(28px,4.5vw,56px) 0 clamp(44px,6vw,80px);perspective:1600px;">
+      <div data-hero-rise style="position:relative;transform-origin:50% 100%;will-change:transform;container-type:inline-size;">
+        <div style="position:relative;border-radius:clamp(9px,1.5cqw,18px);padding:clamp(6px,1.08cqw,13px) clamp(6px,1.08cqw,13px) 0;background:linear-gradient(180deg,#31363E 0%,#1A1D22 100%);border:1px solid rgba(255,255,255,0.12);box-shadow:0 46px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,0.14);">
+          <div style="position:relative;border-radius:clamp(4px,0.67cqw,8px);overflow:hidden;background:#0B0D11;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.6);">
+            <div style="display:flex;align-items:center;gap:clamp(5px,0.67cqw,8px);padding:0 clamp(8px,1.17cqw,14px);height:clamp(24px,3cqw,36px);background:#14171C;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span style="flex:none;width:clamp(6px,0.75cqw,9px);height:clamp(6px,0.75cqw,9px);border-radius:50%;background:#3CCBF4;"></span>
+              <span style="flex:none;width:clamp(6px,0.75cqw,9px);height:clamp(6px,0.75cqw,9px);border-radius:50%;background:#FF9A4A;"></span>
+              <span style="flex:none;width:clamp(6px,0.75cqw,9px);height:clamp(6px,0.75cqw,9px);border-radius:50%;background:#3A3F49;"></span>
+              <span style="margin:0 auto;min-width:min(300px,42%);height:clamp(15px,1.83cqw,22px);border-radius:999px;background:rgba(255,255,255,0.07);display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,0.96cqw,11.5px);color:#8A93A0;letter-spacing:.04em;"><span data-l="it">dj start · console libera</span><span data-l="en">dj start · free console</span></span>
+            </div>
+            <div style="position:relative;aspect-ratio:2104/1568;overflow:hidden;background:#0B0D11;">
+              <img src="assets/djstart/dj-console-hero.jpg" alt="DJ Start · console con i due deck in riproduzione" loading="eager" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+          </div>
+          <div style="height:clamp(30px,3.4vw,46px);display:grid;place-items:center;">
+            <span aria-hidden="true" style="width:clamp(38px,5vw,62px);height:5px;border-radius:999px;background:rgba(255,255,255,0.14);"></span>
+          </div>
+        </div>
+        <div aria-hidden="true" style="width:clamp(78px,9vw,124px);height:clamp(22px,2.6vw,38px);margin:0 auto;background:linear-gradient(90deg,#15181D 0%,#353A43 42%,#262A31 60%,#111317 100%);"></div>
+        <div aria-hidden="true" style="width:min(34%,320px);height:clamp(9px,1vw,14px);margin:0 auto;border-radius:3px 3px 10px 10px;background:linear-gradient(180deg,#353A43 0%,#111317 100%);box-shadow:0 22px 34px rgba(0,0,0,.5);"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:clamp(56px,7vw,92px);">
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A93A0;text-align:center;"><span data-l="it">La console, senza il tutorial: deck A in blu, deck B in arancione</span><span data-l="en">The console without the tutorial: deck A in blue, deck B in orange</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section style="padding:clamp(30px,4.5vw,52px) clamp(20px,6vw,88px) 0;">
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">RUOLO</span><span data-l="en">ROLE</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Product design · orchestrazione agenti</span><span data-l="en">Product design · agent orchestration</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">METODO</span><span data-l="en">METHOD</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Claude Code · sei agenti</span><span data-l="en">Claude Code · six agents</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">RIFERIMENTO</span><span data-l="en">REFERENCE</span></div><div style="font-size:14.5px;font-weight:600;">Pioneer DDJ-FLX4</div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">PIATTAFORME</span><span data-l="en">PLATFORMS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Desktop · mobile semplificato</span><span data-l="en">Desktop · simplified mobile</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">STATO</span><span data-l="en">STATUS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Progetto personale · in test con 5 persone</span><span data-l="en">Personal project · testing with 5 people</span></div></div>
+    </div>
+  </section>
+
+  <!-- 01 CONTESTO E PROBLEMA -->
+  <section id="contesto" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3CCBF4;font-weight:600;margin-bottom:22px;"><span data-l="it">CONTESTO E PROBLEMA</span><span data-l="en">CONTEXT &amp; PROBLEM</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 20px;max-width:24ch;"><span data-l="it">I tutorial spiegano il gesto. Nessuno ti dice quando lo sbagli.</span><span data-l="en">Tutorials explain the move. Nobody tells you when you get it wrong.</span></h2>
+    <p data-l="it" style="font-size:17px;line-height:1.75;color:#B9C0CC;max-width:66ch;margin:0 0 32px;">Imparare a mixare è difficile: entrare a tempo, raddrizzare un brano che scivola, scambiare i bassi senza impastare. I video mostrano come si fa, ma non ascoltano te mentre suoni, quindi l'errore resta invisibile. E chi non ha un controller non può nemmeno provare.</p>
+    <p data-l="en" style="font-size:17px;line-height:1.75;color:#B9C0CC;max-width:66ch;margin:0 0 32px;">Learning to mix is hard: coming in on time, straightening a track that drifts, swapping the bass without muddying it. Videos show how it's done, but they don't listen to you while you play, so the mistake stays invisible. And anyone without a controller can't even try.</p>
+    <div class="csd-prov" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1000px;">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;">01 · <span data-l="it">NESSUNA CORREZIONE</span><span data-l="en">NO CORRECTION</span></span></div>
+        <div style="font-size:15px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Il tutorial va avanti anche se sei fuori tempo: non sai di quanto, né in che direzione.</span><span data-l="en">The tutorial carries on even when you're off time: you don't know by how much, or in which direction.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;">02 · <span data-l="it">NESSUNO STRUMENTO</span><span data-l="en">NO INSTRUMENT</span></span></div>
+        <div style="font-size:15px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Senza un controller non c'è niente da toccare: la curiosità si ferma prima del primo mix.</span><span data-l="en">Without a controller there's nothing to touch: curiosity stops before the first mix.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#1E8FB8;color:#fff;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#fff;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;">03 · <span data-l="it">L'OBIETTIVO</span><span data-l="en">THE GOAL</span></span></div>
+        <div style="font-size:15px;line-height:1.6;font-weight:500;"><span data-l="it">Una console nel browser che ascolta ogni gesto e dice subito cosa correggere.</span><span data-l="en">A console in the browser that listens to every move and says right away what to fix.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 OBIETTIVO E PRINCIPI -->
+  <section id="principi" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);background:#14171C;border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3CCBF4;font-weight:600;margin-bottom:22px;"><span data-l="it">OBIETTIVO E PRINCIPI DI DESIGN</span><span data-l="en">GOAL &amp; DESIGN PRINCIPLES</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:26ch;"><span data-l="it">Una console vera, non un'interfaccia che le somiglia</span><span data-l="en">A real console, not an interface that resembles one</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Il riferimento è il Pioneer DDJ-FLX4: due deck ai lati, mixer al centro, crossfader in basso, e i nomi che si trovano su una console reale, come gain, EQ a tre bande, cue e pitch. Chi impara qui deve ritrovare le stesse cose il giorno in cui mette le mani su un controller.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">The reference is the Pioneer DDJ-FLX4: two decks on the sides, the mixer in the middle, the crossfader at the bottom, and the names you find on a real console, such as gain, three-band EQ, cue and pitch. Whoever learns here should find the same things the day they put their hands on a controller.</p>
+    <div class="csd-prov" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1000px;margin-bottom:clamp(32px,4vw,48px);">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">01 · <span data-l="it">FEDELTÀ</span><span data-l="en">FIDELITY</span></span></div>
+        <div style="font-size:15px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Disposizione e nomi da console reale: deck A a sinistra, deck B a destra, mixer e crossfader al centro.</span><span data-l="en">Real-console layout and naming: deck A on the left, deck B on the right, mixer and crossfader in the middle.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">02 · <span data-l="it">DESKTOP E MOBILE</span><span data-l="en">DESKTOP &amp; MOBILE</span></span></div>
+        <div style="font-size:15px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Su desktop la console è fedele e completa. Sul telefono si semplifica e si impila, ma ordine, nomi e colori restano coerenti.</span><span data-l="en">On desktop the console is faithful and complete. On the phone it simplifies and stacks, but order, names and colors stay consistent.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">03 · <span data-l="it">VERIFICATO O NO</span><span data-l="en">VERIFIED OR NOT</span></span></div>
+        <div style="font-size:15px;line-height:1.6;color:#B9C0CC;"><span data-l="it">L'app dice sempre cosa ha verificato e cosa no. Quando misura un gesto lo dichiara, con lo scarto in millisecondi.</span><span data-l="en">The app always says what it has verified and what it hasn't. When it measures a move it says so, with the offset in milliseconds.</span></div>
+      </div>
+    </div>
+    <div class="csd-pair" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.34fr);gap:clamp(14px,2vw,22px);align-items:start;">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="container-type:inline-size;width:100%;">
+          <div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);">
+            <div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);">
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3CCBF4;"></span>
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span>
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span>
+              <span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">dj start · <span data-l="it">console libera · desktop</span><span data-l="en">free console · desktop</span></span>
+            </div>
+            <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;">
+              <img src="assets/djstart/dj-libera-desk.jpg" alt="DJ Start · Console libera su desktop" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+          </div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;">
+          <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span>DESKTOP · <span data-l="it">FEDELE</span><span data-l="en">FAITHFUL</span></span>
+          <span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Fuori dai livelli tutti i controlli sono aperti: si scelgono i brani dai menu dei due deck e si provano i passaggi imparati.</span><span data-l="en">Outside the levels every control is open: pick tracks from the two decks' menus and try the transitions you've learned.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="csd-phone" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="border:1px solid #262A33;border-radius:22px;padding:6px;background:linear-gradient(180deg,#22262E,#15181D);box-shadow:0 30px 60px rgba(0,0,0,.45);">
+          <div style="position:relative;aspect-ratio:390/700;overflow:hidden;border-radius:17px;background:#0B0D11;">
+            <img src="assets/djstart/dj-libera-tel.jpg" alt="DJ Start · Console libera su telefono" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+          </div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;">
+          <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span>MOBILE · <span data-l="it">SEMPLIFICATO</span><span data-l="en">SIMPLIFIED</span></span>
+          <span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Stessi deck, stessi nomi, impilati in verticale.</span><span data-l="en">Same decks, same names, stacked vertically.</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;margin-top:clamp(28px,4vw,44px);">
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:8px;">DECK A</div><div style="display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;"><span style="width:14px;height:14px;border-radius:4px;background:#3CCBF4;"></span><span data-l="it">Blu</span><span data-l="en">Blue</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:8px;">DECK B</div><div style="display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;"><span style="width:14px;height:14px;border-radius:4px;background:#FF9A4A;"></span><span data-l="it">Arancione</span><span data-l="en">Orange</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:8px;"><span data-l="it">TITOLI</span><span data-l="en">HEADINGS</span></div><div style="font-size:14.5px;font-weight:600;">Anybody</div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:8px;"><span data-l="it">TESTO</span><span data-l="en">BODY</span></div><div style="font-size:14.5px;font-weight:600;">Hanken Grotesk</div></div>
+    </div>
+  </section>
+
+  <!-- 03 IL PERCORSO -->
+  <section id="percorso" style="background:#0B0D11;color:#F2F4F7;padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px) clamp(28px,4vw,48px);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3CCBF4;font-weight:600;margin-bottom:22px;"><span data-l="it">IL PERCORSO · SEI LIVELLI</span><span data-l="en">THE PATH · SIX LEVELS</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.08;letter-spacing:-.01em;margin:0 0 16px;max-width:22ch;"><span data-l="it">Sei livelli, un gesto alla volta</span><span data-l="en">Six levels, one move at a time</span></h2>
+    <p data-l="it" style="font-size:17px;line-height:1.7;color:#B9C0CC;max-width:60ch;margin:0 0 32px;">Ogni livello isola un solo gesto del mixaggio e lo corregge mentre suoni. I primi cinque allenano un gesto alla volta, il sesto li mette insieme senza suggerimenti. A ogni livello superato si sblocca un trucco del mestiere.</p>
+    <p data-l="en" style="font-size:17px;line-height:1.7;color:#B9C0CC;max-width:60ch;margin:0 0 32px;">Each level isolates a single mixing move and corrects it while you play. The first five train one move at a time; the sixth brings them together with no hints. Every level you pass unlocks a trick of the trade.</p>
+    <div class="csd-levels" style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <sc-for list="{{ djLevels }}" as="lv" hint-placeholder-count="6">
+        <div style="background:#14171C;padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;">
+          <span style="width:30px;height:30px;border-radius:999px;border:1.5px dashed #3A3F49;display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:#F2F4F7;">{{ lv.n }}</span>
+          <span style="font-size:14.5px;font-weight:600;line-height:1.35;">{{ lv.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section class="csd-scrub" data-scrub style="background:#0B0D11;color:#F2F4F7;padding:clamp(8px,2vw,24px) clamp(20px,6vw,88px) clamp(40px,6vw,72px);display:grid;grid-template-columns:1.12fr 0.88fr;gap:clamp(24px,4vw,56px);align-items:start;">
+    <div class="scrub-stage" style="position:sticky;top:96px;display:flex;flex-direction:column;gap:18px;justify-content:center;min-height:min(62vh,560px);">
+      <div style="container-type:inline-size;width:100%;">
+        <div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 34px 70px rgba(0,0,0,.5),0 10px 26px rgba(60,203,244,.08);">
+          <div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);">
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3CCBF4;"></span>
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span>
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span>
+            <span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">dj start · <span data-l="it">livelli</span><span data-l="en">levels</span></span>
+          </div>
+          <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;">
+            <div data-scrub-slide>
+              <img src="assets/djstart/dj-livello1-desk.jpg" alt="DJ Start · livello 1, console accesa" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+            <div data-scrub-slide>
+              <img src="assets/djstart/dj-livello6-desk.jpg" alt="DJ Start · livello 6, due deck in riproduzione" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+            <div data-scrub-slide>
+              <img src="assets/djstart/dj-trucco-desk.jpg" alt="DJ Start · livello superato, trucco sbloccato" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;">
+        <sc-for list="{{ djSteps }}" as="v" hint-placeholder-count="3">
+          <span data-rail style="width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,0.22);transition:width .35s cubic-bezier(.22,1,.36,1),background .3s ease;"></span>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <sc-for list="{{ djSteps }}" as="v" hint-placeholder-count="3">
+        <div data-scrub-step style="min-height:74vh;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;">{{ v.n }}</span>
+            <span style="height:1px;width:34px;background:rgba(60,203,244,0.5);"></span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8A93A0;">{{ v.kicker }}</span>
+          </div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(21px,2.5vw,30px);line-height:1.12;margin:0;max-width:20ch;">{{ v.title }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#B9C0CC;max-width:40ch;">{{ v.body }}</p>
+          <ul style="margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;">
+            <sc-for list="{{ v.bullets }}" as="b" hint-placeholder-count="3">
+              <li style="display:flex;gap:11px;font-size:14px;line-height:1.55;color:#D5DAE2;"><span aria-hidden="true" style="flex:none;margin-top:7px;width:6px;height:6px;border-radius:999px;background:#FF9A4A;"></span>{{ b }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 04 DECISIONI DI DESIGN -->
+  <section id="decisioni" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);background:#14171C;border-top:1px solid #262A33;border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3CCBF4;font-weight:600;margin-bottom:22px;"><span data-l="it">DECISIONI DI DESIGN</span><span data-l="en">DESIGN DECISIONS</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:26ch;"><span data-l="it">Quattro scelte, e il perché di ognuna</span><span data-l="en">Four choices, and the reason behind each</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">La regola è stata sempre la stessa: se una console reale si comporta in un certo modo, l'app si comporta così. Dove semplificare avrebbe insegnato un gesto sbagliato, ho scelto un passo guidato in più.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">The rule was always the same: if a real console behaves a certain way, the app behaves that way. Where simplifying would have taught the wrong move, I chose an extra guided step instead.</p>
+    <div class="csd-pair" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.34fr);gap:clamp(14px,2vw,22px);align-items:start;margin-bottom:clamp(32px,4vw,48px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="container-type:inline-size;width:100%;">
+          <div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);">
+            <div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);">
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3CCBF4;"></span>
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span>
+              <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span>
+              <span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">dj start · <span data-l="it">passo guidato sul cue</span><span data-l="en">guided cue step</span></span>
+            </div>
+            <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;">
+              <img src="assets/djstart/dj-cue-desk.jpg" alt="DJ Start · passo guidato sul Cue, desktop" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+          </div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;">
+          <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span data-l="it">PASSO 1 · TIENI PREMUTO CUE, POI LASCIALO</span><span data-l="en">STEP 1 · HOLD CUE, THEN RELEASE</span></span>
+          <span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Mentre tieni premuto, il deck B suona l'attacco; quando lasci torna al punto di partenza.</span><span data-l="en">While you hold, deck B plays the attack; when you let go it returns to the start point.</span></span>
+        </figcaption>
+      </figure>
+      <figure class="csd-phone" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="border:1px solid #262A33;border-radius:22px;padding:6px;background:linear-gradient(180deg,#22262E,#15181D);box-shadow:0 30px 60px rgba(0,0,0,.45);">
+          <div style="position:relative;aspect-ratio:390/700;overflow:hidden;border-radius:17px;background:#0B0D11;">
+            <img src="assets/djstart/dj-cue-tel.jpg" alt="DJ Start · passo guidato sul Cue, telefono" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+          </div>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;">
+          <span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span>MOBILE</span>
+          <span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Il passo resta in vista sopra le forme d'onda.</span><span data-l="en">The step stays in view above the waveforms.</span></span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="csd-dec" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">01 · <span data-l="it">CUE · TIENI PREMUTO E LASCIA</span><span data-l="en">CUE · HOLD AND RELEASE</span></span></div>
+        <div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Come su una console: tieni premuto Cue per ascoltare l'attacco, lascia per tornare al punto. Un tasto che si comportasse diversamente da un controller insegnerebbe il gesto sbagliato, quindi il Cue ha un passo guidato tutto suo.</span><span data-l="en">Just like on a console: hold Cue to hear the attack, release to return to the point. A button behaving differently from a controller would teach the wrong move, so Cue gets a guided step of its own.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">02 · <span data-l="it">PREASCOLTO · SPLIT CUE</span><span data-l="en">PRE-LISTEN · SPLIT CUE</span></span></div>
+        <div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Un orecchio sul brano che stai preparando, l'altro sulla pista: è così che un DJ ascolta prima di far entrare un brano. Il livello 6 lo dichiara: per ora si sente tutto dalle stesse casse, il preascolto separato in cuffia arriva più avanti.</span><span data-l="en">One ear on the track you're cueing, the other on the floor: that's how a DJ listens before bringing a track in. Level 6 says it openly: for now everything plays through the same speakers, separate headphone pre-listen comes later.</span></div>
+      </div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3CCBF4;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;">03 · <span data-l="it">BRANI INCLUSI</span><span data-l="en">TRACKS INCLUDED</span></span></div>
+        <div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">I brani sono sintetizzati e inclusi, creati per gli esercizi. Non serve cercarli, scaricarli o caricarli: si apre la pagina, si mettono le cuffie e si parte.</span><span data-l="en">The tracks are synthesized and included, built for the exercises. No need to find, download or upload anything: open the page, put on headphones and start.</span></div>
+      </div>
+      <div style="border:1px dashed #3A3F49;border-radius:12px;background:#0B0D11;padding:22px;">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;">04 · WEB MIDI · <span data-l="it">PASSO SUCCESSIVO</span><span data-l="en">NEXT STEP</span></span></div>
+        <div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Il passo successivo è collegare i controller reali con Web MIDI, partendo dai Pioneer DDJ entry level, gli stessi presi a riferimento per la disposizione. Non è ancora implementato.</span><span data-l="en">The next step is connecting real controllers through Web MIDI, starting with entry-level Pioneer DDJ units, the same ones used as the layout reference. It isn't implemented yet.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIETRO AL PROGETTO · accordion -->
+  <section id="deep" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;">
+      <div style="max-width:58ch;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3CCBF4;font-weight:600;margin-bottom:20px;"><span data-l="it">DIETRO AL PROGETTO</span><span data-l="en">BEHIND THE WORK</span></div>
+        <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,36px);line-height:1.12;margin:0 0 12px;"><span data-l="it">Processo, metodo e prove: apri solo ciò che ti interessa</span><span data-l="en">Process, method and testing, open only what interests you</span></h2>
+        <p data-l="it" style="font-size:16px;line-height:1.65;color:#8A93A0;margin:0;">Cinque capitoli: come è nata la landing, come ho orchestrato gli agenti, cosa hanno mostrato le prove, cosa non è ancora verificato, cosa viene dopo.</p>
+        <p data-l="en" style="font-size:16px;line-height:1.65;color:#8A93A0;margin:0;">Five chapters: how the landing came about, how I orchestrated the agents, what testing showed, what isn't verified yet, what comes next.</p>
+      </div>
+      <button type="button" data-acc-all style="display:inline-flex;align-items:center;gap:9px;background:#14171C;border:1px solid #262A33;border-radius:10px;padding:11px 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;font-weight:600;color:#F2F4F7;cursor:pointer;">
+        <i data-lucide="chevrons-down-up" style="width:16px;height:16px;color:#3CCBF4;"></i><span data-l="it">APRI TUTTO</span><span data-l="en">EXPAND ALL</span>
+      </button>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;min-width:22px;">01</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Processo di design: dalla prima versione alla landing</span><span data-l="en">Design process: from the first version to the landing</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Le direzioni esplorate e quella scelta</span><span data-l="en">The directions explored and the one chosen</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3CCBF4;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 20px;">La prima versione dell'interfaccia è precedente al passo guidato sul Cue e all'aspetto leggero attuale. [da completare: cosa è cambiato tra la prima versione e quella attuale, e perché.]</p>
+        <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 20px;">The first version of the interface predates the guided Cue step and the current lighter look. [to be completed: what changed between the first version and the current one, and why.]</p>
+        <div class="csd-figs" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:900px;margin-bottom:24px;">
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;aspect-ratio:16/10;display:grid;place-items:center;padding:20px;text-align:center;">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;margin-bottom:8px;"><span data-l="it">PRIMA VERSIONE</span><span data-l="en">FIRST VERSION</span></div><div style="font-size:14px;color:#8A93A0;"><span data-l="it">[da completare: schermate della prima versione]</span><span data-l="en">[to be completed: first-version screens]</span></div></div>
+          </div>
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;aspect-ratio:16/10;display:grid;place-items:center;padding:20px;text-align:center;">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3CCBF4;margin-bottom:8px;"><span data-l="it">DIREZIONI PER LA LANDING</span><span data-l="en">LANDING DIRECTIONS</span></div><div style="font-size:14px;color:#8A93A0;"><span data-l="it">[da completare: direzioni esplorate per la landing]</span><span data-l="en">[to be completed: landing directions explored]</span></div></div>
+          </div>
+        </div>
+        <figure style="margin:0;max-width:900px;display:flex;flex-direction:column;gap:12px;">
+          <div style="border:1px solid #262A33;border-radius:10px;overflow:hidden;background:#0B0D11;">
+            <img src="assets/djstart/dj-landing-desk.jpg" alt="DJ Start · landing" loading="lazy" data-zoom style="display:block;width:100%;height:auto;">
+          </div>
+          <figcaption style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">La landing attuale: senza controller, brani inclusi, in italiano. [da completare: perché questa direzione e non le altre.]</span><span data-l="en">The current landing: no controller, tracks included, in Italian. [to be completed: why this direction and not the others.]</span></figcaption>
+        </figure>
+      </div></div>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;min-width:22px;">02</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Metodo: un team di sei agenti in Claude Code</span><span data-l="en">Method: a team of six agents in Claude Code</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Come li ho orchestrati e dove ho deciso io</span><span data-l="en">How I orchestrated them and where I made the call</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3CCBF4;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 24px;">Ho costruito l'app con un team di sei agenti in Claude Code, ognuno con un ruolo, e un processo da team di prodotto: un brief, un backlog a storie numerate, una revisione prima di ogni unione e prove con persone vere.</p>
+        <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 24px;">I built the app with a team of six agents in Claude Code, each with a role, and a product-team process: a brief, a backlog of numbered stories, a review before every merge and tests with real people.</p>
+        <div class="csd-levels" style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;max-width:900px;margin-bottom:24px;">
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">01</div><div style="font-size:14px;font-weight:600;">product-owner</div></div>
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">02</div><div style="font-size:14px;font-weight:600;">frontend</div></div>
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">03</div><div style="font-size:14px;font-weight:600;"><span data-l="it">revisore</span><span data-l="en">reviewer</span></div></div>
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">04</div><div style="font-size:13px;color:#8A93A0;"><span data-l="it">[da completare]</span><span data-l="en">[to be completed]</span></div></div>
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">05</div><div style="font-size:13px;color:#8A93A0;"><span data-l="it">[da completare]</span><span data-l="en">[to be completed]</span></div></div>
+          <div style="background:#14171C;padding:16px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3CCBF4;margin-bottom:6px;">06</div><div style="font-size:13px;color:#8A93A0;"><span data-l="it">[da completare]</span><span data-l="en">[to be completed]</span></div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;max-width:760px;margin-bottom:24px;">
+          <div style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-top:1px solid #262A33;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;color:#3CCBF4;width:30px;">1</div>
+            <div><div style="font-size:15.5px;font-weight:600;margin-bottom:4px;">Brief</div><div style="font-size:14px;color:#8A93A0;line-height:1.6;"><span data-l="it">Il punto di partenza di ogni agente: obiettivo, principi, cosa è fuori ambito.</span><span data-l="en">Every agent's starting point: goal, principles, what's out of scope.</span></div></div>
+          </div>
+          <div style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-top:1px solid #262A33;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;color:#3CCBF4;width:30px;">2</div>
+            <div><div style="font-size:15.5px;font-weight:600;margin-bottom:4px;"><span data-l="it">Backlog a storie numerate</span><span data-l="en">Backlog of numbered stories</span></div><div style="font-size:14px;color:#8A93A0;line-height:1.6;"><span data-l="it">Ogni cambiamento parte da una storia con un numero, così ogni lavoro si può tracciare e discutere.</span><span data-l="en">Every change starts from a numbered story, so each piece of work can be traced and discussed.</span></div></div>
+          </div>
+          <div style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-top:1px solid #262A33;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;color:#3CCBF4;width:30px;">3</div>
+            <div><div style="font-size:15.5px;font-weight:600;margin-bottom:4px;"><span data-l="it">Revisione prima di ogni unione</span><span data-l="en">Review before every merge</span></div><div style="font-size:14px;color:#8A93A0;line-height:1.6;"><span data-l="it">Nessuna modifica entra senza essere passata dal revisore.</span><span data-l="en">No change gets in without going through the reviewer.</span></div></div>
+          </div>
+          <div style="display:flex;gap:20px;align-items:flex-start;padding:18px 0;border-top:1px solid #262A33;border-bottom:1px solid #262A33;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;color:#3CCBF4;width:30px;">4</div>
+            <div><div style="font-size:15.5px;font-weight:600;margin-bottom:4px;"><span data-l="it">Prove con persone vere</span><span data-l="en">Tests with real people</span></div><div style="font-size:14px;color:#8A93A0;line-height:1.6;"><span data-l="it">Quello che conta si verifica con chi suona, non nel codice.</span><span data-l="en">What matters gets checked with the people playing, not in the code.</span></div></div>
+          </div>
+        </div>
+        <div style="border:1px solid #262A33;border-left:3px solid #3CCBF4;border-radius:10px;background:#14171C;padding:22px 24px;max-width:760px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#3CCBF4;margin-bottom:12px;"><span data-l="it">DOVE HO DECISO IO</span><span data-l="en">WHERE I MADE THE CALL</span></div>
+          <p data-l="it" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0;">Gli agenti propongono e implementano; il brief, l'ordine del backlog e cosa si unisce restano decisioni mie. [da completare: due o tre esempi concreti di decisioni prese da te contro la proposta di un agente.]</p>
+          <p data-l="en" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0;">The agents propose and implement; the brief, the backlog order and what gets merged remain my decisions. [to be completed: two or three concrete examples of calls you made against an agent's proposal.]</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;min-width:22px;">03</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Test e cosa ho imparato</span><span data-l="en">Testing and what I learned</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Cinque persone, un tablet che rallenta, un'ipotesi smentita</span><span data-l="en">Five people, a tablet that slows down, a disproved hypothesis</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3CCBF4;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 20px;">Cinque persone hanno provato la demo. [da completare: cosa hanno osservato o detto sul percorso e sugli esercizi.]</p>
+        <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 20px;">Five people tried the demo. [to be completed: what they observed or said about the path and the exercises.]</p>
+        <div style="border:1px solid #262A33;border-left:3px solid #FF9A4A;border-radius:10px;background:#14171C;padding:22px 24px;max-width:760px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#FF9A4A;margin-bottom:12px;"><span data-l="it">UN CASO CONCRETO · TABLET ANDROID</span><span data-l="en">A CONCRETE CASE · ANDROID TABLET</span></div>
+          <p data-l="it" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0 0 14px;">Su un tablet Samsung Android di fascia economica la demo rallenta dopo l'accensione della console: le onde scattano e i tasti rispondono in ritardo. La prima ipotesi era il vetro sfocato dei pannelli; la prova sul dispositivo reale l'ha smentita.</p>
+          <p data-l="en" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0 0 14px;">On a budget Samsung Android tablet the demo slows down once the console is switched on: the waveforms stutter and the buttons respond late. The first hypothesis was the panels' frosted glass; testing on the real device disproved it.</p>
+          <p data-l="it" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0;"><strong>Cosa ho imparato:</strong> un'ipotesi plausibile non è una diagnosi. Le prestazioni si verificano sul dispositivo che le persone usano davvero. Il problema non è ancora risolto e la causa è ancora da trovare.</p>
+          <p data-l="en" style="font-size:15.5px;line-height:1.75;color:#B9C0CC;margin:0;"><strong>What I learned:</strong> a plausible hypothesis isn't a diagnosis. Performance gets checked on the device people actually use. The problem isn't solved yet and the cause is still to be found.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;min-width:22px;">04</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Cosa non è ancora verificato</span><span data-l="en">What isn't verified yet</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Quattro aree aperte, dichiarate</span><span data-l="en">Four open areas, stated plainly</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3CCBF4;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <div class="csd-figs" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;">
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;padding:20px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;margin-bottom:10px;"><span data-l="it">NON VERIFICATO</span><span data-l="en">NOT VERIFIED</span></div>
+            <div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Suono e sensazione dei tasti</span><span data-l="en">Sound and button feel</span></div>
+          </div>
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;padding:20px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;margin-bottom:10px;"><span data-l="it">NON VERIFICATO</span><span data-l="en">NOT VERIFIED</span></div>
+            <div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Un controller fisico reale</span><span data-l="en">A real physical controller</span></div>
+          </div>
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;padding:20px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;margin-bottom:10px;"><span data-l="it">NON VERIFICATO</span><span data-l="en">NOT VERIFIED</span></div>
+            <div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;">iPhone · Safari</div>
+          </div>
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#14171C;padding:20px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;margin-bottom:10px;"><span data-l="it">NON VERIFICATO</span><span data-l="en">NOT VERIFIED</span></div>
+            <div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Lettore di schermo</span><span data-l="en">Screen reader</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3CCBF4;min-width:22px;">05</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Prossimi passi</span><span data-l="en">Next steps</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Cosa viene dopo</span><span data-l="en">What comes next</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3CCBF4;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <ul style="margin:0;padding:0 0 0 20px;font-size:15px;line-height:1.75;color:#B9C0CC;max-width:70ch;">
+          <li data-l="it">Jog wheel per lo scratch e per trattenere il disco (hold)</li>
+          <li data-l="en">Jog wheel for scratching and holding the record</li>
+          <li data-l="it">Effetti: riverbero ed eco</li>
+          <li data-l="en">Effects: reverb and echo</li>
+          <li data-l="it">Mappature di altri controller, dopo i Pioneer DDJ entry level</li>
+          <li data-l="en">Mappings for other controllers, after the entry-level Pioneer DDJ</li>
+        </ul>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section style="padding:clamp(40px,6vw,64px) clamp(20px,6vw,88px);background:#0B0D11;color:#8A93A0;display:flex;flex-direction:column;gap:24px;">
+    <p data-l="it" style="font-size:13.5px;line-height:1.7;color:#8A93A0;max-width:680px;margin:0;">Questo documento descrive un progetto personale in fase di test con cinque persone, non ancora pubblicato in modo stabile.</p>
+    <p data-l="en" style="font-size:13.5px;line-height:1.7;color:#8A93A0;max-width:680px;margin:0;">This document describes a personal project being tested with five people, not yet published in a stable form.</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid #262A33;padding-top:24px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;">© {{ year }} Antonino Omar Amato · Product Design</div>
+      <a href="/portfolio" data-cursor="" style="text-decoration:none;color:#3CCBF4;font-family:'IBM Plex Mono',monospace;font-size:13px;"><span data-l="it">Tutti i lavori →</span><span data-l="en">All work →</span></a>
+    </div>
+  </section>
+
+</div>
+</sc-if>
+
   <sc-if value="{{ isRekord }}" hint-placeholder-val="{{ false }}">
 
 <sc-if value="{{ locked }}" hint-placeholder-val="{{ false }}">
@@ -3637,6 +4239,7 @@ class Component extends DCLogic {
       if (hp === "portfolio") return "portfolio";
       if (hp === "case/fisiogest") return "fisio";
       if (hp === "case/etna") return "etna";
+      if (hp === "case/djstart") return "djstart";
       if (hp === "case/rekord") return "rekord";
       if (hp === "case/bsb") return "bsb";
       if (hp === "case/siv") return "siv";
@@ -3647,6 +4250,7 @@ class Component extends DCLogic {
     if (p === "case/bsb") return "bsb";
     if (p === "case/fisiogest") return "fisio";
     if (p === "case/etna") return "etna";
+    if (p === "case/djstart") return "djstart";
     if (p === "case/rekord") return "rekord";
     if (p === "case/siv") return "siv";
     return "home";
@@ -3673,6 +4277,11 @@ class Component extends DCLogic {
         title: "Kratera — Case Study | Antonino Omar Amato",
         desc: "Kratera: un digital shadow dei vulcani — sismicità, ordinanze e livello di allerta in tempo quasi reale, con ogni dato tracciato alla sua fonte. Case study 2026, data systems.",
         path: "/case/etna"
+      },
+      djstart: {
+        title: "DJ Start — Case Study | Antonino Omar Amato",
+        desc: "DJ Start: un'app web per imparare a mixare da DJ nel browser, senza controller, con sei livelli di esercizi corretti mentre si suona. Progetto personale in fase di test.",
+        path: "/case/djstart"
       },
       rekord: {
         title: "Rekord — Case Study | Antonino Omar Amato",
@@ -3719,7 +4328,7 @@ class Component extends DCLogic {
       const a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
       if (!a) return;
       const href = a.getAttribute("href") || "";
-      const ROUTE_BY_HREF = { "/": "home", "/portfolio": "portfolio", "/case/fisiogest": "fisio", "/case/etna": "etna", "/case/rekord": "rekord", "/case/bsb": "bsb", "/case/siv": "siv" };
+      const ROUTE_BY_HREF = { "/": "home", "/portfolio": "portfolio", "/case/fisiogest": "fisio", "/case/etna": "etna", "/case/djstart": "djstart", "/case/rekord": "rekord", "/case/bsb": "bsb", "/case/siv": "siv" };
       if (!(href in ROUTE_BY_HREF)) return;
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
@@ -4562,6 +5171,33 @@ _data_rekord(){
     return { etnaViews };
   }
 
+  _data_dj() {
+    const T = (it, en) => (this.state.lang === "en" ? en : it);
+    const djLevels = [
+      {n:"1", name:T("Entra sull'uno","Come in on the one")},
+      {n:"2", name:T("Raddrizza con il nudge","Straighten with the nudge")},
+      {n:"3", name:T("Aggancia il tempo","Lock the tempo")},
+      {n:"4", name:T("Scambia i bassi","Swap the bass")},
+      {n:"5", name:T("Entra sulla frase","Come in on the phrase")},
+      {n:"6", name:T("Il passaggio completo","The full transition")},
+    ];
+    const djSteps = [
+      {n:"01", kicker:T("LIVELLO 1 · ENTRA SULL'UNO","LEVEL 1 · COME IN ON THE ONE"),
+        title:T("Un obiettivo misurabile, diviso in passi","A measurable goal, split into steps"),
+        body:T("Il deck A suona, il deck B è fermo sul primo colpo di cassa. L'esercizio è scomposto in passi numerati, tieni premuto Cue, conta la cassa, premi Play su un battito, e chiede tre partenze con meno di 60 ms di scarto.","Deck A is playing, deck B is parked on its first kick. The exercise is split into numbered steps, hold Cue, count the kick, hit Play on a beat, and asks for three starts within 60 ms."),
+        bullets:[T("Il passo attivo è evidenziato, gli altri aspettano","The active step is highlighted, the others wait"),T("Avanzamento sempre visibile: «0 di 3 partenze a tempo»","Progress always visible: \"0 of 3 starts on time\""),T("Scorciatoie da tastiera per i deck e il nudge","Keyboard shortcuts for the decks and the nudge")]},
+      {n:"02", kicker:T("LIVELLO 6 · IL PASSAGGIO COMPLETO","LEVEL 6 · THE FULL TRANSITION"),
+        title:T("La correzione arriva mentre suoni","The correction arrives while you play"),
+        body:T("In alto l'indicatore di fase mostra di quanto il deck B è avanti o indietro rispetto al deck A, in millisecondi, e una frase dice cosa fare adesso. Le forme d'onda sovrapposte rendono visibile lo scarto.","Up top, the phase indicator shows how far deck B is ahead of or behind deck A, in milliseconds, and a sentence says what to do now. The stacked waveforms make the offset visible."),
+        bullets:[T("Scarto dichiarato: «B avanti di 231 ms»","Offset stated: \"B ahead by 231 ms\""),T("Istruzione al presente: «Prepara il deck B: via i bassi, poi Play»","Instruction in the present: \"Prep deck B: bass out, then Play\""),T("Nel livello 6 il bpm del deck B è nascosto: si aggancia a orecchio","In level 6 deck B's bpm is hidden: you match it by ear")]},
+      {n:"03", kicker:T("LIVELLO SUPERATO · TRUCCO DEL MESTIERE","LEVEL PASSED · TRICK OF THE TRADE"),
+        title:T("A ogni livello, un trucco da DJ","Every level, a DJ trick"),
+        body:T("Superato il livello si sblocca un trucco del mestiere: nel primo è «Conta ad alta voce». Fino a quel momento resta visibile ma chiuso, così si sa cosa si sta per guadagnare.","Passing a level unlocks a trick of the trade: in the first one it's \"Count out loud\". Until then it stays visible but locked, so you know what you're about to earn."),
+        bullets:[T("Il livello superato si segna nella barra in alto","The passed level is ticked in the top bar"),T("Il livello successivo si propone con il suo nome","The next level offers itself by name"),T("«Ricomincia l'esercizio» sempre a portata","\"Restart the exercise\" always within reach")]},
+    ];
+    return { djLevels, djSteps };
+  }
+
   renderVals() {
     const setLang = (l) => { this._persist("oa_lang", l); this.setState({ lang: l }); };
     const route = this.state.route;
@@ -4621,6 +5257,7 @@ _data_rekord(){
       isBSB: route === "bsb",
       isFisio: route === "fisio",
       isEtna: route === "etna",
+      isDj: route === "djstart",
       isRekord: route === "rekord",
       isSiv: route === "siv",
       lang: this.state.lang,
@@ -4646,6 +5283,7 @@ _data_rekord(){
     else if (route === "rekord") pd = this._data_rekord();
     else if (route === "siv") pd = this._data_siv();
     else if (route === "etna") pd = this._data_etna();
+    else if (route === "djstart") pd = this._data_dj();
     return Object.assign({}, base, pd);
   }
 }
