@@ -1015,6 +1015,44 @@
   .port .nav-links{gap:24px!important;}
   .port .nav-links a{font-size:13px!important;}
   @media (max-width:1100px){.port .nav-links{display:none!important;}}
+  /* mobile: no horizontal wobble, full hero in view */
+  html,body{overflow-x:clip;max-width:100%;}
+  .port{overflow-x:clip;max-width:100vw;}
+  .port img,.port video,.port canvas,.port svg{max-width:100%;}
+  @media (max-width:700px){
+    .port #top{min-height:calc(100svh - 64px)!important;padding:32px 20px 24px!important;gap:20px!important;justify-content:center!important;}
+    .port #top h1{font-size:clamp(24px,7vw,30px)!important;max-width:none!important;}
+    .port #top > div:last-child{flex-direction:column;align-items:flex-start!important;gap:14px!important;font-size:12px!important;}
+    .port .feat-grid{grid-template-columns:1fr!important;}
+    .port .feat-grid > div{order:0!important;border-left:0!important;border-right:0!important;}
+    .port .card-feat .fd-dj::before{width:520px;height:520px;}
+  }
+  /* dark creatives — DJ Start / Kratera */
+  @keyframes fd-spin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+  @keyframes fd-drift{0%,100%{transform:translate(0,0);}50%{transform:translate(-18px,10px);}}
+  .port .card-feat > .feat-grid > .feat-dark.feat-dark{background:#0C0D10!important;border-color:#23242A!important;isolation:isolate;}
+  .port .card-feat .feat-dark > div[style*="position:absolute"][style*="translate(-50%"]{display:none!important;}
+  .port .card-feat > .feat-grid > .feat-dark [style*="linear-gradient"]{background:linear-gradient(180deg,#2C2C33,#1C1C21)!important;border-color:transparent!important;}
+  .port .card-feat .feat-dark::before,.port .card-feat .feat-dark::after{content:"";position:absolute;pointer-events:none;z-index:0;}
+  .port .card-feat .fd-dj::before{top:50%;left:50%;width:760px;height:760px;border-radius:50%;transform:translate(-50%,-50%);
+    background:radial-gradient(circle,rgba(107,155,255,.22) 0 6%,transparent 6.4%),
+      repeating-radial-gradient(circle,rgba(255,255,255,.055) 0 1px,transparent 1px 7px),
+      conic-gradient(from 0deg,transparent 0 12%,rgba(107,155,255,.10) 18%,transparent 26% 62%,rgba(255,255,255,.05) 70%,transparent 78%);
+    -webkit-mask-image:radial-gradient(circle,#000 0 48%,transparent 70%);mask-image:radial-gradient(circle,#000 0 48%,transparent 70%);
+    animation:fd-spin 28s linear infinite;}
+  .port .card-feat .fd-dj::after{left:0;right:0;bottom:0;height:46%;
+    background:repeating-linear-gradient(90deg,rgba(107,155,255,.28) 0 2px,transparent 2px 9px);
+    -webkit-mask-image:linear-gradient(transparent,#000 70%),radial-gradient(ellipse 60% 100% at 50% 100%,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);opacity:.35;}
+  .port .card-feat .fd-kr::before{inset:-40px;
+    background:repeating-radial-gradient(ellipse 120% 80% at 70% 38%,transparent 0 22px,rgba(237,235,230,.09) 22px 23px),
+      repeating-radial-gradient(ellipse 90% 70% at 18% 82%,transparent 0 17px,rgba(107,155,255,.12) 17px 18px);
+    -webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 78%);mask-image:radial-gradient(ellipse at 50% 50%,#000 30%,transparent 78%);
+    animation:fd-drift 16s ease-in-out infinite;}
+  .port .card-feat .fd-kr::after{inset:0;
+    background:radial-gradient(circle 220px at 70% 38%,rgba(255,106,43,.16),transparent 70%),
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/40px 40px;}
+  .port .card-feat .feat-dark > *{position:relative;z-index:1;}
+  @media (prefers-reduced-motion:reduce){.port .card-feat .feat-dark::before{animation:none;}}
   /* cards — flat, hairline, square */
   .port .work-feat,.port .card-feat,.port .ai-grid > div,.port .skills-card,.port .awards-grid{background:transparent!important;border:1px solid var(--border2)!important;border-radius:4px!important;box-shadow:none!important;}
   .port .awards-grid{background:var(--border2)!important;gap:1px!important;}
@@ -1404,8 +1442,8 @@
   <section style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,5vw,72px) 0;">
     <p class="reveal" style="font-family:var(--label-font);font-size:var(--label-size);font-weight:var(--label-w);letter-spacing:var(--label-ls);text-transform:uppercase;color:var(--accent);margin:0 0 16px;">Portfolio</p>
     <h1 class="reveal" style="margin:0;font-size:clamp(38px,6.4vw,92px);font-weight:700;letter-spacing:-0.045em;line-height:0.96;--d:.05s;"><span data-l="it">Case study<br>selezionati</span><span data-l="en">Selected<br>case studies</span></h1>
-    <p data-l="it" class="reveal" style="margin:24px 0 0;max-width:54ch;font-size:17px;line-height:1.62;color:var(--text2);--d:.1s;">Quattro progetti di product e UX design. Per riservatezza, alcuni contenuti sono protetti da password.</p>
-    <p data-l="en" class="reveal" style="margin:24px 0 0;max-width:54ch;font-size:17px;line-height:1.62;color:var(--text2);--d:.1s;">Four product and UX design projects. For confidentiality, some contents are password protected.</p>
+    <p data-l="it" class="reveal" style="margin:24px 0 0;max-width:54ch;font-size:17px;line-height:1.62;color:var(--text2);--d:.1s;">Sei progetti di product e UX design. Per riservatezza, alcuni contenuti sono protetti da password.</p>
+    <p data-l="en" class="reveal" style="margin:24px 0 0;max-width:54ch;font-size:17px;line-height:1.62;color:var(--text2);--d:.1s;">Six product and UX design projects. For confidentiality, some contents are password protected.</p>
   </section>
 
   <section style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,56px) clamp(20px,5vw,72px) clamp(56px,8vw,110px);">
@@ -1414,10 +1452,8 @@
       <!-- DJ Start -->
       <a href="/case/djstart" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="background:linear-gradient(160deg, rgba(107,155,255,0.12), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+          <div class="feat-dark fd-dj" style="background:linear-gradient(160deg, rgba(107,155,255,0.12), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
             <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at 40% 50%, rgba(107,155,255,0.16), transparent 60%),radial-gradient(circle at 62% 50%, rgba(107,155,255,0.12), transparent 60%);pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(107,155,255,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
               <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#2C2C33,#1C1C21);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(107,155,255,0.18);">
                 <img src="assets/djstart/dj-console-hero.jpg" alt="DJ Start, console con due deck" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
@@ -1478,10 +1514,8 @@
       <!-- Kratera -->
       <a href="/case/etna" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;animation-delay:.04s;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="background:linear-gradient(200deg, rgba(107,155,255,0.14), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+          <div class="feat-dark fd-kr" style="background:linear-gradient(200deg, rgba(107,155,255,0.14), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
             <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(107,155,255,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
               <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#2C2C33,#1C1C21);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(37,86,214,0.22);">
                 <img src="assets/kratera/k-etna-prospettiva.jpg" alt="Kratera dashboard, Etna in allerta gialla" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
@@ -1544,10 +1578,8 @@
               <i data-lucide="arrow-up-right" class="feat-arrow" style="width:18px;height:18px;"></i>
             </div>
           </div>
-          <div style="order:2;background:linear-gradient(160deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+          <div class="feat-dark fd-kr" style="order:2;background:linear-gradient(160deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
             <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid var(--accent-line);border-radius:999px;opacity:0.45;pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
               <img src="assets/rekordcase/rk-dpp-dashboard.q.jpg" alt="Rekord component interface" loading="lazy" style="position:relative;z-index:2;display:block;width:100%;max-width:390px;height:auto;border-radius:10px;transform:rotate(-3deg);filter:drop-shadow(0 28px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(37,86,214,0.22));">
               <div style="position:absolute;top:-8px;right:4px;z-index:3;color:var(--accent);opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:22px;height:22px;"></i></div>
@@ -1706,13 +1738,23 @@
   </header>
 
   <!-- HERO -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(44px,8vw,92px) clamp(20px,5vw,56px) clamp(32px,5vw,48px);">
+  <section style="max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) clamp(32px,5vw,48px);">
     <div class="rise">
       <p style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;">Case study · 2023–2024 · Enterprise UX</p>
       <h1 style="margin:0;max-width:20ch;font-size:clamp(32px,4.6vw,58px);font-weight:700;letter-spacing:-0.03em;line-height:1.04;"><span data-l="it">Modernizzare i tool video della rete autostradale italiana</span><span data-l="en">Modernizing Italy's motorway video-infrastructure tools</span></h1>
       <p data-l="it" style="margin:24px 0 0;max-width:64ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:var(--muted);">Un ridisegno guidato dalla ricerca della piattaforma interna di monitoraggio video di BSB, usata dagli operatori di 14 concessionarie autostradali per gestire oltre 5.000 flussi live da telecamera.</p>
       <p data-l="en" style="margin:24px 0 0;max-width:64ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:var(--muted);">A research-driven redesign of BSB's internal video-monitoring platform, used by operators across 14 motorway concessionaires to manage over 5,000 live camera streams.</p>
     </div>
+
+    <figure class="rise" style="margin:clamp(28px,4vw,44px) 0 0;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:0 28px 56px rgba(20,30,50,0.16);--d:.08s;">
+      <div style="display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--surface2);border-bottom:1px solid var(--line);">
+        <span style="width:9px;height:9px;border-radius:50%;background:#FF5F57;"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:#FEBC2E;"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:#28C840;"></span>
+        <span style="margin-left:12px;font-size:11px;color:var(--faint);">bsb · video monitoring</span>
+      </div>
+      <img src="assets/case/after-dashboard.q.jpg" alt="BSB · dashboard riprogettata" loading="eager" style="display:block;width:100%;height:auto;">
+    </figure>
 
     <div class="bs-stats" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:clamp(36px,5vw,56px);background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;">
       <div style="background:var(--surface);padding:24px clamp(16px,2vw,26px);"><div style="font-size:clamp(26px,3.2vw,38px);font-weight:700;letter-spacing:-0.03em;color:var(--accent);">5.332</div><div style="font-size:13px;color:var(--muted);margin-top:5px;line-height:1.4;"><span data-l="it">Flussi video gestiti</span><span data-l="en">Video streams managed</span></div></div>
@@ -2024,7 +2066,7 @@
     <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 50% -12%, rgba(95,203,150,0.20), transparent 62%);"></div>
     <div aria-hidden="true" style="position:absolute;top:8%;left:6%;color:rgba(95,203,150,0.22);font-size:34px;line-height:1;">+</div>
     <div aria-hidden="true" style="position:absolute;top:22%;right:9%;color:rgba(95,203,150,0.16);font-size:22px;line-height:1;">+</div>
-    <div style="position:relative;max-width:1120px;margin:0 auto;padding:clamp(40px,7vw,86px) clamp(20px,5vw,56px) 0;text-align:center;">
+    <div style="position:relative;max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) 0;text-align:center;">
       <p style="font-size:11.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#5FCB96;margin:0 0 20px;">Case study · 2024–2026 · Healthcare SaaS</p>
       <h1 data-wsplit style="margin:0 auto;max-width:18ch;font-size:clamp(38px,6.6vw,82px);font-weight:700;letter-spacing:-0.04em;line-height:0.98;color:#fff;"><span data-l="it">Trenta secondi tra un paziente e l'altro</span><span data-l="en">Thirty seconds between two patients</span></h1>
       <p data-l="it" style="margin:22px auto 0;max-width:52ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:rgba(255,255,255,0.66);">FisioGest è il gestionale per fisioterapisti che tiene agenda, cartelle e incassi in un'unica interfaccia. Progettato perché si usi tra un paziente e l'altro, non alla fine del turno.</p>
@@ -2034,7 +2076,7 @@
         <a href="#deep" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;color:rgba(255,255,255,0.82);font-weight:600;font-size:14.5px;padding:13px 20px;border:1px solid rgba(255,255,255,0.16);border-radius:10px;"><span data-l="it">Dietro al progetto</span><span data-l="en">Behind the work</span></a>
       </div>
     </div>
-    <div style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(28px,4.5vw,56px) clamp(20px,5vw,56px) clamp(44px,6vw,80px);perspective:1600px;">
+    <div style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(20px,3vw,32px) clamp(20px,5vw,56px) clamp(44px,6vw,80px);perspective:1600px;">
       <div data-hero-rise style="position:relative;transform-origin:50% 100%;will-change:transform;container-type:inline-size;">
         <div style="position:relative;border-radius:clamp(9px,1.5cqw,18px);padding:clamp(6px,1.08cqw,13px) clamp(6px,1.08cqw,13px) 0;background:linear-gradient(180deg,#31363E 0%,#1A1D22 100%);border:1px solid rgba(255,255,255,0.12);box-shadow:0 46px 90px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.14);">
           <div style="position:relative;border-radius:clamp(4px,0.67cqw,8px);overflow:hidden;background:#0A100D;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.6);">
@@ -2717,7 +2759,7 @@
   <!-- HERO · centered, rising laptop -->
   <section style="background:#14110F;color:#F6F2EC;position:relative;overflow:hidden;">
     <div style="position:absolute;left:50%;top:-220px;width:900px;height:640px;transform:translateX(-50%);background:radial-gradient(ellipse at center, rgba(255,77,46,.22), transparent 68%);pointer-events:none;"></div>
-    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(52px,8vw,96px) 0 0;text-align:center;">
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(28px,4vw,48px) 0 0;text-align:center;">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;color:#FF8A5C;font-weight:600;margin-bottom:24px;"><span data-l="it">CASE STUDY · PRODUCT DESIGN &amp; SISTEMI DI DATI</span><span data-l="en">CASE STUDY · PRODUCT DESIGN &amp; DATA SYSTEMS</span></div>
       <h1 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.2vw,52px);line-height:1.06;letter-spacing:-.02em;margin:0 auto;max-width:20ch;text-wrap:balance;"><span data-l="it">Kratera: il digital shadow dei vulcani</span><span data-l="en">Kratera: the volcano digital shadow</span></h1>
       <p data-l="it" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#C9C2B6;">Sismicità, ordinanze di chiusura e livello di allerta in tempo quasi reale, con lo switch tra i preset dei vulcani monitorati dal selettore in testa. Progettato per chi deve decidere un'interdizione mentre il turno è in corso.</p>
@@ -2727,7 +2769,7 @@
         <a href="#deep" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;color:rgba(255,255,255,0.82);font-weight:600;font-size:14.5px;padding:13px 20px;border:1px solid rgba(255,255,255,0.16);border-radius:8px;"><span data-l="it">Dietro al progetto</span><span data-l="en">Behind the work</span></a>
       </div>
     </div>
-    <div style="position:relative;max-width:980px;margin:0 auto;padding:clamp(28px,4.5vw,56px) 0 clamp(44px,6vw,80px);perspective:1600px;">
+    <div style="position:relative;max-width:980px;margin:0 auto;padding:clamp(20px,3vw,32px) 0 clamp(44px,6vw,80px);perspective:1600px;">
       <div data-hero-rise style="position:relative;transform-origin:50% 100%;will-change:transform;container-type:inline-size;">
         <div style="position:relative;border-radius:clamp(9px,1.5cqw,18px);padding:clamp(6px,1.08cqw,13px) clamp(6px,1.08cqw,13px) 0;background:linear-gradient(180deg,#31363E 0%,#1A1D22 100%);border:1px solid rgba(255,255,255,0.12);box-shadow:0 46px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,0.14);">
           <div style="position:relative;border-radius:clamp(4px,0.67cqw,8px);overflow:hidden;background:#14110F;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.6);">
@@ -3121,7 +3163,7 @@
   <!-- HERO · centered, rising laptop -->
   <section class="csd-hero" style="background:#0B0D11;color:#F2F4F7;position:relative;overflow:hidden;">
     <div style="position:absolute;left:0;right:0;top:-160px;height:820px;background:radial-gradient(ellipse 55% 70% at 22% 40%, rgba(60,203,244,.20), transparent 70%),radial-gradient(ellipse 55% 70% at 78% 40%, rgba(255,154,74,.16), transparent 70%);pointer-events:none;"></div>
-    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(36px,5vw,64px) 0 0;text-align:center;">
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(24px,3.5vw,40px) 0 0;text-align:center;">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;color:#3CCBF4;font-weight:600;margin-bottom:24px;"><span data-l="it">CASE STUDY · PRODUCT DESIGN &amp; SVILUPPO CON AGENTI</span><span data-l="en">CASE STUDY · PRODUCT DESIGN &amp; AGENT-DRIVEN BUILD</span></div>
       <h1 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.2vw,52px);line-height:1.06;letter-spacing:-.02em;margin:0 auto;max-width:26ch;text-wrap:balance;"><span data-l="it">DJ Start: imparare a mixare con chi ti corregge mentre suoni</span><span data-l="en">DJ Start: learning to mix with something that corrects you as you play</span></h1>
       <p data-l="it" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#B9C0CC;">Un'app web per imparare a mixare da DJ nel browser, senza controller: due deck, mixer e crossfader, sei livelli di esercizi e una correzione immediata a ogni gesto. Progetto personale, in fase di test con cinque persone.</p>
@@ -3659,8 +3701,8 @@
   <!-- HERO (dark, screens are dark) -->
   <section style="background:var(--dark);color:#fff;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 80% 0%, rgba(207,74,46,0.22), transparent 55%);"></div>
-    <div class="rise" style="position:relative;max-width:1120px;margin:0 auto;padding:clamp(44px,8vw,92px) clamp(20px,5vw,56px) clamp(36px,5vw,64px);">
-      <div class="rk-hero" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center;">
+    <div class="rise" style="position:relative;max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) clamp(36px,5vw,64px);">
+      <div class="rk-hero" style="display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,44px);align-items:start;">
         <div>
           <p style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#E2785F;margin:0 0 20px;">Case study · 2026 · Manufacturing</p>
           <h1 style="margin:0;font-size:clamp(34px,5vw,62px);font-weight:700;letter-spacing:-0.03em;line-height:1.0;color:#fff;">Rekord</h1>
@@ -3668,7 +3710,7 @@
           <p data-l="it" style="margin:20px 0 0;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:rgba(255,255,255,0.66);max-width:40ch;">Un Digital Product Passport tablet-first per la manutenzione delle pale eoliche, progettato per l'AMRC. Si attiva con la scansione di un QR sul componente fisico.</p>
           <p data-l="en" style="margin:20px 0 0;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:rgba(255,255,255,0.66);max-width:42ch;">A tablet-first Digital Product Passport for wind turbine maintenance, built for AMRC. Triggered by scanning a QR code on the physical component.</p>
         </div>
-        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);box-shadow:0 30px 70px rgba(0,0,0,0.55), 0 0 0 6px rgba(207,74,46,0.06);">
+        <div style="width:100%;max-width:980px;justify-self:center;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);box-shadow:0 30px 70px rgba(0,0,0,0.55), 0 0 0 6px rgba(207,74,46,0.06);">
           <div style="display:flex;align-items:center;gap:7px;padding:11px 15px;background:#211E1B;border-bottom:1px solid rgba(255,255,255,0.07);">
             <span style="width:10px;height:10px;border-radius:50%;background:#E2553D;"></span>
             <span style="width:10px;height:10px;border-radius:50%;background:#E0A93B;"></span>
@@ -3962,7 +4004,7 @@
   </header>
 
   <!-- HERO -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(44px,8vw,88px) clamp(20px,5vw,56px) clamp(28px,4vw,48px);">
+  <section style="max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) clamp(28px,4vw,48px);">
     <div class="rise" style="max-width:780px;">
       <p style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">Case study · 2024 · <span data-l="it">Mobilità · Enterprise</span><span data-l="en">Mobility · Enterprise</span></p>
       <h1 style="margin:0;font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.0;">SIV<span style="color:var(--accent);">.</span> <span data-l="it">Ammodernamento</span><span data-l="en">Modernization</span></h1>
@@ -3970,7 +4012,7 @@
       <p data-l="en" style="margin:18px 0 0;font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--muted);max-width:62ch;">User-centered redesign of ASPI's highway information management system, from a holistic dashboard to a metro-map-inspired synoptic.</p>
     </div>
 
-    <div class="sv-stage rise" style="margin-top:clamp(30px,4vw,52px);--d:.08s;">
+    <div class="sv-stage rise" style="margin-top:clamp(24px,3vw,36px);--d:.08s;">
       <div class="sv-glow"></div>
       <div class="sv-card">
         <img src="assets/sivcase/siv-dashboard.q.s.jpg" alt="SIV · Dashboard operativa della sala radio" loading="eager">
@@ -4347,11 +4389,27 @@ class Component extends DCLogic {
       if (!x || (reduce && frame > 400)) return;
       if (c.getBoundingClientRect().bottom < 0) return;
       x.fillStyle = fade; x.fillRect(0, 0, w, h); x.fillStyle = ink;
+      if (!this._hl) this._hl = Array.from({ length: 5 }, (_, j) => ({ i: Math.floor(Math.random() * P.length), t0: t + j * 1200 }));
+      for (const s of this._hl) if (t - s.t0 > 6000) { s.i = Math.floor(Math.random() * P.length); s.t0 = t; }
       for (const p of P) {
         const ang = N(p.x * .0022, p.y * .0022, t * .00006) * Math.PI * 4;
         p.x += Math.cos(ang) * 1.1; p.y += Math.sin(ang) * 1.1; p.a++;
         if (p.x < 0 || p.x > w || p.y < 0 || p.y > h || p.a > 420) { p.x = Math.random() * w; p.y = Math.random() * h; p.a = 0; }
         x.fillRect(p.x, p.y, 1.1, 1.1);
+      }
+      for (const s of this._hl) {
+        if (t < s.t0) continue;
+        const hp = P[s.i]; if (!hp) continue;
+        if (hp.a > 330) hp.a = 0;
+        const q = (t - s.t0) / 6000, L = (a, b, k) => Math.round(a + (b - a) * k);
+        const red = [220, 38, 38], green = [22, 163, 74];
+        let col, al;
+        if (q < .15) { col = red; al = q / .15; }
+        else if (q < .75) { const k = (q - .15) / .6, s = k * k * (3 - 2 * k); col = [L(red[0], green[0], s), L(red[1], green[1], s), L(red[2], green[2], s)]; al = 1; }
+        else { col = green; al = 1 - (q - .75) / .25; }
+        x.fillStyle = 'rgba(' + col.join(',') + ',' + al + ')';
+        x.beginPath(); x.arc(hp.x, hp.y, 1.4 + al * 1.8, 0, 6.283); x.fill();
+        x.fillStyle = ink;
       }
     };
     requestAnimationFrame(step);
