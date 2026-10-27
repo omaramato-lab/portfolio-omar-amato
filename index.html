@@ -9,7 +9,7 @@
 <meta name="description" content="Lead Product Designer, 13 years on data-dense B2B platforms across smart mobility, IoT, healthcare and fintech. Redesigned Italy's national road information system — 80% faster operator time-to-action. Remote across UK and EU.">
 <meta name="keywords" content="AI-Driven Design, AI-driven product design, Lead Product Designer, Design System, Enterprise SaaS, Information Architecture, Data Visualization, Dashboard Design, UX Research, Claude Code MCP Figma, Claude Design, Antonino Omar Amato">
 <link rel="canonical" href="https://omaramato.com/">
-<meta name="theme-color" content="#0B0D11">
+<meta name="theme-color" content="#16161A">
 <meta name="author" content="Antonino Omar Amato">
 
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Slack…) -->
@@ -98,7 +98,7 @@
 <helmet>
 <link rel="stylesheet" href="_ds/fisiogest-design-system-a8b99a9f-bf3a-493c-be0f-0676babcffbf/colors_and_type.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%230B0D11'/%3E%3Cpath%20d='M21%208.2%20A9.4%209.4%200%201%201%2016%206.6'%20fill='none'%20stroke='%234D8DFF'%20stroke-width='2.7'%20stroke-linecap='round'/%3E%3C/svg%3E">
 <script src="_ds/fisiogest-design-system-a8b99a9f-bf3a-493c-be0f-0676babcffbf/_ds_bundle.js"></script>
 <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -966,6 +966,98 @@
   body:has(.csf){background:#0E1512;}
   body:has(.cse){background:#14110F;}
   body:has(.csr){background:#11100F;}
+  /* ===== CARTA · mono theme (home + portfolio) ===== */
+  .port{
+    --bg:#16161A; --bg2:#111114; --surface:#1C1C21; --surface2:#24242A;
+    --border:#2C2C33; --border2:#3B3B43;
+    --text:#EDEBE6; --text2:#AAA79F; --text3:#7D7A73;
+    --accent:#6B9BFF; --accent-2:#8AB0FF; --accent-btn:#EDEBE6;
+    --accent-soft:rgba(107,155,255,.10); --accent-line:rgba(107,155,255,.38);
+    --radius:6px; --radius-sm:4px;
+    --font-sans:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --label-font:"IBM Plex Mono",ui-monospace,monospace; --label-ls:.08em; --label-w:400; --label-size:12px;
+  }
+  .port[data-theme="light"]{
+    --bg:#EDEBE6; --bg2:#E5E2DB; --surface:#F4F2EE; --surface2:#E9E6E0;
+    --border:#D7D3CB; --border2:#C3BEB4;
+    --text:#16161A; --text2:#4D4B46; --text3:#76736C;
+    --accent:#2556D6; --accent-2:#1C45B3; --accent-btn:#16161A;
+    --accent-soft:rgba(37,86,214,.08); --accent-line:rgba(37,86,214,.32);
+  }
+  body:has(.port){background:#EDEBE6!important;}
+  body:has(.port[data-theme="dark"]){background:#16161A!important;}
+  .port ::selection{background:var(--accent);color:#fff;}
+  .port .page-curtain{background:var(--bg);}
+  .port h1,.port h2,.port h3{font-family:var(--font-sans)!important;font-weight:400!important;letter-spacing:-0.02em!important;line-height:1.2!important;text-wrap:balance;}
+  .port h2{font-size:clamp(26px,3vw,40px)!important;}
+  .port h3{font-size:clamp(17px,1.5vw,21px)!important;}
+  .port #contact h2{font-size:clamp(30px,4.4vw,56px)!important;}
+  .port p{text-wrap:pretty;}
+  .port [style*="font-weight:700"],.port [style*="font-weight: 700"],.port [style*="font-weight:800"],.port [style*="font-weight: 800"]{font-weight:400!important;}
+  .port [style*="font-weight:600"],.port [style*="font-weight: 600"]{font-weight:500!important;}
+  .port [style*="letter-spacing:-0.04em"],.port [style*="letter-spacing: -0.04em"],.port [style*="letter-spacing:-0.045em"],.port [style*="letter-spacing: -0.045em"],.port [style*="letter-spacing:-0.03em"],.port [style*="letter-spacing: -0.03em"]{letter-spacing:-0.02em!important;}
+  .port [style*="border-radius:999px"]:not([style*="width:7px"]):not([style*="width: 7px"]):not([style*="width:8px"]):not([style*="width: 8px"]):not(.feat-cta),.port [style*="border-radius: 999px"]:not([style*="width:7px"]):not([style*="width: 7px"]):not([style*="width:8px"]):not([style*="width: 8px"]):not(.feat-cta){border-radius:4px!important;}
+  .port .btn-primary,.port .hdr-cta,.port .feat-cta{color:var(--bg)!important;}
+  .port .btn-primary::before,.port .btn-ghost::before{background:var(--accent);}
+  .port .btn-primary:hover,.port .btn-ghost:hover{color:#fff!important;border-color:var(--accent)!important;}
+  .port .work-feat:hover .feat-cta{background:var(--accent)!important;color:#fff!important;}
+  .port:not([data-lang="en"]) .seg-it,.port[data-lang="en"] .seg-en{color:var(--bg)!important;}
+  .port .tag{font-size:11px;letter-spacing:.04em;font-weight:400;border-radius:2px;}
+  .port .tag::before{font-weight:400;}
+  .port .skill-chip{font-size:10.5px;letter-spacing:.04em;font-weight:400;border-radius:2px;}
+  .port .skill-ico{border-radius:4px;}
+  .port .skill-metric{border-radius:4px;}
+  .port .skill-metric .v{font-weight:400;}
+  .port .mq-word{font-family:var(--font-sans);font-weight:300;font-size:clamp(22px,3.4vw,44px);letter-spacing:-0.02em;color:var(--text3);-webkit-text-stroke:0;}
+  .port .mq-word:hover{color:var(--accent);-webkit-text-stroke:0;}
+  .port .oa-cursor-ring{border-radius:2px;}
+  .port a.navlink,.port header a span{white-space:nowrap;}
+  .port .nav-links{gap:24px!important;}
+  .port .nav-links a{font-size:13px!important;}
+  @media (max-width:1100px){.port .nav-links{display:none!important;}}
+  /* cards — flat, hairline, square */
+  .port .work-feat,.port .card-feat,.port .ai-grid > div,.port .skills-card,.port .awards-grid{background:transparent!important;border:1px solid var(--border2)!important;border-radius:4px!important;box-shadow:none!important;}
+  .port .awards-grid{background:var(--border2)!important;gap:1px!important;}
+  .port .awards-grid > div{background:var(--bg)!important;}
+  .port .work-feat,.port .card-feat,.port .ai-grid > div{transition:border-color .2s ease,background .2s ease,transform .3s cubic-bezier(.22,1,.36,1)!important;}
+  .port .work-feat:hover,.port .card-feat:hover,.port .ai-grid > div:hover{border-color:var(--text)!important;background:var(--surface)!important;transform:none!important;}
+  .port .work-feat [style*="linear-gradient"],.port .card-feat [style*="linear-gradient"]{background:var(--bg2)!important;border-color:var(--border2)!important;}
+  .port .work-feat [style*="radial-gradient"],.port .card-feat [style*="radial-gradient"],.port .work-feat [style*="border-radius:999px"][style*="position:absolute"],.port .work-feat [style*="border-radius: 999px"][style*="position: absolute"]{display:none!important;}
+  .port .feat-phone > div[style*="blur"]{display:none!important;}
+  .port .ai-grid > div > span:first-child{background:transparent!important;border:1px solid var(--border2)!important;border-radius:4px!important;color:var(--text)!important;width:40px!important;height:40px!important;}
+  .port .ai-grid > div:hover > span:first-child{border-color:var(--accent)!important;color:var(--accent)!important;}
+  .port .skill-item{border-bottom-color:var(--border2);}
+  .port .skill-ico{background:transparent!important;border:1px solid var(--border2);color:var(--text);}
+  .port .skill-item[data-open="true"] .skill-ico,.port .skill-head:hover .skill-ico{border-color:var(--accent);color:var(--accent);transform:none!important;}
+  .port .skill-head:hover,.port .skill-item[data-open="true"] .skill-head{background:var(--surface)!important;}
+  .port .skill-metric{background:transparent!important;border:1px solid var(--accent-line)!important;}
+  .port .tag.accent{background:transparent!important;}
+  /* buttons — one system */
+  .port .btn-primary,.port .btn-ghost,.port .hdr-cta,.port .card-feat button,.port .pw-input + button,.port button[onclick]{border-radius:4px!important;}
+  .port .btn-primary,.port .btn-ghost{font-family:var(--font-sans)!important;font-size:14px!important;font-weight:500!important;letter-spacing:0!important;padding:13px 22px!important;gap:10px!important;}
+  .port .btn-primary{background:var(--accent-btn)!important;border:1px solid var(--accent-btn)!important;}
+  .port .btn-ghost{background:transparent!important;border:1px solid var(--border2)!important;color:var(--text)!important;}
+  .port .btn-primary i,.port .btn-ghost i{width:16px!important;height:16px!important;}
+  .port .hdr-cta{font-size:13px!important;padding:9px 16px!important;}
+  @media(max-width:600px){.port .hdr-cta{padding:9px!important;}}
+  .port .feat-cta{width:44px!important;height:44px!important;border-radius:4px!important;background:var(--accent-btn)!important;}
+  .port .theme-btn{border-radius:4px!important;background:transparent!important;border-color:var(--border2)!important;}
+  .port .theme-btn + div{border-radius:4px!important;background:transparent!important;border-color:var(--border2)!important;padding:2px!important;}
+  .port .seg-btn{border-radius:2px!important;font-weight:500!important;}
+  .port .pw-input{border-radius:4px!important;font-family:var(--font-sans)!important;}
+  .port .pw-input + button{background:var(--accent-btn)!important;color:var(--bg)!important;font-weight:500!important;font-family:var(--font-sans)!important;}
+  .port .oa-cursor-ring.big{border-radius:4px;}
+
+  /* ===== CARTA · case studies — typography only ===== */
+  .csb,.csf,.csr,.csv,.cse,.csd{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace!important;--font-sans:"IBM Plex Mono",ui-monospace,monospace;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-family"]{font-family:inherit!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) h1,:is(.csb,.csf,.csr,.csv,.cse,.csd) h2,:is(.csb,.csf,.csr,.csv,.cse,.csd) h3{font-weight:400!important;letter-spacing:-0.02em!important;line-height:1.2!important;text-wrap:balance;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) h1{font-size:clamp(30px,4.4vw,56px)!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) h2{font-size:clamp(24px,2.8vw,36px)!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) h3{font-size:clamp(17px,1.5vw,21px)!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight:700"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight: 700"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight:800"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight: 800"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight:900"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight: 900"]{font-weight:400!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight:600"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight: 600"]{font-weight:500!important;}
+  :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing:-0.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing: -0.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing:-.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing: -.0"]{letter-spacing:-0.02em!important;}
 </style>
 </helmet>
 
@@ -978,7 +1070,7 @@
   <div class="oa-cursor-ring"></div>
 
   <div class="page-curtain enter">
-    <span class="pc-mark" style="color:#4D8DFF;display:grid;place-items:center;">
+    <span class="pc-mark" style="color:var(--accent);display:grid;place-items:center;">
       <svg width="46" height="46" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M18 4.7 A11.5 11.5 0 1 1 14 4.7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
       </svg>
@@ -1020,54 +1112,17 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="top" style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(64px,12vw,150px) clamp(20px,5vw,72px) clamp(36px,6vw,72px);">
-    <div class="hero-fx" aria-hidden="true">
-      <div class="hero-gridlines"></div>
-      <div class="fx-dyn">
-        <div class="hero-aura"></div>
-        <span class="hero-glyph" data-px="0.05" style="right:7%;top:15%;opacity:.6;"><i data-lucide="asterisk" class="hg-spin" style="width:76px;height:76px;"></i></span>
-        <span class="hero-glyph" data-px="0.09" style="right:22%;top:56%;opacity:.5;"><i data-lucide="plus" class="hg-drift" style="width:30px;height:30px;"></i></span>
-        <span class="hero-glyph" data-px="0.07" style="left:3%;bottom:34%;opacity:.4;"><i data-lucide="plus" class="hg-drift" style="width:20px;height:20px;animation-delay:-4s;"></i></span>
-        <div class="hero-ring" style="width:270px;height:270px;right:8%;top:24%;"></div>
-        <span class="hero-reg" data-px="0.04" style="left:1.5%;top:9%;"></span>
-        <span class="hero-reg acc" data-px="0.06" style="right:4%;bottom:12%;"></span>
-        <span class="hero-reg" data-px="0.08" style="left:38%;bottom:6%;"></span>
-      </div>
-    </div>
+  <section id="top" style="position:relative;z-index:1;max-width:1240px;margin:0 auto;min-height:calc(100svh - 73px);padding:clamp(48px,8vw,96px) clamp(20px,5vw,72px) clamp(28px,4vw,44px);display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(24px,3vw,36px);">
+    <div aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);z-index:-1;pointer-events:none;overflow:hidden;"><canvas ref="{{ heroCanvas }}" style="display:block;width:100%;height:100%;"></canvas></div>
     <sc-if value="{{ showBadge }}" hint-placeholder-val="{{ true }}">
-      <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border:1px solid var(--accent-line);border-radius:3px;background:var(--accent-soft);margin-bottom:34px;animation:oa-rise .5s ease both;">
-        <span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:oa-pulse 2.4s ease-in-out infinite;"></span>
-        <span style="font-family:var(--label-font);font-size:var(--label-size);font-weight:var(--label-w);letter-spacing:var(--label-ls);text-transform:uppercase;color:var(--accent);"><span data-l="it">AI-Driven Design · Disponibile per nuovi progetti</span><span data-l="en">AI-Driven Design · Available for new projects</span></span>
-      </div>
+      <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:10px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);background:var(--bg);padding:2px 6px 2px 0;animation:oa-rise .5s ease both;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent);animation:oa-pulse 2.4s ease-in-out infinite;"></span><span data-l="it">Disponibile per nuovi progetti</span><span data-l="en">Available for new projects</span></div>
     </sc-if>
-
-    <h1 data-l="it" style="margin:0;font-size:clamp(46px,9vw,124px);font-weight:700;letter-spacing:-0.045em;line-height:0.95;max-width:15ch;text-wrap:balance;animation:oa-rise .6s ease both;">Trasformo gli insight in <span class="hero-mark" style="color:var(--accent);">prodotti</span> semplici e scalabili.</h1>
-    <h1 data-l="en" style="margin:0;font-size:clamp(46px,9vw,124px);font-weight:700;letter-spacing:-0.045em;line-height:0.95;max-width:15ch;text-wrap:balance;animation:oa-rise .6s ease both;">I turn insight into <span class="hero-mark" style="color:var(--accent);">simple</span>, scalable products.</h1>
-
-    <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-end;justify-content:space-between;margin-top:clamp(36px,5vw,56px);">
-      <p data-l="it" style="margin:0;max-width:50ch;font-size:clamp(16px,1.7vw,19px);line-height:1.65;color:var(--text2);animation:oa-rise .7s ease both;">Lead Product Designer con oltre 13 anni su piattaforme B2B data-dense — smart mobility, IoT, healthcare, enterprise SaaS. Porto una pratica di <strong style="color:var(--text);font-weight:600;">AI-Driven Design</strong>: design system costruiti con Claude Code via MCP in Figma, prototipi in Claude Design, componenti e documentazione sempre allineati.</p>
-      <p data-l="en" style="margin:0;max-width:50ch;font-size:clamp(16px,1.7vw,19px);line-height:1.65;color:var(--text2);animation:oa-rise .7s ease both;">Lead Product Designer with 13+ years on data-dense B2B platforms — smart mobility, IoT, healthcare, enterprise SaaS. I run an <strong style="color:var(--text);font-weight:600;">AI-Driven Design</strong> practice: design systems built with Claude Code via MCP in Figma, prototypes in Claude Design, components and docs always in sync.</p>
-
-      <div style="display:flex;flex-wrap:wrap;gap:14px;animation:oa-rise .8s ease both;">
-        <a href="#work" data-magnetic="" class="btn-primary" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--accent-btn);color:#fff;font-weight:600;font-size:15px;padding:15px 26px;border-radius:999px;"><span data-l="it">Guarda i lavori</span><span data-l="en">View work</span><i data-lucide="arrow-down" style="width:17px;height:17px;"></i></a>
-        <a href="#contact" data-magnetic="" class="btn-ghost" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:transparent;color:var(--text2);border:1px solid var(--border2);font-weight:600;font-size:15px;padding:15px 26px;border-radius:999px;"><span data-l="it">Contatti</span><span data-l="en">Get in touch</span></a>
-      </div>
-    </div>
-
-    <!-- hero stats -->
-    <div class="hero-stats reveal" style="display:flex;gap:clamp(28px,5vw,64px);margin-top:clamp(56px,8vw,96px);">
-      <div class="hero-stat" style="flex:1;">
-        <div style="font-size:clamp(34px,4.4vw,56px);font-weight:700;letter-spacing:-0.04em;color:var(--text);">13+</div>
-        <div style="font-family:var(--label-font);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-top:8px;line-height:1.5;"><span data-l="it">Anni di esperienza</span><span data-l="en">Years of experience</span></div>
-      </div>
-      <div class="hero-stat" style="flex:1;border-left:1px solid var(--border);padding-left:clamp(28px,5vw,64px);">
-        <div style="font-size:clamp(34px,4.4vw,56px);font-weight:700;letter-spacing:-0.04em;color:var(--accent);">+80%</div>
-        <div style="font-family:var(--label-font);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-top:8px;line-height:1.5;"><span data-l="it">Time-to-action operatori</span><span data-l="en">Operator time-to-action</span></div>
-      </div>
-      <div class="hero-stat" style="flex:1;border-left:1px solid var(--border);padding-left:clamp(28px,5vw,64px);">
-        <div style="font-size:clamp(34px,4.4vw,56px);font-weight:700;letter-spacing:-0.04em;color:var(--accent);">+60%</div>
-        <div style="font-family:var(--label-font);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-top:8px;line-height:1.5;"><span data-l="it">Metriche di usabilità</span><span data-l="en">Usability metrics</span></div>
-      </div>
+    <h1 data-l="it" data-split="1" style="margin:0;font-size:clamp(28px,3.6vw,48px);font-weight:400;letter-spacing:-0.02em;line-height:1.25;max-width:24ch;animation:oa-rise .8s ease .1s both;"><span style="background:var(--bg);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .2em 0 0;">Trasformo i {{ heroSlot }} in prodotti semplici e scalabili.</span></h1>
+    <h1 data-l="en" data-split="1" style="margin:0;font-size:clamp(28px,3.6vw,48px);font-weight:400;letter-spacing:-0.02em;line-height:1.25;max-width:24ch;animation:oa-rise .8s ease .1s both;"><span style="background:var(--bg);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .2em 0 0;">I turn {{ heroSlot }} into simple, scalable products.</span></h1>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;border-top:1px solid var(--border);padding-top:20px;font-size:13px;color:var(--text2);background:color-mix(in srgb, var(--bg) 88%, transparent);animation:oa-rise .8s ease .3s both;">
+      <span data-l="it">Lead Product Designer · 13+ anni su piattaforme B2B data-dense · AI-Driven Design</span>
+      <span data-l="en">Lead Product Designer · 13+ years on data-dense B2B platforms · AI-Driven Design</span>
+      <a href="#work" class="navlink" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--text);"><span data-l="it">Lavori selezionati</span><span data-l="en">Selected work</span><i data-lucide="arrow-down" style="width:15px;height:15px;"></i></a>
     </div>
   </section>
 
@@ -1118,13 +1173,13 @@
           </div>
         </div>
         <!-- visual: FisioGest agenda -->
-        <div style="background:linear-gradient(160deg, rgba(77,141,255,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:440px;position:relative;overflow:hidden;">
-          <div style="position:absolute;top:50%;left:50%;width:460px;height:460px;transform:translate(-50%,-54%);background:radial-gradient(circle at center, rgba(77,141,255,0.18), transparent 62%);pointer-events:none;"></div>
+        <div style="background:linear-gradient(160deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:440px;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:50%;left:50%;width:460px;height:460px;transform:translate(-50%,-54%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
           <div style="position:absolute;top:50%;left:50%;width:340px;height:340px;transform:translate(-50%,-52%);border:1px solid var(--accent-line);border-radius:999px;opacity:0.45;pointer-events:none;"></div>
           <div style="position:absolute;top:50%;left:50%;width:440px;height:440px;transform:translate(-50%,-52%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
           <div class="feat-phone" style="position:relative;display:flex;align-items:center;justify-content:center;">
             <div style="position:absolute;width:206px;height:360px;border-radius:34px;background:linear-gradient(150deg, var(--accent), transparent 70%);opacity:0.20;transform:rotate(9deg) translateX(14px);filter:blur(2px);"></div>
-            <img src="assets/fgcase/agenda.cut.s.png" alt="FisioGest agenda" loading="lazy" style="position:relative;z-index:2;display:block;width:auto;height:392px;border-radius:22px;transform:rotate(-4deg);filter:drop-shadow(0 30px 52px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(77,141,255,0.22));">
+            <img src="assets/fgcase/agenda.cut.s.png" alt="FisioGest agenda" loading="lazy" style="position:relative;z-index:2;display:block;width:auto;height:392px;border-radius:22px;transform:rotate(-4deg);filter:drop-shadow(0 30px 52px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(37,86,214,0.22));">
             <div style="position:absolute;top:6px;right:10px;z-index:3;color:var(--accent);opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:22px;height:22px;"></i></div>
             <div style="position:absolute;bottom:38px;left:2px;z-index:3;color:var(--accent);opacity:0.55;animation:oa-pulse 3.8s ease-in-out infinite .6s;"><i data-lucide="plus" style="width:16px;height:16px;"></i></div>
             <div style="position:absolute;top:64px;left:-6px;z-index:0;width:8px;height:8px;border-radius:999px;background:var(--accent);opacity:0.7;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
@@ -1308,7 +1363,7 @@
   <div class="oa-cursor-ring"></div>
 
   <div class="page-curtain enter">
-    <span class="pc-mark" style="color:#4D8DFF;display:grid;place-items:center;">
+    <span class="pc-mark" style="color:var(--accent);display:grid;place-items:center;">
       <svg width="46" height="46" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M18 4.7 A11.5 11.5 0 1 1 14 4.7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path>
       </svg>
@@ -1359,16 +1414,16 @@
       <!-- DJ Start -->
       <a href="/case/djstart" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="background:linear-gradient(160deg, rgba(60,203,244,0.12), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at 40% 50%, rgba(60,203,244,0.16), transparent 60%),radial-gradient(circle at 62% 50%, rgba(255,154,74,0.12), transparent 60%);pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(60,203,244,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
+          <div style="background:linear-gradient(160deg, rgba(107,155,255,0.12), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at 40% 50%, rgba(107,155,255,0.16), transparent 60%),radial-gradient(circle at 62% 50%, rgba(107,155,255,0.12), transparent 60%);pointer-events:none;"></div>
+            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(107,155,255,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
-              <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#262A33,#14171C);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(60,203,244,0.18);">
+              <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#2C2C33,#1C1C21);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(107,155,255,0.18);">
                 <img src="assets/djstart/dj-console-hero.jpg" alt="DJ Start, console con due deck" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
               </div>
-              <div style="position:absolute;top:-16px;right:2%;z-index:3;color:#FF9A4A;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
-              <div style="position:absolute;bottom:-2px;left:0;z-index:3;width:9px;height:9px;border-radius:999px;background:#3CCBF4;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
+              <div style="position:absolute;top:-16px;right:2%;z-index:3;color:#6B9BFF;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
+              <div style="position:absolute;bottom:-2px;left:0;z-index:3;width:9px;height:9px;border-radius:999px;background:#6B9BFF;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
             </div>
           </div>
           <div style="padding:clamp(30px,3.8vw,52px);display:flex;flex-direction:column;">
@@ -1391,13 +1446,13 @@
       <!-- FisioGest -->
       <a href="/case/fisiogest" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="order:2;background:linear-gradient(160deg, rgba(77,141,255,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-52%);background:radial-gradient(circle at center, rgba(77,141,255,0.18), transparent 62%);pointer-events:none;"></div>
+          <div style="order:2;background:linear-gradient(160deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-52%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid var(--accent-line);border-radius:999px;opacity:0.45;pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
               <div style="position:absolute;width:176px;height:300px;border-radius:30px;background:linear-gradient(150deg, var(--accent), transparent 70%);opacity:0.20;transform:rotate(9deg) translateX(12px);filter:blur(2px);"></div>
-              <img src="assets/fgcase/agenda.cut.s.png" alt="FisioGest agenda" loading="lazy" style="position:relative;z-index:2;display:block;width:auto;height:300px;border-radius:18px;transform:rotate(-4deg);filter:drop-shadow(0 26px 46px rgba(0,0,0,0.5)) drop-shadow(0 8px 20px rgba(77,141,255,0.22));">
+              <img src="assets/fgcase/agenda.cut.s.png" alt="FisioGest agenda" loading="lazy" style="position:relative;z-index:2;display:block;width:auto;height:300px;border-radius:18px;transform:rotate(-4deg);filter:drop-shadow(0 26px 46px rgba(0,0,0,0.5)) drop-shadow(0 8px 20px rgba(37,86,214,0.22));">
               <div style="position:absolute;top:0;right:0;z-index:3;color:var(--accent);opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
               <div style="position:absolute;bottom:30px;left:-4px;z-index:3;color:var(--accent);opacity:0.55;animation:oa-pulse 3.8s ease-in-out infinite .6s;"><i data-lucide="plus" style="width:15px;height:15px;"></i></div>
               <div style="position:absolute;top:54px;left:-8px;z-index:0;width:8px;height:8px;border-radius:999px;background:var(--accent);opacity:0.7;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
@@ -1423,16 +1478,16 @@
       <!-- Kratera -->
       <a href="/case/etna" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;animation-delay:.04s;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="background:linear-gradient(200deg, rgba(255,138,92,0.14), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(255,77,46,0.18), transparent 62%);pointer-events:none;"></div>
-            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(255,138,92,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
+          <div style="background:linear-gradient(200deg, rgba(107,155,255,0.14), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
+            <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid rgba(107,155,255,0.28);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
-              <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#262A33,#14171C);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(255,77,46,0.22);">
+              <div style="position:relative;z-index:2;width:100%;max-width:340px;transform:rotate(-3deg);background:linear-gradient(180deg,#2C2C33,#1C1C21);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.6),0 12px 28px rgba(37,86,214,0.22);">
                 <img src="assets/kratera/k-etna-prospettiva.jpg" alt="Kratera dashboard, Etna in allerta gialla" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
               </div>
-              <div style="position:absolute;top:-16px;right:2%;z-index:3;color:#FF8A5C;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
-              <div style="position:absolute;bottom:-2px;left:0;z-index:3;width:9px;height:9px;border-radius:999px;background:#B3121C;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
+              <div style="position:absolute;top:-16px;right:2%;z-index:3;color:#6B9BFF;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
+              <div style="position:absolute;bottom:-2px;left:0;z-index:3;width:9px;height:9px;border-radius:999px;background:#2556D6;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
             </div>
           </div>
           <div style="padding:clamp(30px,3.8vw,52px);display:flex;flex-direction:column;">
@@ -1489,12 +1544,12 @@
               <i data-lucide="arrow-up-right" class="feat-arrow" style="width:18px;height:18px;"></i>
             </div>
           </div>
-          <div style="order:2;background:linear-gradient(160deg, rgba(77,141,255,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(77,141,255,0.18), transparent 62%);pointer-events:none;"></div>
+          <div style="order:2;background:linear-gradient(160deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid var(--accent-line);border-radius:999px;opacity:0.45;pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
-              <img src="assets/rekordcase/rk-dpp-dashboard.q.jpg" alt="Rekord component interface" loading="lazy" style="position:relative;z-index:2;display:block;width:100%;max-width:390px;height:auto;border-radius:10px;transform:rotate(-3deg);filter:drop-shadow(0 28px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(77,141,255,0.22));">
+              <img src="assets/rekordcase/rk-dpp-dashboard.q.jpg" alt="Rekord component interface" loading="lazy" style="position:relative;z-index:2;display:block;width:100%;max-width:390px;height:auto;border-radius:10px;transform:rotate(-3deg);filter:drop-shadow(0 28px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(37,86,214,0.22));">
               <div style="position:absolute;top:-8px;right:4px;z-index:3;color:var(--accent);opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:22px;height:22px;"></i></div>
               <div style="position:absolute;bottom:2px;left:-4px;z-index:3;color:var(--accent);opacity:0.55;animation:oa-pulse 3.8s ease-in-out infinite .6s;"><i data-lucide="plus" style="width:16px;height:16px;"></i></div>
               <div style="position:absolute;top:32%;left:-12px;z-index:0;width:8px;height:8px;border-radius:999px;background:var(--accent);opacity:0.7;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
@@ -1506,12 +1561,12 @@
       <!-- BSB -->
       <a href="/case/bsb" data-cursor="" class="card-feat" style="display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;animation:oa-rise .6s cubic-bezier(.22,1,.36,1) both;animation-delay:.16s;">
         <div class="feat-grid" style="display:grid;grid-template-columns:1fr 1fr;">
-          <div style="background:linear-gradient(200deg, rgba(77,141,255,0.10), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(77,141,255,0.18), transparent 62%);pointer-events:none;"></div>
+          <div style="background:linear-gradient(200deg, rgba(37,86,214,0.10), transparent 55%), var(--bg2);border-right:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:50%;left:50%;width:430px;height:430px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.18), transparent 62%);pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:300px;height:300px;transform:translate(-50%,-50%);border:1px solid var(--accent-line);border-radius:999px;opacity:0.45;pointer-events:none;"></div>
             <div style="position:absolute;top:50%;left:50%;width:400px;height:400px;transform:translate(-50%,-50%);border:1px solid var(--border2);border-radius:999px;opacity:0.5;pointer-events:none;"></div>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;">
-              <img src="assets/case/after-dashboard.cut.s.png" alt="BSB desktop dashboard" loading="lazy" style="position:relative;z-index:2;display:block;width:100%;max-width:390px;height:auto;transform:rotate(-3deg);filter:drop-shadow(0 28px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(77,141,255,0.22));">
+              <img src="assets/case/after-dashboard.cut.s.png" alt="BSB desktop dashboard" loading="lazy" style="position:relative;z-index:2;display:block;width:100%;max-width:390px;height:auto;transform:rotate(-3deg);filter:drop-shadow(0 28px 50px rgba(0,0,0,0.55)) drop-shadow(0 8px 22px rgba(37,86,214,0.22));">
               <div style="position:absolute;top:-8px;right:4px;z-index:3;color:var(--accent);opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:22px;height:22px;"></i></div>
               <div style="position:absolute;bottom:2px;left:-4px;z-index:3;color:var(--accent);opacity:0.55;animation:oa-pulse 3.8s ease-in-out infinite .6s;"><i data-lucide="plus" style="width:16px;height:16px;"></i></div>
               <div style="position:absolute;top:32%;left:-12px;z-index:0;width:8px;height:8px;border-radius:999px;background:var(--accent);opacity:0.7;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
@@ -1552,21 +1607,21 @@
               <i data-lucide="arrow-up-right" class="feat-arrow" style="width:18px;height:18px;"></i>
             </div>
           </div>
-          <div style="order:2;background:linear-gradient(160deg, rgba(14,127,140,0.16), transparent 58%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:42%;left:58%;width:460px;height:460px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(14,127,140,0.26), transparent 62%);pointer-events:none;"></div>
+          <div style="order:2;background:linear-gradient(160deg, rgba(37,86,214,0.16), transparent 58%), var(--bg2);border-left:1px solid var(--border);padding:clamp(24px,3vw,40px);display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:42%;left:58%;width:460px;height:460px;transform:translate(-50%,-50%);background:radial-gradient(circle at center, rgba(37,86,214,0.26), transparent 62%);pointer-events:none;"></div>
             <svg viewBox="0 0 460 380" fill="none" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;opacity:0.6;pointer-events:none;">
               <path d="M-20 292 L150 292 Q178 292 194 266 L228 214 Q244 190 272 190 L490 190" stroke="#2C7681" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
-              <circle cx="92" cy="292" r="9" fill="#0B0D11" stroke="#1F9D57" stroke-width="4"></circle>
-              <circle cx="320" cy="190" r="9" fill="#0B0D11" stroke="#E0533A" stroke-width="4"></circle>
-              <circle cx="430" cy="190" r="9" fill="#0B0D11" stroke="#3FC9D2" stroke-width="4"></circle>
+              <circle cx="92" cy="292" r="9" fill="#16161A" stroke="#1F9D57" stroke-width="4"></circle>
+              <circle cx="320" cy="190" r="9" fill="#16161A" stroke="#E0533A" stroke-width="4"></circle>
+              <circle cx="430" cy="190" r="9" fill="#16161A" stroke="#6B9BFF" stroke-width="4"></circle>
             </svg>
             <div style="position:relative;display:flex;align-items:center;justify-content:center;width:100%;">
-              <div style="position:relative;z-index:2;width:100%;max-width:320px;transform:rotate(-4deg);background:linear-gradient(180deg,#262A33,#14171C);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.62),0 12px 28px rgba(14,127,140,0.30);">
+              <div style="position:relative;z-index:2;width:100%;max-width:320px;transform:rotate(-4deg);background:linear-gradient(180deg,#2C2C33,#1C1C21);padding:7px 7px 9px;border-radius:12px;box-shadow:0 30px 58px rgba(0,0,0,0.62),0 12px 28px rgba(37,86,214,0.30);">
                 <img src="assets/sivcase/siv-dashboard.q.s.jpg" alt="SIV dashboard operativa della sala radio" loading="lazy" style="display:block;width:100%;height:auto;border-radius:6px;">
               </div>
-              <div style="position:absolute;z-index:3;top:-18px;left:0;color:#3FC9D2;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
+              <div style="position:absolute;z-index:3;top:-18px;left:0;color:#6B9BFF;opacity:0.9;animation:oa-pulse 3.2s ease-in-out infinite;"><i data-lucide="plus" style="width:20px;height:20px;"></i></div>
               <div style="position:absolute;z-index:3;bottom:-6px;right:6%;width:9px;height:9px;border-radius:999px;background:#E0533A;opacity:0.85;animation:oa-pulse 2.8s ease-in-out infinite .3s;"></div>
-              <div style="position:absolute;z-index:0;top:30%;right:-10px;width:7px;height:7px;border-radius:999px;background:#3FC9D2;opacity:0.6;animation:oa-pulse 3.6s ease-in-out infinite .5s;"></div>
+              <div style="position:absolute;z-index:0;top:30%;right:-10px;width:7px;height:7px;border-radius:999px;background:#6B9BFF;opacity:0.6;animation:oa-pulse 3.6s ease-in-out infinite .5s;"></div>
             </div>
           </div>
         </div>
@@ -4258,6 +4313,76 @@
 class Component extends DCLogic {
   rootRef = React.createRef();
   inputRef = React.createRef();
+  heroCanvas = React.createRef();
+  _noise(x, y, z) {
+    const hh = (i, j, k) => { let n = Math.imul(i, 374761393) + Math.imul(j, 668265263) + Math.imul(k, 1274126177); n = Math.imul(n ^ (n >>> 13), 1274126177); return ((n ^ (n >>> 16)) & 0xffff) / 0xffff; };
+    const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z), xf = x - xi, yf = y - yi, zf = z - zi;
+    const s = t => t * t * (3 - 2 * t), u = s(xf), v = s(yf), w = s(zf), L = (a, b, t) => a + (b - a) * t;
+    const a = L(L(hh(xi, yi, zi), hh(xi + 1, yi, zi), u), L(hh(xi, yi + 1, zi), hh(xi + 1, yi + 1, zi), u), v);
+    const b = L(L(hh(xi, yi, zi + 1), hh(xi + 1, yi, zi + 1), u), L(hh(xi, yi + 1, zi + 1), hh(xi + 1, yi + 1, zi + 1), u), v);
+    return L(a, b, w);
+  }
+  _heroLoop() {
+    const hex = c => { c = (c || '').trim().replace('#', ''); if (c.length === 3) c = c.split('').map(x => x + x).join(''); const n = parseInt(c, 16) || 0; return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+    let cv = null, x, w, h, P = [], key = '', fade = '', ink = '', frame = 0;
+    const N = (a, b, c) => this._noise(a, b, c) * .65 + this._noise(a * 2.1, b * 2.1, c) * .35;
+    const init = () => {
+      const d = Math.min(2, window.devicePixelRatio || 1); w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = w * d; cv.height = h * d; x = cv.getContext('2d'); x.setTransform(d, 0, 0, d, 0, 0);
+      const cs = getComputedStyle(cv); const bg = hex(cs.getPropertyValue('--bg')), tx = hex(cs.getPropertyValue('--text'));
+      fade = 'rgba(' + bg.join(',') + ',0.045)'; ink = 'rgba(' + tx.join(',') + ',0.5)';
+      x.fillStyle = 'rgb(' + bg.join(',') + ')'; x.fillRect(0, 0, w, h);
+      const n = Math.round(Math.min(1600, w * h / 700));
+      P = Array.from({ length: n }, () => ({ x: Math.random() * w, y: Math.random() * h, a: Math.random() * 300 }));
+    };
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const step = t => {
+      if (this._heroDead) return;
+      requestAnimationFrame(step);
+      const c = this.heroCanvas.current; if (!c) { cv = null; return; }
+      if (++frame % 30 === 0 || c !== cv) {
+        const k = c.clientWidth + 'x' + c.clientHeight + this.state.theme;
+        if (c !== cv || k !== key) { cv = c; key = k; init(); }
+      }
+      if (!x || (reduce && frame > 400)) return;
+      if (c.getBoundingClientRect().bottom < 0) return;
+      x.fillStyle = fade; x.fillRect(0, 0, w, h); x.fillStyle = ink;
+      for (const p of P) {
+        const ang = N(p.x * .0022, p.y * .0022, t * .00006) * Math.PI * 4;
+        p.x += Math.cos(ang) * 1.1; p.y += Math.sin(ang) * 1.1; p.a++;
+        if (p.x < 0 || p.x > w || p.y < 0 || p.y > h || p.a > 420) { p.x = Math.random() * w; p.y = Math.random() * h; p.a = 0; }
+        x.fillRect(p.x, p.y, 1.1, 1.1);
+      }
+    };
+    requestAnimationFrame(step);
+  }
+  _getSlot() {
+    if (Component._Slot) return Component._Slot;
+    const e = React.createElement;
+    class Slot extends React.Component {
+      state = { t: 0 };
+      componentDidMount() { const t0 = performance.now(); const f = n => { if (this.dead) return; this.setState({ t: n - t0 }); requestAnimationFrame(f); }; requestAnimationFrame(f); }
+      componentWillUnmount() { this.dead = true; }
+      render() {
+        const { ink, accent } = this.props, T = 2600, t = this.state.t + 600;
+        const k = Math.floor(t / T) % 6, p = (t % T) / T;
+        const io = p < .14 ? p / .14 : p > .86 ? (1 - p) / .14 : 1, vis = 1 - Math.pow(1 - io, 3);
+        const g0 = Math.min(1, Math.max(0, (p - .08) / .5)), g = 1 - Math.pow(1 - g0, 3);
+        const num = { fontVariantNumeric: 'tabular-nums', color: accent, fontWeight: 500, whiteSpace: 'nowrap' };
+        const svg = (kids) => e('svg', { viewBox: '0 0 100 34', preserveAspectRatio: 'none', style: { width: '100%', height: '100%', overflow: 'visible', display: 'block' } }, kids);
+        let c;
+        if (k === 0) c = e('span', { style: num }, '+' + Math.round(80 * g) + '%');
+        else if (k === 1) c = svg([e('polyline', { key: 1, points: '0,30 16,24 30,27 46,15 62,19 78,8 100,3', fill: 'none', stroke: accent, strokeWidth: 3, strokeLinejoin: 'round', strokeLinecap: 'round', pathLength: 1, strokeDasharray: 1, strokeDashoffset: 1 - g, vectorEffect: 'non-scaling-stroke' }), g > .97 ? e('circle', { key: 2, cx: 100, cy: 3, r: 3.5, fill: accent }) : null]);
+        else if (k === 2) { const H = [.35, .55, .45, .7, .6, 1]; c = svg(H.map((v, i) => { const gi = Math.min(1, Math.max(0, g * 1.6 - i * .12)); const hh = 32 * v * gi; return e('rect', { key: i, x: i * 17, y: 34 - hh, width: 11, height: hh, rx: 1.5, fill: i === 5 ? accent : ink, opacity: i === 5 ? 1 : .35 }); })); }
+        else if (k === 5) c = e('span', { style: { ...num, letterSpacing: '.04em' } }, '?'.repeat(Math.max(1, Math.ceil(3 * g))));
+        else if (k === 3) c = e('span', { style: num }, e('span', { style: { color: ink, opacity: .5 } }, '+→'), Math.max(1, Math.round(10 * g)));
+        else c = e('span', { style: { display: 'flex', alignItems: 'center', gap: '.18em', height: '100%' } }, e('svg', { viewBox: '0 0 40 40', style: { height: '100%', width: 'auto', transform: 'rotate(-90deg)' } }, [e('circle', { key: 1, cx: 20, cy: 20, r: 15, fill: 'none', stroke: ink, strokeOpacity: .2, strokeWidth: 6 }), e('circle', { key: 2, cx: 20, cy: 20, r: 15, fill: 'none', stroke: accent, strokeWidth: 6, pathLength: 100, strokeDasharray: (60 * g) + ' 100' })]), e('span', { style: { ...num, fontSize: '.6em' } }, Math.round(60 * g) + '%'));
+        return e('span', { 'aria-hidden': true, style: { display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '3.3em', height: '1em', verticalAlign: 'middle', margin: '0 .06em', borderBottom: '1px dashed ' + ink + '55' } },
+          e('span', { style: { display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '70%', opacity: vis, transform: 'translateY(' + ((1 - vis) * .25) + 'em) scale(' + (.85 + .15 * vis) + ')', transformOrigin: 'center center' } }, c));
+      }
+    }
+    return (Component._Slot = Slot);
+  }
   wrapRef = React.createRef();
 
   state = {
@@ -4364,6 +4489,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
+    this._heroDead = false; this._heroLoop();
     this._roGuard = (e) => { if (e && e.message && e.message.indexOf("ResizeObserver loop") !== -1) e.stopImmediatePropagation(); };
     try { window.addEventListener("error", this._roGuard); } catch (e) {}
     this._onPop = () => { const isAnchor = location.hash && location.hash.indexOf("#/") !== 0; if (isAnchor) return; const r = this._parseRoute(); const same = r === this.state.route; this.setState({ route: r }); if (!same) this._toTop(); this._applyMeta(r); };
@@ -5015,7 +5141,7 @@ _data_fisio(){
         {label:T("Audio analizzato","Audio analyzed"), value:"6h+"},
       ]},
       {icon:"palette", title:T("Design token","Design tokens"), sub:"Figma → MCP", rows:[
-        {label:"Brand primary", value:"#377D60", swatch:"#377D60"},
+        {label:"Brand primary", value:"#2556D6", swatch:"#2556D6"},
         {label:"Brand soft", value:"#E0F3EA", swatch:"#E0F3EA"},
         {label:T("Spaziatura base","Base spacing"), value:"8px"},
         {label:T("Raggio card","Card radius"), value:"16px"},
@@ -5036,8 +5162,8 @@ _data_fisio(){
 
     const ia=[
       {level:"L0 · ACCESS", badge:"#5B6470", name:T("Accesso","Access"), nodes:["Homepage","Log-in","Register"]},
-      {level:"L1 · CORE HUB", badge:"#377D60", name:T("Hub centrale","Core hub"), nodes:[T("Web App, punto d'ingresso centrale","Web App, central entry point")]},
-      {level:"L2 · PRIMARY NAV", badge:"#0A6440", name:T("Navigazione","Navigation"), nodes:[T("Agenda, slot appuntamenti","Schedule, appointment slots"),T("Pazienti, database principale","Patients, master database"),T("Incassi, dashboard finanziaria","Revenue, financial dashboard")]},
+      {level:"L1 · CORE HUB", badge:"#2556D6", name:T("Hub centrale","Core hub"), nodes:[T("Web App, punto d'ingresso centrale","Web App, central entry point")]},
+      {level:"L2 · PRIMARY NAV", badge:"#1C45B3", name:T("Navigazione","Navigation"), nodes:[T("Agenda, slot appuntamenti","Schedule, appointment slots"),T("Pazienti, database principale","Patients, master database"),T("Incassi, dashboard finanziaria","Revenue, financial dashboard")]},
       {level:"L3 · DETAILS", badge:"#5B6470", name:T("Dettaglio operativo","Operational detail"), nodes:[T("Nuovo appuntamento (+)","New appointment (+)"),T("Gestione stato","Status management"),"WhatsApp Recall",T("Profilo paziente (Overview·Record·Pathway·Documenti·Pagamenti)","Patient profile (Overview·Record·Pathway·Documents·Payments)"),T("Azioni bulk","Bulk actions"),T("Export dati","Data export")]},
     ];
     ia.forEach((l,i)=>{ l.notLast = i<ia.length-1; });
@@ -5150,8 +5276,8 @@ _data_fisio(){
     ];
 
     const swatches=[
-      {name:"brand/primary", hex:"#377D60", border:"rgba(0,0,0,0.06)"},
-      {name:"brand/primary-hover", hex:"#0A6440", border:"rgba(0,0,0,0.06)"},
+      {name:"brand/primary", hex:"#2556D6", border:"rgba(0,0,0,0.06)"},
+      {name:"brand/primary-hover", hex:"#1C45B3", border:"rgba(0,0,0,0.06)"},
       {name:"brand/primary-soft", hex:"#E0F3EA", border:"rgba(0,0,0,0.08)"},
       {name:"background/base", hex:"#F5F5F7", border:"rgba(0,0,0,0.08)"},
       {name:"text/primary", hex:"#1E2933", border:"rgba(0,0,0,0.06)"},
@@ -5307,6 +5433,8 @@ _data_rekord(){
       isSiv: route === "siv",
       lang: this.state.lang,
       theme: this.state.theme,
+      heroCanvas: this.heroCanvas,
+      heroSlot: React.createElement(this._getSlot(), this.state.theme === "dark" ? { ink: "#EDEBE6", accent: "#6B9BFF" } : { ink: "#16161A", accent: "#2556D6" }),
       year: new Date().getFullYear(),
       showBadge: this.props.showAvailability ?? true,
       skills: skills,
