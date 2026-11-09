@@ -1158,6 +1158,18 @@
   :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight:600"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="font-weight: 600"]{font-weight:500!important;}
   :is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing:-0.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing: -0.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing:-.0"],:is(.csb,.csf,.csr,.csv,.cse,.csd) [style*="letter-spacing: -.0"]{letter-spacing:-0.02em!important;}
 
+  /* ===== Mobile fix: the solid backing behind the sticky stage (::before) reached up over the
+     last lines of the intro text above it. Backing now covers only the header zone, and the stage
+     keeps enough space above it so no text sits under the backing before it sticks. ===== */
+  @media (max-width:880px){
+    .cse .cse-scrub .scrub-stage::before{top:-64px;}
+    .cse .cse-scrub .scrub-stage{margin-top:32px;}
+    .csd .csd-scrub .scrub-stage::before{top:-64px;}
+    .csd .csd-scrub .scrub-stage{margin-top:12px;}
+    .csf .fg-scrub .scrub-stage::before{top:-68px;}
+    .csf .fg-scrub .scrub-stage{margin-top:52px;}
+  }
+
   /* ===== WEB & BRAND CRAFT (secondary list on the Projects page) ===== */
   .wbc-list{border-top:1px solid var(--border);}
   .wbc-item{border-bottom:1px solid var(--border);}
