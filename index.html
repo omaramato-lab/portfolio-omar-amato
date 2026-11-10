@@ -261,9 +261,9 @@
   .hero-wf .wf-ui{opacity:0;pointer-events:none;transition:opacity .45s ease;}
   .hero-wf .wf-g .wf-sk{transition:opacity .35s ease .12s;}
   .hero-wf .wf-g{transition:transform .5s cubic-bezier(.22,1,.36,1);transform-box:fill-box;transform-origin:50% 50%;}
-  .hero-wf .wf-g:hover .wf-ui{opacity:1;}
-  .hero-wf .wf-g:hover .wf-sk{opacity:0;}
-  .hero-wf .wf-g:hover{transform:translateY(-4px);}
+  .hero-wf .wf-g:hover .wf-ui,.hero-wf .wf-g.wf-on .wf-ui{opacity:1;}
+  .hero-wf .wf-g:hover .wf-sk,.hero-wf .wf-g.wf-on .wf-sk{opacity:0;}
+  .hero-wf .wf-g:hover,.hero-wf .wf-g.wf-on{transform:translateY(-4px);}
   .hero-wf text{font-family:inherit;stroke:none;}
   @media (prefers-reduced-motion: no-preference){.hero-wf .s{stroke-dasharray:var(--l);animation:wf-draw .8s cubic-bezier(.6,0,.2,1) both;animation-delay:var(--d);}}
   @keyframes wf-draw{from{stroke-dashoffset:var(--l);}to{stroke-dashoffset:0;}}
@@ -4975,6 +4975,18 @@ class Component extends DCLogic {
       return [c(p0[0], p1[0], p2[0], p3[0]), c(p0[1], p1[1], p2[1], p3[1])];
     };
     const set = (x, y) => { clip.setAttribute("cx", x); clip.setAttribute("cy", y); ring.setAttribute("cx", x); ring.setAttribute("cy", y); };
+    const groups = ["phone", "win", "kr"].map((k) => svg.querySelector(".wf-" + k)).filter(Boolean);
+    let seqT = [];
+    const clearSeq = () => { seqT.forEach(clearTimeout); seqT = []; groups.forEach((g) => g.classList.remove("wf-on")); };
+    const reveal = () => {
+      clearSeq();
+      groups.forEach((g, i) => {
+        const t0 = 260 + i * 1550;
+        seqT.push(setTimeout(() => { if (svg.isConnected) g.classList.add("wf-on"); }, t0));
+        seqT.push(setTimeout(() => g.classList.remove("wf-on"), t0 + 1150));
+      });
+    };
+    svg.addEventListener("pointerenter", clearSeq);
     let running = false;
     const pass = (dur) => {
       if (running || !svg.isConnected) return;
@@ -4987,13 +4999,13 @@ class Component extends DCLogic {
         const t = (now - t0) / dur, e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
         const p = at(e); set(p[0].toFixed(1), p[1].toFixed(1));
         if (t > 0.88) layer.style.opacity = "0";
-        if (t < 1) requestAnimationFrame(step); else { running = false; set(-200, -200); }
+        if (t < 1) requestAnimationFrame(step); else { running = false; set(-200, -200); reveal(); }
       };
       requestAnimationFrame(step);
     };
     const mobile = () => typeof matchMedia !== "undefined" && matchMedia("(max-width:860px)").matches;
     this._lensT = setTimeout(() => pass(mobile() ? 5200 : 4200), 2900);
-    this._lensI = setInterval(() => { if (mobile()) pass(5200); }, 11000);
+    this._lensI = setInterval(() => { if (mobile()) pass(5200); }, 16000);
   }
 
   _initWbc(root) {
