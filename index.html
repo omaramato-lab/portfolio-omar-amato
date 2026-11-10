@@ -257,7 +257,8 @@
   .port:not([data-theme="light"]) .hero-wf .wf-lt{display:none;}
   .hero-wf .wf-lens{pointer-events:none;transition:opacity .5s ease;}
   .hero-wf .wf-lring{fill:none;stroke:var(--accent);stroke-width:1.6;stroke-opacity:.9;}
-  .hero-wf .wf-hit{fill:transparent;pointer-events:all;cursor:pointer;}
+  .hero-wf .wf-hit{fill:transparent;pointer-events:none;cursor:pointer;}
+  .hero-wf.wf-ready .wf-hit{pointer-events:all;}
   .hero-wf .wf-ui{opacity:0;pointer-events:none;transition:opacity .45s ease;}
   .hero-wf .wf-g .wf-sk{transition:opacity .35s ease .12s;}
   .hero-wf .wf-g{transition:transform .5s cubic-bezier(.22,1,.36,1);transform-box:fill-box;transform-origin:50% 50%;}
@@ -4966,7 +4967,7 @@ class Component extends DCLogic {
     if (!layer || !clip || !ring) return;
     svg._lens = true;
     clearTimeout(this._lensT); clearInterval(this._lensI);
-    if (typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches) { svg.classList.add("wf-ready"); return; }
     const pts = [[1010, 300], [888, 430], [888, 520], [700, 250], [520, 200], [560, 520], [700, 560], [820, 700]];
     const at = (t) => {
       const n = pts.length - 3, f = Math.min(Math.max(t, 0), 0.9999) * n, i = Math.floor(f), u = f - i;
@@ -4977,21 +4978,24 @@ class Component extends DCLogic {
     const set = (x, y) => { clip.setAttribute("cx", x); clip.setAttribute("cy", y); ring.setAttribute("cx", x); ring.setAttribute("cy", y); };
     const groups = ["phone", "win", "kr"].map((k) => svg.querySelector(".wf-" + k)).filter(Boolean);
     let seqT = [];
-    const clearSeq = () => { seqT.forEach(clearTimeout); seqT = []; groups.forEach((g) => g.classList.remove("wf-on")); };
-    const reveal = () => {
-      clearSeq();
-      groups.forEach((g, i) => {
-        const t0 = 260 + i * 1550;
-        seqT.push(setTimeout(() => { if (svg.isConnected) g.classList.add("wf-on"); }, t0));
-        seqT.push(setTimeout(() => g.classList.remove("wf-on"), t0 + 1150));
-      });
+    const finish = () => {
+      seqT.forEach(clearTimeout); seqT = [];
+      groups.forEach((g) => g.classList.add("wf-on"));
+      svg.classList.add("wf-ready");
+      clearInterval(this._lensI);
     };
-    svg.addEventListener("pointerenter", clearSeq);
+    const reveal = () => {
+      seqT.forEach(clearTimeout); seqT = [];
+      groups.forEach((g, i) => {
+        seqT.push(setTimeout(() => { if (svg.isConnected) g.classList.add("wf-on"); }, 700 + i * 1000));
+      });
+      seqT.push(setTimeout(finish, 700 + groups.length * 1000));
+    };
     let running = false;
     const pass = (dur) => {
       if (running || !svg.isConnected) return;
       const r = svg.getBoundingClientRect();
-      if (r.bottom < 80 || r.top > (window.innerHeight || 800)) return;
+      if (r.bottom < 80 || r.top > (window.innerHeight || 800)) { finish(); return; }
       running = true; layer.style.opacity = "1";
       const t0 = performance.now();
       const step = (now) => {
