@@ -1000,6 +1000,16 @@
   }
   @media (max-width:560px){ .csd .csd-levels{grid-template-columns:repeat(2,1fr)!important;} .csd .csd-meta{grid-template-columns:1fr!important;} }
   body:has(.csd){background:#0B0D11;}
+  .csd.siv:not([data-lang="en"]) .seg-it{background:#0E7F8C;}
+  .csd.siv[data-lang="en"] .seg-en{background:#0E7F8C;}
+  .csd.siv a.backlink:hover{color:#3FC9D2;}
+  .csd.siv .acc:hover,.csd.siv .acc.open{border-color:rgba(63,201,210,0.45);}
+  .csd.siv .acc-head:hover .acc-chev,.csd.siv .acc.open .acc-chev{background:rgba(63,201,210,0.14);border-color:rgba(63,201,210,0.45);}
+  .csd.siv [data-acc-all]:hover{border-color:rgba(63,201,210,0.45);background:rgba(63,201,210,0.14);}
+  .csd.siv [data-rail].on{background:#3FC9D2!important;}
+  .csd.siv #contesto,.csd.siv #metodo,.csd.siv #ciclo,.csd.siv #aree,.csd.siv #dashboard,.csd.siv #sinottico,.csd.siv #sviluppo{scroll-margin-top:84px;}
+  @media (max-width:1100px){ .csd.siv .siv-areas{grid-template-columns:repeat(4,1fr)!important;} }
+  @media (max-width:560px){ .csd.siv .siv-areas{grid-template-columns:repeat(2,1fr)!important;} }
 
   /* merged: per-route body background */
   body:has(.port){background:#EAECEF;}
@@ -4239,8 +4249,7 @@
 </div>
 </sc-if>
 <sc-if value="{{ unlocked }}" hint-placeholder-val="{{ false }}">
-
-<div class="cs csv" data-lang="{{ lang }}" data-screen-label="Case study · SIV" style="background:var(--bg);color:var(--ink);font-family:var(--font-sans);min-height:100vh;">
+<div class="cs csd siv" data-lang="{{ lang }}" data-screen-label="Case study · SIV" style="background:#0B0D11;color:#F2F4F7;font-family:'IBM Plex Sans',sans-serif;min-height:100vh;">
 
   <div class="page-curtain enter">
     <span class="pc-mark" style="color:#3FC9D2;display:grid;place-items:center;">
@@ -4250,20 +4259,19 @@
     </span>
   </div>
 
-  <div class="oa-cursor-dot"></div>
   <div class="oa-cursor-ring"></div>
 
+  <div class="oa-lb" data-lb aria-hidden="true">
+    <button class="oa-lb-close" data-lb-close type="button" aria-label="Close"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    <img alt="" data-lb-img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+  </div>
+
   <!-- DARK HEADER -->
-  <header style="position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--header) 90%, transparent);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);">
-    <div style="max-width:1120px;margin:0 auto;padding:15px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px;">
+  <header style="position:sticky;top:0;z-index:40;background:rgba(11,13,17,0.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1200px;margin:0 auto;padding:15px clamp(20px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:20px;">
       <a href="/portfolio" class="backlink" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:rgba(255,255,255,0.78);font-size:14px;font-weight:500;">
         <i data-lucide="arrow-left" style="width:17px;height:17px;"></i><span data-l="it">Tutti i lavori</span><span data-l="en">All work</span>
       </a>
-      <nav class="nav-links" style="display:flex;align-items:center;gap:22px;">
-        <a class="navlink-d" href="#process" style="text-decoration:none;color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;"><span data-l="it">Processo</span><span data-l="en">Process</span></a>
-        <a class="navlink-d" href="#synoptic" style="text-decoration:none;color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;">Sinottico</a>
-        <a class="navlink-d" href="#results" style="text-decoration:none;color:rgba(255,255,255,0.6);font-size:13px;font-weight:500;"><span data-l="it">Risultati</span><span data-l="en">Results</span></a>
-      </nav>
       <div style="display:flex;align-items:center;gap:14px;">
         <span style="display:flex;align-items:center;gap:8px;color:#fff;font-size:14px;font-weight:600;"><span style="width:22px;height:22px;border-radius:6px;background:#0E7F8C;display:grid;place-items:center;font-size:11px;">S</span>SIV</span>
         <div style="display:flex;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:3px;">
@@ -4275,329 +4283,336 @@
   </header>
 
   <!-- HERO -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) clamp(28px,4vw,48px);">
-    <div class="rise" style="max-width:780px;">
-      <p style="font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">Case study · 2024 · <span data-l="it">Mobilità · Enterprise</span><span data-l="en">Mobility · Enterprise</span></p>
-      <h1 style="margin:0;font-size:clamp(34px,5.4vw,64px);font-weight:700;letter-spacing:-0.03em;line-height:1.0;">SIV<span style="color:var(--accent);">.</span> <span data-l="it">Ammodernamento</span><span data-l="en">Modernization</span></h1>
-      <p data-l="it" style="margin:18px 0 0;font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--muted);max-width:60ch;">Riprogettazione user-centered del sistema di gestione delle informazioni autostradali di ASPI, dalla dashboard olistica a un sinottico ispirato alle mappe metro.</p>
-      <p data-l="en" style="margin:18px 0 0;font-size:clamp(17px,1.9vw,21px);line-height:1.5;color:var(--muted);max-width:62ch;">User-centered redesign of ASPI's highway information management system, from a holistic dashboard to a metro-map-inspired synoptic.</p>
-    </div>
-
-    <div class="sv-stage rise" style="margin-top:clamp(24px,3vw,36px);--d:.08s;">
-      <div class="sv-glow"></div>
-      <div class="sv-card">
-        <img src="assets/sivcase/siv-dashboard.q.s.jpg" alt="SIV · Dashboard operativa della sala radio" loading="eager">
-      </div>
-      <div class="sv-float tr">
-        <span class="tag"><span class="dot"></span><span data-l="it">In diretta · Sala radio</span><span data-l="en">Live · Radio room</span></span>
-      </div>
-      <div class="sv-float bl">
-        <div class="v">−80%</div>
-        <div class="l"><span data-l="it">tempo di entrata in azione</span><span data-l="en">time to take action</span></div>
+  <section class="csd-hero" style="background:#0B0D11;color:#F2F4F7;position:relative;overflow:hidden;">
+    <div style="position:absolute;left:0;right:0;top:-160px;height:820px;background:radial-gradient(ellipse 55% 70% at 22% 40%, rgba(63,201,210,.20), transparent 70%),radial-gradient(ellipse 55% 70% at 78% 40%, rgba(31,63,143,.34), transparent 70%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:clamp(24px,3.5vw,40px) 0 0;text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.16em;color:#3FC9D2;font-weight:600;margin-bottom:24px;"><span data-l="it">CASE STUDY · UX RESEARCH &amp; PRODUCT DESIGN</span><span data-l="en">CASE STUDY · UX RESEARCH &amp; PRODUCT DESIGN</span></div>
+      <h1 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.2vw,52px);line-height:1.06;letter-spacing:-.02em;margin:0 auto;max-width:26ch;text-wrap:balance;"><span data-l="it">Ammodernamento SIV: il sistema informativo delle sale radio di Autostrade, riprogettato con gli operatori</span><span data-l="en">SIV modernisation: the information system of Autostrade's radio rooms, redesigned with its operators</span></h1>
+      <p data-l="it" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#B9C0CC;">Per Movyon e Autostrade per l'Italia ho riprogettato il sistema di gestione delle informazioni autostradali con un processo user-centered: ricerca con gli operatori sul campo, prototipi iterati a ogni incontro e un sinottico ispirato alle mappe della metropolitana. Le metriche di usabilità sono migliorate del 60%.</p>
+      <p data-l="en" style="margin:26px auto 0;max-width:56ch;font-size:clamp(16px,1.8vw,20px);line-height:1.55;color:#B9C0CC;">For Movyon and Autostrade per l'Italia I redesigned the motorway information management system through a user-centred process: research with operators in the field, prototypes iterated at every meeting and a synoptic inspired by metro maps. Usability metrics improved by 60%.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px;">
+        <a href="#sinottico" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;background:#3FC9D2;color:#0B0D11;font-weight:600;font-size:14.5px;padding:13px 22px;border-radius:8px;"><span data-l="it">Guarda il sinottico</span><span data-l="en">See the synoptic</span><i data-lucide="arrow-down" style="width:16px;height:16px;"></i></a>
+        <a href="#deep" style="display:inline-flex;align-items:center;gap:9px;white-space:nowrap;text-decoration:none;color:rgba(255,255,255,0.82);font-weight:600;font-size:14.5px;padding:13px 20px;border:1px solid rgba(255,255,255,0.16);border-radius:8px;"><span data-l="it">Dietro al progetto</span><span data-l="en">Behind the work</span></a>
       </div>
     </div>
-    <p style="margin:clamp(26px,3vw,40px) auto 0;max-width:76ch;text-align:center;font-size:14.5px;line-height:1.6;color:var(--muted);"><span data-l="it">La dashboard olistica a widget: l'intero tronco autostradale in un colpo d'occhio. Allarmi, eventi, soccorsi, cantieri e mappa in un'unica vista, senza più finestre del browser disposte a mosaico.</span><span data-l="en">The holistic widget dashboard: the whole motorway trunk at a glance. Alarms, events, rescue, roadworks and map in a single view, with no more tiled browser windows.</span></p>
-
-    <div class="sv-meta4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:clamp(36px,5vw,56px);background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;">
-      <div style="background:var(--surface);padding:20px 22px;"><p style="margin:0 0 6px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Ruolo</span><span data-l="en">Role</span></p><p style="margin:0;font-size:14.5px;font-weight:600;"><span data-l="it">Design Consultant</span><span data-l="en">Design Consultant</span></p></div>
-      <div style="background:var(--surface);padding:20px 22px;"><p style="margin:0 0 6px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Cliente</span><span data-l="en">Client</span></p><p style="margin:0;font-size:14.5px;font-weight:600;">Autostrade per l'Italia</p></div>
-      <div style="background:var(--surface);padding:20px 22px;"><p style="margin:0 0 6px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);">Partner</p><p style="margin:0;font-size:14.5px;font-weight:600;">Movyon · BCG · PwC</p></div>
-      <div style="background:var(--surface);padding:20px 22px;"><p style="margin:0 0 6px;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Ambito</span><span data-l="en">Scope</span></p><p style="margin:0;font-size:14.5px;font-weight:600;"><span data-l="it">Sale radio · Web app</span><span data-l="en">Radio rooms · Web app</span></p></div>
-    </div>
-  </section>
-
-  <!-- 01 CONTEXT -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(32px,5vw,60px) clamp(20px,5vw,56px);">
-    <div class="sv-context" style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:clamp(28px,5vw,64px);">
-      <div>
-        <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">01</p>
-        <p style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);margin:0 0 16px;"><span data-l="it">Contesto &amp; problema</span><span data-l="en">Context &amp; problem</span></p>
-        <h2 style="margin:0;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">Operatori di sala radio, sommersi da finestre</span><span data-l="en">Radio-room operators, buried in windows</span></h2>
-      </div>
-      <div>
-        <p data-l="it" style="margin:0 0 18px;font-size:16.5px;line-height:1.7;color:var(--muted);">Il progetto nasce dalla collaborazione tra Movyon e Autostrade per l'Italia, con il supporto consulenziale di BCG e PwC. Come design consultant per Movyon, ho riprogettato il sistema di gestione delle informazioni stradali con un solo obiettivo: migliorarne usabilità ed efficacia operativa per gli operatori delle sale radio.</p>
-        <p data-l="en" style="margin:0 0 18px;font-size:16.5px;line-height:1.7;color:var(--muted);">The project comes from the collaboration between Movyon and Autostrade per l'Italia, with advisory support from BCG and PwC. As a design consultant for Movyon, I redesigned the road information management system with a single goal: improving its usability and operational effectiveness for radio-room operators.</p>
-        <div class="sv-problems" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px;">
-          <sc-for list="{{ problems }}" as="p" hint-placeholder-count="4">
-            <div style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;">
-              <i data-lucide="{{ p.icon }}" style="width:20px;height:20px;color:var(--danger);"></i>
-              <h3 style="margin:12px 0 5px;font-size:14.5px;font-weight:700;color:var(--ink);">{{ p.title }}</h3>
-              <p style="margin:0;font-size:13px;line-height:1.5;color:var(--muted);">{{ p.body }}</p>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 METHODOLOGY (dark) -->
-  <section id="process" style="background:var(--dark);color:#fff;">
-   <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,84px) clamp(20px,5vw,56px);">
-    <p style="font-size:13px;font-weight:600;color:#3FC9D2;margin:0 0 12px;">02</p>
-    <h2 style="margin:0 0 14px;font-size:clamp(24px,3.2vw,36px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#fff;max-width:24ch;"><span data-l="it">Un cambio di paradigma: l'utente al centro</span><span data-l="en">A paradigm shift: the user at the center</span></h2>
-    <p data-l="it" style="margin:0 0 40px;max-width:66ch;font-size:16.5px;line-height:1.65;color:rgba(255,255,255,0.62);">Dai primi incontri di Firenze, con tutte le parti coinvolte attorno allo stesso tavolo, abbiamo adottato una metodologia user-centered per la raccolta dei requisiti e la progettazione, ponendo gli operatori al centro di ogni decisione.</p>
-    <p data-l="en" style="margin:0 0 40px;max-width:66ch;font-size:16.5px;line-height:1.65;color:rgba(255,255,255,0.62);">From the first meetings in Florence, with every stakeholder around the same table, we adopted a user-centered methodology for requirements and design, putting operators at the center of every decision.</p>
-
-    <div class="sv-method" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:36px;">
-      <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
-        <div style="background:var(--dark2);border:1px solid rgba(255,255,255,0.09);border-radius:16px;padding:24px;display:flex;flex-direction:column;">
-          <span style="width:40px;height:40px;border-radius:11px;background:rgba(63,201,210,0.14);color:#3FC9D2;display:grid;place-items:center;margin-bottom:18px;"><i data-lucide="{{ p.icon }}" style="width:20px;height:20px;"></i></span>
-          <h3 style="margin:0 0 8px;font-size:16px;font-weight:700;color:#fff;">{{ p.title }}</h3>
-          <p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.58);">{{ p.body }}</p>
-        </div>
-      </sc-for>
-    </div>
-
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:20px 24px;">
-      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3FC9D2;"><i data-lucide="map-pin" style="width:16px;height:16px;"></i><span data-l="it">Ricerca sul campo</span><span data-l="en">Field research</span></span>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <sc-for list="{{ cities }}" as="c" hint-placeholder-count="5">
-          <span style="font-size:13px;font-weight:600;color:#fff;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:7px 14px;border-radius:999px;">{{ c }}</span>
-        </sc-for>
-      </div>
-      <span style="font-size:13px;color:rgba(255,255,255,0.5);"><span data-l="it">Interviste presso le direzioni di tronco e le sale radio ASPI</span><span data-l="en">Interviews at ASPI's trunk directorates and radio rooms</span></span>
-    </div>
-   </div>
-  </section>
-
-  <!-- 03 RESEARCH LOOP -->
-  <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-   <div style="max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:36px;max-width:62ch;">
-      <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">03</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">Discovery: un ciclo iterativo che si chiude</span><span data-l="en">Discovery: an iterative loop that closes</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">Interviste semi-strutturate, wireframe disegnati alla lavagna durante gli incontri e prototipi in Adobe XD testati nel meeting successivo. Ogni giro restituisce un miglioramento tangibile.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">Semi-structured interviews, wireframes sketched on whiteboards during meetings, and Adobe XD prototypes tested in the next session. Every loop returns a tangible improvement.</p>
-    </div>
-    <div class="sv-loop" style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;">
-      <sc-for list="{{ loop }}" as="s" hint-placeholder-count="6">
-        <div class="card-h" style="background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
-          <span style="font-size:12px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;">{{ s.n }}</span>
-          <h3 style="margin:0;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;">{{ s.label }}</h3>
-          <p style="margin:0;font-size:12.5px;line-height:1.45;color:var(--muted);">{{ s.desc }}</p>
-        </div>
-      </sc-for>
-    </div>
-   </div>
-  </section>
-
-  <!-- 04 AREAS -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:32px;max-width:60ch;">
-      <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">04</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">14 aree di intervento</span><span data-l="en">14 areas of intervention</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">La ricerca ha mappato il nucleo funzionale del sistema: 14 categorie, ognuna con le proprie esigenze di visualizzazione tra listati, sinottici e grafici di KPI.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">Research mapped the functional core of the system: 14 categories, each with its own visualization needs across lists, synoptics and KPI charts.</p>
-    </div>
-    <div class="sv-areas" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;">
-      <sc-for list="{{ areas }}" as="a" hint-placeholder-count="14">
-        <div class="sv-areacard" style="background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;align-items:center;gap:12px;">
-          <span style="width:36px;height:36px;border-radius:9px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;flex:none;"><i data-lucide="{{ a.icon }}" style="width:18px;height:18px;"></i></span>
-          <span style="font-size:14px;font-weight:600;color:var(--ink);line-height:1.25;">{{ a.name }}</span>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- 05 SINOTTICO (dark, centerpiece) -->
-  <section id="synoptic" style="background:var(--dark);color:#fff;">
-   <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,84px) clamp(20px,5vw,56px);">
-    <div style="max-width:64ch;margin-bottom:36px;">
-      <p style="font-size:13px;font-weight:600;color:#3FC9D2;margin:0 0 12px;">05</p>
-      <h2 style="margin:0 0 14px;font-size:clamp(26px,3.4vw,40px);font-weight:700;letter-spacing:-0.02em;line-height:1.08;color:#fff;"><span data-l="it">Il sinottico ispirato alle mappe metro</span><span data-l="en">The metro-map-inspired synoptic</span></h2>
-      <p data-l="it" style="margin:0;font-size:16.5px;line-height:1.65;color:rgba(255,255,255,0.62);">Dai brainstorming è emerso un bisogno chiaro: associare liste e dati a qualcosa di più intuitivo e immersivo. È nato così un grande sinottico ispirato alle linee metropolitane di Londra e New York, l'innovazione che ha ridefinito la gestione visiva delle informazioni stradali.</p>
-      <p data-l="en" style="margin:0;font-size:16.5px;line-height:1.65;color:rgba(255,255,255,0.62);">From the brainstorms a clear need emerged: pairing lists and data with something more intuitive and immersive. That gave birth to a large synoptic inspired by the London and New York metro lines, the innovation that redefined the visual handling of road information.</p>
-    </div>
-
-    <!-- Sinottici: vista geografica + vista PMV, impaginazione consistente -->
-    <div style="max-width:720px;margin:0 auto 40px;position:relative;display:flex;flex-direction:column;gap:32px;">
-      <div style="position:absolute;inset:-7% -8%;background:radial-gradient(58% 46% at 50% 30%, rgba(63,201,210,0.15), transparent 72%);pointer-events:none;"></div>
-
-      <figure style="margin:0;position:relative;z-index:1;">
-        <p class="sv-cap on-dark"><span class="dot"></span><span data-l="it">Sinottico · vista geografica della rete</span><span data-l="en">Synoptic · geographic network view</span></p>
-        <div class="sv-card on-dark">
-          <img src="assets/sivcase/siv-synoptic-map.q.jpg" alt="SIV · Sinottico geografico con eventi in tempo reale sulla rete autostradale" loading="lazy">
-        </div>
-      </figure>
-
-      <figure style="margin:0;position:relative;z-index:1;">
-        <p class="sv-cap on-dark"><span class="dot"></span><span data-l="it">Sinottico PMV · A01 Milano–Napoli</span><span data-l="en">PMV synoptic · A01 Milano–Napoli</span></p>
-        <div class="sv-card on-dark">
-          <img src="assets/sivcase/siv-synoptic.q.jpg" alt="SIV · Sinottico PMV ispirato alle mappe metro" loading="lazy">
-        </div>
-      </figure>
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;">
-      <div style="background:var(--dark2);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-        <i data-lucide="map" style="width:20px;height:20px;color:#3FC9D2;"></i>
-        <h3 style="margin:12px 0 6px;font-size:15.5px;font-weight:700;color:#fff;"><span data-l="it">Spaziale e intuitivo</span><span data-l="en">Spatial and intuitive</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.58);"><span data-l="it">Le informazioni disposte lungo la linea, come fermate su una mappa metro.</span><span data-l="en">Information laid out along the line, like stops on a metro map.</span></p>
-      </div>
-      <div style="background:var(--dark2);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-        <i data-lucide="palette" style="width:20px;height:20px;color:#3FC9D2;"></i>
-        <h3 style="margin:12px 0 10px;font-size:15.5px;font-weight:700;color:#fff;"><span data-l="it">Codifica cromatica</span><span data-l="en">Color coding</span></h3>
-        <div style="display:flex;flex-direction:column;gap:7px;">
-          <span style="display:inline-flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,0.7);"><span style="width:10px;height:10px;border-radius:50%;background:#E0533A;"></span><span data-l="it">Rosso · allarmi</span><span data-l="en">Red · alarms</span></span>
-          <span style="display:inline-flex;align-items:center;gap:9px;font-size:13px;color:rgba(255,255,255,0.7);"><span style="width:10px;height:10px;border-radius:50%;background:#3F7DDB;"></span><span data-l="it">Blu · eventi</span><span data-l="en">Blue · events</span></span>
-        </div>
-      </div>
-      <div style="background:var(--dark2);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-        <i data-lucide="brain" style="width:20px;height:20px;color:#3FC9D2;"></i>
-        <h3 style="margin:12px 0 6px;font-size:15.5px;font-weight:700;color:#fff;"><span data-l="it">Modello mentale</span><span data-l="en">Mental model</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.58);"><span data-l="it">Supporta operatori abituati a ragionare per geografia, non per tabelle.</span><span data-l="en">Supports operators used to thinking by geography, not tables.</span></p>
-      </div>
-      <div style="background:var(--dark2);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;">
-        <i data-lucide="zap" style="width:20px;height:20px;color:#3FC9D2;"></i>
-        <h3 style="margin:12px 0 6px;font-size:15.5px;font-weight:700;color:#fff;"><span data-l="it">Criticità immediate</span><span data-l="en">Instant criticality</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.58);"><span data-l="it">Segni visivi riconoscibili a colpo d'occhio per le situazioni critiche.</span><span data-l="en">At-a-glance visual cues for critical situations.</span></p>
-      </div>
-    </div>
-   </div>
-  </section>
-
-  <!-- 06 STREAMS / PRODUCT -->
-  <section id="product" style="max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:32px;max-width:64ch;">
-      <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">06</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">Dalla ricerca al prodotto: tre stream</span><span data-l="en">From research to product: three streams</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">In fase di sviluppo, con un team scrum, il design dell'interfaccia si è concentrato su tre stream prioritari: Eventi, Cantieri e Allarmi.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">In the development phase, with a scrum team, interface design focused on three priority streams: Events, Roadworks and Alarms.</p>
-    </div>
-    <div class="sv-streams" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;">
-      <div style="display:flex;flex-direction:column;">
-        <div class="sv-card">
-          <img src="assets/sivcase/siv-events.q.jpg" alt="SIV · Stream eventi attivi" loading="lazy">
-        </div>
-        <p style="margin:18px 0 5px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);"><span data-l="it">Stream · Eventi</span><span data-l="en">Stream · Events</span></p>
-        <h3 style="margin:0 0 7px;font-size:17px;font-weight:700;letter-spacing:-0.01em;"><span data-l="it">Eventi attivi</span><span data-l="en">Active events</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--muted);"><span data-l="it">Listato gerarchico di eventi e cause, con localizzazione chilometrica, stato e azioni rapide in riga.</span><span data-l="en">Hierarchical list of events and causes, with kilometric location, status and quick in-row actions.</span></p>
-      </div>
-      <div style="display:flex;flex-direction:column;">
-        <div class="sv-card">
-          <img src="assets/sivcase/siv-cantieri.q.jpg" alt="SIV · Stream cantieri" loading="lazy">
-        </div>
-        <p style="margin:18px 0 5px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);"><span data-l="it">Stream · Cantieri</span><span data-l="en">Stream · Roadworks</span></p>
-        <h3 style="margin:0 0 7px;font-size:17px;font-weight:700;letter-spacing:-0.01em;"><span data-l="it">Cantieri</span><span data-l="en">Roadworks</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--muted);"><span data-l="it">Dettaglio cantiere con mappa, direzione, km di scambio e rientro, ordinanza e stato di installazione.</span><span data-l="en">Roadwork detail with map, direction, swap and return km, ordinance and installation status.</span></p>
-      </div>
-      <div style="display:flex;flex-direction:column;">
-        <div class="sv-card">
-          <img src="assets/sivcase/siv-alarms.q.jpg" alt="SIV · Stream allarmi galleria" loading="lazy">
-        </div>
-        <p style="margin:18px 0 5px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);"><span data-l="it">Stream · Allarmi</span><span data-l="en">Stream · Alarms</span></p>
-        <h3 style="margin:0 0 7px;font-size:17px;font-weight:700;letter-spacing:-0.01em;"><span data-l="it">Allarmi galleria</span><span data-l="en">Tunnel alarms</span></h3>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--muted);"><span data-l="it">Gestione allarmi per galleria con video live e chip d'azione per inserire o chiudere un evento SIV.</span><span data-l="en">Per-tunnel alarm handling with live video and action chips to open or close a SIV event.</span></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 ACCESSIBILITY & DESIGN SYSTEM -->
-  <section style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
-   <div style="max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:32px;max-width:62ch;">
-      <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">07</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">Accessibilità come priorità, sistema come fondamenta</span><span data-l="en">Accessibility as a priority, the system as foundation</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">Standard WCAG ai livelli AA e AAA per tipografia, colori e contrasti, perché il sistema sia leggibile anche in condizioni di stress o scarsa illuminazione. Il tutto sul design system di Movyon, costruito su griglia base 8px.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">WCAG standards at AA and AAA levels for typography, colors and contrast, so the system stays readable even under stress or poor lighting. All built on Movyon's design system, on an 8px base grid.</p>
-    </div>
-    <div class="sv-ds" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(20px,3vw,28px);">
-      <div style="background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.6vw,28px);">
-        <p style="margin:0 0 16px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Approccio atomico</span><span data-l="en">Atomic approach</span></p>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <sc-for list="{{ dsLadder }}" as="d" hint-placeholder-count="5">
-            <div style="display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;">
-              <span style="width:30px;height:30px;border-radius:8px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-size:12px;font-weight:700;flex:none;font-variant-numeric:tabular-nums;">{{ d.level }}</span>
-              <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;"><span style="font-size:14.5px;font-weight:700;color:var(--ink);">{{ d.name }}</span><span style="font-size:13px;color:var(--muted);">{{ d.desc }}</span></div>
-            </div>
-          </sc-for>
-        </div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:16px;">
-        <div style="background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.6vw,28px);">
-          <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);">WCAG</p>
-          <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="display:flex;align-items:center;gap:12px;background:var(--accent-soft);border-radius:10px;padding:13px 16px;"><span style="width:30px;height:26px;border-radius:6px;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;">AA</span><span style="font-size:14px;font-weight:600;color:var(--accent-deep);"><span data-l="it">Conformità di base garantita</span><span data-l="en">Baseline compliance guaranteed</span></span></div>
-            <div style="display:flex;align-items:center;gap:12px;background:var(--accent-soft);border-radius:10px;padding:13px 16px;"><span style="width:30px;height:26px;border-radius:6px;background:var(--accent-deep);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:700;">AAA</span><span style="font-size:14px;font-weight:600;color:var(--accent-deep);"><span data-l="it">Raggiunta dove possibile</span><span data-l="en">Reached wherever possible</span></span></div>
+    <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:clamp(18px,2.6vw,32px) 0 clamp(44px,6vw,80px);perspective:1600px;">
+      <div data-hero-rise style="position:relative;transform-origin:50% 100%;will-change:transform;container-type:inline-size;">
+        <div style="max-width:1060px;margin:0 auto;"><div style="position:relative;border-radius:clamp(18px,3.2cqw,40px);padding:clamp(12px,2.3cqw,28px);background:linear-gradient(180deg,#2C3038 0%,#16181D 100%);border:1px solid rgba(255,255,255,0.12);box-shadow:0 46px 90px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,0.14),inset 0 0 0 clamp(2px,0.3cqw,4px) #0E1014;">
+          <span aria-hidden="true" style="position:absolute;top:50%;left:clamp(5px,1.1cqw,13px);transform:translateY(-50%);width:clamp(4px,0.6cqw,7px);height:clamp(4px,0.6cqw,7px);border-radius:50%;background:#0B0D11;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.1);"></span>
+          <div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(6px,1cqw,12px);background:#0B0D11;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.6);">
+            <img src="assets/sivcase2/siv-dashboard.webp" alt="SIV · dashboard con i widget di allarmi, eventi, soccorsi meccanici, cantieri, mappa, trasporti eccezionali e to-do list" loading="eager" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
           </div>
+        </div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:clamp(56px,7vw,92px);">
+        <p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A93A0;text-align:center;"><span data-l="it">La dashboard: allarmi, eventi, soccorsi meccanici, cantieri, mappa, trasporti eccezionali e to-do list in una sola vista</span><span data-l="en">The dashboard: alarms, events, roadside assistance, roadworks, map, exceptional transports and to-do list in a single view</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- META -->
+  <section style="padding:clamp(30px,4.5vw,52px) clamp(20px,6vw,88px) 0;">
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">RUOLO</span><span data-l="en">ROLE</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Consulente design per Movyon</span><span data-l="en">Design consultant for Movyon</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">CLIENTE</span><span data-l="en">CLIENT</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Autostrade per l'Italia · con BCG e PwC</span><span data-l="en">Autostrade per l'Italia · with BCG and PwC</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">RICERCA</span><span data-l="en">RESEARCH</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Interviste in 5 città: Roma, Firenze, Pescara, Milano, Genova</span><span data-l="en">Interviews in 5 cities: Rome, Florence, Pescara, Milan, Genoa</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">STRUMENTI</span><span data-l="en">TOOLS</span></div><div style="font-size:14.5px;font-weight:600;">Adobe XD · Figma · FigJam</div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">STANDARD</span><span data-l="en">STANDARDS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">WCAG AA / AAA · griglia 8px · 12 colonne</span><span data-l="en">WCAG AA / AAA · 8px grid · 12 columns</span></div></div>
+    </div>
+  </section>
+
+  <section id="contesto" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">CONTESTO E PROBLEMA</span><span data-l="en">CONTEXT &amp; PROBLEM</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 20px;max-width:24ch;"><span data-l="it">A inizio turno, pagine del browser disposte a mosaico su un monitor</span><span data-l="en">At the start of a shift, browser pages tiled across a monitor</span></h2>
+    <p data-l="it" style="font-size:17px;line-height:1.75;color:#B9C0CC;max-width:66ch;margin:0 0 32px;">Il progetto «Ammodernamento - SIV» nasce dalla collaborazione tra Movyon e Autostrade per l'Italia (ASPI), con il supporto consulenziale di BCG e PwC. Come consulente design per Movyon sono stato coinvolto nella riprogettazione del sistema di gestione delle informazioni stradali, con l'obiettivo di migliorarne in modo significativo l'usabilità e l'efficacia operativa.</p>
+    <p data-l="en" style="font-size:17px;line-height:1.75;color:#B9C0CC;max-width:66ch;margin:0 0 32px;">The “Ammodernamento - SIV” project was born from the collaboration between Movyon and Autostrade per l'Italia (ASPI), with advisory support from BCG and PwC. As design consultant for Movyon I was involved in redesigning the road information management system, with the goal of significantly improving its usability and operational effectiveness.</p>
+    <div class="csd-prov" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1000px;">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;">01 · <span data-l="it">IL MOSAICO</span><span data-l="en">THE MOSAIC</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Gli operatori, quando iniziano il turno, aprono diverse pagine del browser su categorie diverse e le dispongono a mosaico su un monitor.</span><span data-l="en">When operators start their shift they open several browser pages on different categories and tile them across a monitor.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;">02 · <span data-l="it">LISTE E DATI</span><span data-l="en">LISTS AND DATA</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Dai primi incontri e dai brainstorming è emerso un bisogno chiaro: associare liste e dati a qualcosa di più intuitivo e immersivo.</span><span data-l="en">From the first meetings and brainstorming sessions a clear need emerged: pairing lists and data with something more intuitive and immersive.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0E7F8C;color:#fff;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#fff;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;">03 · <span data-l="it">L'OBIETTIVO</span><span data-l="en">THE GOAL</span></span></div><div style="font-size:15px;line-height:1.6;font-weight:500;"><span data-l="it">Migliorare in modo significativo usabilità ed efficacia operativa del sistema, partendo dalle esigenze reali degli operatori.</span><span data-l="en">Significantly improve the system's usability and operational effectiveness, starting from operators' real needs.</span></div></div>
+    </div>
+  </section>
+
+  <section id="metodo" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);background:#14171C;border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">METODOLOGIA USER-CENTERED</span><span data-l="en">USER-CENTRED METHODOLOGY</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:28ch;"><span data-l="it">Dai primi incontri a Firenze, gli utenti finali al centro delle decisioni</span><span data-l="en">From the first meetings in Florence, end users at the centre of every decision</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Nei primi incontri, tenuti a Firenze con i rappresentanti di tutte le parti coinvolte, è stato stabilito di adottare una metodologia user-centered per la raccolta dei requisiti e la progettazione dell'interfaccia: un cambio di paradigma rispetto agli approcci precedenti, con gli utenti finali al centro del processo decisionale.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">In the first meetings, held in Florence with representatives of every party involved, it was agreed to adopt a user-centred methodology for requirements gathering and interface design: a paradigm shift from previous approaches, placing end users at the centre of decision-making.</p>
+    <div class="csd-prov" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1100px;margin-bottom:clamp(36px,5vw,56px);">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">01 · <span data-l="it">COINVOLGIMENTO DIRETTO</span><span data-l="en">DIRECT INVOLVEMENT</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Utenti finali coinvolti fin dalle prime fasi.</span><span data-l="en">End users involved from the earliest stages.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">02 · <span data-l="it">PROCESSI ITERATIVI</span><span data-l="en">ITERATIVE PROCESSES</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Progettazione e test ripetuti a ogni ciclo.</span><span data-l="en">Design and testing repeated with every cycle.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">03 · <span data-l="it">VALIDAZIONE CONTINUA</span><span data-l="en">CONTINUOUS VALIDATION</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Ogni soluzione proposta verificata con chi la userà.</span><span data-l="en">Every proposed solution checked with the people who will use it.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">04 · <span data-l="it">MISURAZIONE OGGETTIVA</span><span data-l="en">OBJECTIVE MEASUREMENT</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">I miglioramenti di usabilità misurati, non dichiarati.</span><span data-l="en">Usability improvements measured, not declared.</span></div></div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;margin-bottom:12px;"><span data-l="it">RICERCA SUL CAMPO</span><span data-l="en">FIELD RESEARCH</span></div>
+    <h3 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,26px);line-height:1.15;margin:0 0 16px;max-width:34ch;"><span data-l="it">Interviste nelle direzioni di tronco e nelle sale radio di cinque città</span><span data-l="en">Interviews at trunk directorates and radio rooms in five cities</span></h3>
+    <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 28px;">Per garantire che il nuovo sistema rispondesse alle reali necessità degli operatori, ho organizzato una serie di interviste strutturate presso le direzioni di tronco di ASPI e con gli operatori di sala radio di Roma, Firenze, Pescara, Milano e Genova. Le sessioni hanno seguito un approccio semi-strutturato, lasciando agli operatori la libertà di esprimere esigenze, frustrazioni e aspettative: insight raccolti direttamente dagli utenti finali, sui flussi di lavoro reali e sui punti critici da risolvere.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 28px;">To make sure the new system answered operators' real needs, I organised a series of structured interviews at ASPI's trunk directorates and with radio-room operators in Rome, Florence, Pescara, Milan and Genoa. The sessions followed a semi-structured approach, leaving operators free to express needs, frustrations and expectations: insights gathered directly from end users, about real workflows and the critical points to solve.</p>
+    <div class="csd-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);align-items:start;">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #262A33;border-radius:12px;background:#0B0D11;box-shadow:0 30px 60px rgba(0,0,0,.45);"><img src="assets/sivcase2/siv-radio-room.webp" alt="SIV · postazione operativa in una sala radio ASPI" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;"></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span data-l="it">SALA RADIO · POSTAZIONE</span><span data-l="en">RADIO ROOM · WORKSTATION</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Una postazione operativa: liste su più monitor e il videowall alle spalle.</span><span data-l="en">An operator workstation: lists across several monitors, the videowall behind.</span></span></figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #262A33;border-radius:12px;background:#0B0D11;box-shadow:0 30px 60px rgba(0,0,0,.45);"><img src="assets/sivcase2/siv-proto-session.webp" alt="SIV · un prototipo del sinottico presentato agli utenti su un grande schermo" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;"></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span data-l="it">PROTOTIPO · INCONTRO CON GLI UTENTI</span><span data-l="en">PROTOTYPE · MEETING WITH USERS</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Un prototipo del sinottico presentato agli utenti durante un incontro.</span><span data-l="en">A synoptic prototype presented to users during a meeting.</span></span></figcaption></figure>
+    </div>
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;margin-top:clamp(28px,4vw,44px);">
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">CITTÀ</span><span data-l="en">CITIES</span></div><div style="font-size:14.5px;font-weight:600;">Roma · Firenze · Pescara · Milano · Genova</div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">INTERVISTE</span><span data-l="en">INTERVIEWS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Semi-strutturate, con gli operatori di sala radio</span><span data-l="en">Semi-structured, with radio-room operators</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">WIREFRAME</span><span data-l="en">WIREFRAMES</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Alla lavagna, durante gli incontri</span><span data-l="en">On the whiteboard, during meetings</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">PROTOTIPI</span><span data-l="en">PROTOTYPES</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Adobe XD, testati nell'incontro successivo</span><span data-l="en">Adobe XD, tested at the next meeting</span></div></div>
+    </div>
+  </section>
+
+  <section id="ciclo" style="background:#0B0D11;color:#F2F4F7;padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px) clamp(28px,4vw,48px);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">PROTOTIPAZIONE E ITERAZIONE</span><span data-l="en">PROTOTYPING AND ITERATION</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 16px;max-width:22ch;"><span data-l="it">Un ciclo in sei passi, ripetuto a ogni incontro</span><span data-l="en">A six-step cycle, repeated at every meeting</span></h2>
+    <p data-l="it" style="font-size:17px;line-height:1.7;color:#B9C0CC;max-width:60ch;margin:0 0 32px;">Durante le interviste le ipotesi venivano schematizzate alla lavagna; nei giorni successivi diventavano prototipi interattivi in Adobe XD, presentati agli utenti nell'incontro seguente per essere testati, valutati e raffinati. Ogni iterazione è stata un miglioramento tangibile rispetto alla precedente.</p>
+    <p data-l="en" style="font-size:17px;line-height:1.7;color:#B9C0CC;max-width:60ch;margin:0 0 32px;">During the interviews, hypotheses were sketched on the whiteboard; in the following days they became interactive prototypes in Adobe XD, presented to users at the next meeting to be tested, evaluated and refined. Every iteration was a tangible improvement on the previous one.</p>
+    <div class="csd-levels" style="display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <sc-for list="{{ sivLoop }}" as="lv" hint-placeholder-count="6">
+        <div style="background:#14171C;padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;">
+          <span style="width:30px;height:30px;border-radius:999px;border:1.5px dashed #3A3F49;display:grid;place-items:center;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:#F2F4F7;">{{ lv.n }}</span>
+          <span style="font-size:14.5px;font-weight:600;line-height:1.35;">{{ lv.name }}</span>
         </div>
-        <div style="background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:clamp(20px,2.6vw,28px);">
-          <p style="margin:0 0 14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Specifiche &amp; strumenti</span><span data-l="en">Specs &amp; tools</span></p>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;">
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">Figma · dev-mode</span>
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">Adobe XD</span>
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">Base 8px</span>
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">1440px</span>
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">Grid 12 col</span>
-            <span style="font-size:12px;font-family:ui-monospace,monospace;color:var(--muted);background:var(--surface2);padding:6px 11px;border-radius:7px;">13"+</span>
+      </sc-for>
+    </div>
+  </section>
+
+  <section class="csd-scrub" data-scrub style="background:#0B0D11;color:#F2F4F7;padding:clamp(8px,2vw,24px) clamp(20px,6vw,88px) clamp(40px,6vw,72px);display:grid;grid-template-columns:1.12fr 0.88fr;gap:clamp(24px,4vw,56px);align-items:start;">
+    <div class="scrub-stage" style="position:sticky;top:96px;display:flex;flex-direction:column;gap:18px;justify-content:center;min-height:min(62vh,560px);">
+      <div style="container-type:inline-size;width:100%;">
+        <div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 34px 70px rgba(0,0,0,.5),0 10px 26px rgba(63,201,210,.08);">
+          <div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);">
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span>
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span>
+            <span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span>
+            <span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">dalla lavagna al prototipo</span><span data-l="en">from whiteboard to prototype</span></span>
+          </div>
+          <div style="position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;">
+            <div data-scrub-slide>
+              <img src="assets/sivcase2/siv-whiteboard.webp" alt="SIV · wireframe disegnati alla lavagna durante un incontro" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;">
+            </div>
+            <div data-scrub-slide>
+              <img src="assets/sivcase2/siv-xd-dashboard.webp" alt="SIV · prototipo della dashboard in Adobe XD, analisi UX/UI" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
+            <div data-scrub-slide>
+              <img src="assets/sivcase2/siv-synoptic-map.webp" alt="SIV · prototipo del sinottico su mappa" loading="lazy" data-scrub-img data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-   </div>
-  </section>
-
-  <!-- 08 SCRUM LOOP (dark) -->
-  <section style="background:var(--dark);color:#fff;">
-   <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,80px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:36px;max-width:64ch;">
-      <p style="font-size:13px;font-weight:600;color:#3FC9D2;margin:0 0 12px;">08</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.12;color:#fff;"><span data-l="it">Design e sviluppo, un ciclo virtuoso</span><span data-l="en">Design and development, a virtuous loop</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.62);">Il processo di design è stato integrato nel flusso scrum: mentre il design avanza sull'interfaccia, gli sviluppatori lavorano su debito tecnico e code review. Due ritmi che si rafforzano a vicenda.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.62);">The design process was woven into the scrum flow: while design moves ahead on the interface, developers work on technical debt and code review. Two rhythms that reinforce each other.</p>
-    </div>
-    <div class="sv-benefits" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
-      <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:14px;padding:22px;display:flex;gap:16px;">
-          <span style="width:40px;height:40px;border-radius:11px;background:rgba(63,201,210,0.14);color:#3FC9D2;display:grid;place-items:center;flex:none;"><i data-lucide="{{ b.icon }}" style="width:20px;height:20px;"></i></span>
-          <div><h3 style="margin:0 0 6px;font-size:16px;font-weight:700;color:#fff;">{{ b.title }}</h3><p style="margin:0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,0.58);">{{ b.body }}</p></div>
-        </div>
-      </sc-for>
-    </div>
-   </div>
-  </section>
-
-  <!-- 09 RESULTS -->
-  <section id="results" style="max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,56px);">
-    <div style="margin-bottom:32px;max-width:60ch;">
-      <p style="font-size:13px;font-weight:600;color:var(--accent);margin:0 0 12px;">09</p>
-      <h2 style="margin:0 0 12px;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-0.02em;line-height:1.14;"><span data-l="it">Risultati misurabili</span><span data-l="en">Measurable results</span></h2>
-      <p data-l="it" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">L'approccio user-centered e il processo iterativo hanno prodotto miglioramenti oggettivi nelle metriche di usabilità.</p>
-      <p data-l="en" style="margin:0;font-size:16px;line-height:1.65;color:var(--muted);">The user-centered approach and the iterative process produced objective improvements in usability metrics.</p>
-    </div>
-    <div class="sv-results" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px;">
-      <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
-        <div style="background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,32px);">
-          <div style="font-size:clamp(34px,4.4vw,52px);font-weight:700;letter-spacing:-0.03em;color:var(--accent);line-height:1;">{{ r.value }}</div>
-          <h3 style="margin:16px 0 7px;font-size:16px;font-weight:700;">{{ r.label }}</h3>
-          <p style="margin:0;font-size:13.5px;line-height:1.55;color:var(--muted);">{{ r.note }}</p>
-        </div>
-      </sc-for>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;">
-      <span style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);"><span data-l="it">Cosa abbiamo misurato</span><span data-l="en">What we measured</span></span>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;">
-        <sc-for list="{{ measured }}" as="m" hint-placeholder-count="3">
-          <span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink);background:var(--surface2);border:1px solid var(--line);padding:7px 14px;border-radius:999px;"><i data-lucide="check" style="width:14px;height:14px;color:var(--accent);"></i>{{ m }}</span>
+      <div style="display:flex;align-items:center;gap:8px;justify-content:center;">
+        <sc-for list="{{ sivSteps }}" as="v" hint-placeholder-count="3">
+          <span data-rail style="width:7px;height:7px;border-radius:999px;background:rgba(255,255,255,0.22);transition:width .35s cubic-bezier(.22,1,.36,1),background .3s ease;"></span>
         </sc-for>
       </div>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <sc-for list="{{ sivSteps }}" as="v" hint-placeholder-count="3">
+        <div data-scrub-step style="min-height:74vh;display:flex;flex-direction:column;justify-content:center;gap:14px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3FC9D2;">{{ v.n }}</span>
+            <span style="height:1px;width:34px;background:rgba(63,201,210,0.5);"></span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#8A93A0;">{{ v.kicker }}</span>
+          </div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(21px,2.5vw,30px);line-height:1.12;margin:0;max-width:20ch;">{{ v.title }}</h3>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:#B9C0CC;max-width:40ch;">{{ v.body }}</p>
+          <ul style="margin:4px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;">
+            <sc-for list="{{ v.bullets }}" as="b" hint-placeholder-count="3">
+              <li style="display:flex;gap:11px;font-size:14px;line-height:1.55;color:#D5DAE2;"><span aria-hidden="true" style="flex:none;margin-top:7px;width:6px;height:6px;border-radius:999px;background:#FF9A4A;"></span>{{ b }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="aree" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);background:#14171C;border-top:1px solid #262A33;border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">MAPPATURA DELLE FUNZIONALITÀ CRITICHE</span><span data-l="en">MAPPING THE CRITICAL FEATURES</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:30ch;"><span data-l="it">Quattordici aree di intervento per la gestione delle informazioni autostradali</span><span data-l="en">Fourteen areas of intervention for managing motorway information</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">La ricerca ha permesso di identificare 14 aree di intervento fondamentali. Sono il nucleo funzionale del sistema, ciascuna con specifiche esigenze di visualizzazione e interazione: listati, sinottici e grafici che mostrano KPI e dati relativi agli eventi in autostrada.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Research identified 14 fundamental areas of intervention. They form the functional core of the system, each with its own visualisation and interaction needs: lists, synoptics and charts showing KPIs and data on motorway events.</p>
+    <div class="csd-levels siv-areas" style="display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <sc-for list="{{ sivAreas }}" as="a" hint-placeholder-count="14">
+        <div style="background:#0B0D11;padding:16px 16px 18px;display:flex;flex-direction:column;gap:9px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:#3FC9D2;">{{ a.n }}</span>
+          <span style="font-size:14px;font-weight:600;line-height:1.3;">{{ a.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="dashboard" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">INNOVAZIONE DELLA DASHBOARD</span><span data-l="en">DASHBOARD INNOVATION</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:26ch;"><span data-l="it">Una vista olistica a widget, senza aprire altre pagine del browser</span><span data-l="en">A holistic widget view, without opening other browser pages</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">La dashboard evita il mosaico di finestre: è composta da vari widget che danno una visione olistica delle informazioni necessarie alla gestione degli eventi e delle emergenze, senza dover aprire ulteriori pagine del browser. Questa operazione ha migliorato dell'80% le tempistiche per l'entrata in azione.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">The dashboard avoids the mosaic of windows: it is made of widgets that give a holistic view of the information needed to manage events and emergencies, without opening further browser pages. This improved time-to-action by 80%.</p>
+    <div class="csd-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);align-items:start;margin-bottom:clamp(28px,4vw,44px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">prototipo · adobe xd</span><span data-l="en">prototype · adobe xd</span></span></div><div style="position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-xd-dashboard.webp" alt="SIV · prototipo della dashboard in Adobe XD" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span data-l="it">PROTOTIPO · ANALISI UX/UI</span><span data-l="en">PROTOTYPE · UX/UI ANALYSIS</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Il prototipo in Adobe XD: widget per allarmi, eventi, cantieri, soccorsi meccanici, mappa e to-do list.</span><span data-l="en">The Adobe XD prototype: widgets for alarms, events, roadworks, roadside assistance, map and to-do list.</span></span></figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">dashboard · ui finale</span><span data-l="en">dashboard · final ui</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-dashboard.webp" alt="SIV · dashboard, interfaccia finale in Figma" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span data-l="it">UI FINALE · FIGMA</span><span data-l="en">FINAL UI · FIGMA</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">La dashboard finale sul design system Movyon: stessa struttura, componenti conformi WCAG.</span><span data-l="en">The final dashboard on the Movyon design system: same structure, WCAG-compliant components.</span></span></figcaption></figure>
+    </div>
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;">
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">ENTRATA IN AZIONE</span><span data-l="en">TIME TO ACTION</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">−80% rispetto al mosaico di pagine</span><span data-l="en">−80% compared with the page mosaic</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">WIDGET</span><span data-l="en">WIDGETS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Allarmi · Eventi · Soccorsi meccanici · Cantieri · Trasporti eccezionali · To-do list · Mappa</span><span data-l="en">Alarms · Events · Roadside assistance · Roadworks · Exceptional transports · To-do list · Map</span></div></div>
+      <div style="background:#14171C;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">PAGINE DEL BROWSER</span><span data-l="en">BROWSER PAGES</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Una sola, al posto del mosaico</span><span data-l="en">One, instead of the mosaic</span></div></div>
+    </div>
+  </section>
+
+  <section id="sinottico" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);background:#14171C;border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">INNOVAZIONE DEL SINOTTICO / MAPPA</span><span data-l="en">SYNOPTIC / MAP INNOVATION</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:26ch;"><span data-l="it">Un sinottico ispirato alle linee della metropolitana di Londra e New York</span><span data-l="en">A synoptic inspired by the London and New York metro lines</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Dai primi incontri e dalle sessioni di brainstorming è emerso un bisogno chiaro: associare liste e dati a qualcosa di più intuitivo e immersivo, che migliorasse sia l'apprendimento sia l'usabilità della piattaforma. Da questa esigenza è nata l'idea di un grande sinottico ispirato ai disegni delle linee metropolitane. Il prototipo è stato iterato più volte insieme al product owner, agli utenti e ai consulenti business.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">From the first meetings and brainstorming sessions a clear need emerged: pairing lists and data with something more intuitive and immersive, improving both learnability and usability of the platform. From that need came the idea of a large synoptic inspired by metro line maps. The prototype was iterated several times together with the product owner, users and business consultants.</p>
+    <div class="csd-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);align-items:start;margin-bottom:clamp(28px,4vw,44px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">sinottico · mappa</span><span data-l="en">synoptic · map</span></span></div><div style="position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-synoptic-map.webp" alt="SIV · sinottico su mappa con eventi, allarmi, cantieri e soccorsi sulla rete" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span data-l="it">SINOTTICO · MAPPA</span><span data-l="en">SYNOPTIC · MAP</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Eventi, allarmi, cantieri e soccorsi lungo la rete, con un colore per categoria.</span><span data-l="en">Events, alarms, roadworks and assistance along the network, one colour per category.</span></span></figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">sinottico · pmv</span><span data-l="en">synoptic · vms</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-pmv.webp" alt="SIV · sinottico dei pannelli a messaggio variabile lungo la tratta" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span data-l="it">SINOTTICO · PMV</span><span data-l="en">SYNOPTIC · VMS</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">I pannelli a messaggio variabile disposti lungo la tratta, con chilometriche e stato di ogni pannello.</span><span data-l="en">Variable-message signs laid out along the stretch, with kilometre marks and the state of each sign.</span></span></figcaption></figure>
+    </div>
+    <div class="csd-dec" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:1000px;">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">01 · <span data-l="it">SPAZIALE E INTUITIVO</span><span data-l="en">SPATIAL AND INTUITIVE</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Le informazioni visualizzate in modo spaziale e intuitivo, non più solo come liste.</span><span data-l="en">Information displayed spatially and intuitively, no longer only as lists.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">02 · <span data-l="it">CODIFICA CROMATICA</span><span data-l="en">COLOUR CODING</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Un colore per ogni categoria: rosso per gli allarmi, blu per gli eventi.</span><span data-l="en">One colour per category: red for alarms, blue for events.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">03 · <span data-l="it">MODELLO MENTALE</span><span data-l="en">MENTAL MODEL</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Supporta operatori abituati a ragionare in termini geografici.</span><span data-l="en">Supports operators used to thinking in geographic terms.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">04 · <span data-l="it">SEGNI RICONOSCIBILI</span><span data-l="en">RECOGNISABLE SIGNS</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Identificazione rapida delle situazioni critiche grazie a segni visivi immediatamente riconoscibili.</span><span data-l="en">Rapid identification of critical situations through immediately recognisable visual signs.</span></div></div>
+    </div>
+    <div class="csd-meta" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#262A33;border:1px solid #262A33;border-radius:12px;overflow:hidden;margin-top:clamp(28px,4vw,44px);">
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">VISUALIZZAZIONE</span><span data-l="en">VISUALISATION</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">+60% nel passaggio dell'applicativo a sinottico / mappa</span><span data-l="en">+60% with the application's switch to synoptic / map</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">GESTIONE</span><span data-l="en">MANAGEMENT</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Geo-localizzata, più pratica e visivamente più intuitiva</span><span data-l="en">Geo-located, more practical and visually more intuitive</span></div></div>
+      <div style="background:#0B0D11;padding:18px 20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A93A0;margin-bottom:6px;"><span data-l="it">ITERAZIONI</span><span data-l="en">ITERATIONS</span></div><div style="font-size:14.5px;font-weight:600;"><span data-l="it">Con product owner, utenti e consulenti business</span><span data-l="en">With product owner, users and business consultants</span></div></div>
+    </div>
+  </section>
+
+  <section id="sviluppo" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);border-bottom:1px solid #262A33;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:22px;"><span data-l="it">IMPLEMENTAZIONE E SVILUPPO</span><span data-l="en">IMPLEMENTATION AND DEVELOPMENT</span></div>
+    <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);line-height:1.1;margin:0 0 18px;max-width:24ch;"><span data-l="it">Tre stream in scrum: Eventi, Cantieri e Allarmi</span><span data-l="en">Three scrum streams: Events, Roadworks and Alarms</span></h2>
+    <p data-l="it" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Completata la fase di UX research, il progetto è passato alla fase di sviluppo con un team scrum. Il focus del design si è concentrato sull'interfaccia utente dei tre stream principali: Eventi, Cantieri e Allarmi.</p>
+    <p data-l="en" style="font-size:16.5px;line-height:1.7;color:#B9C0CC;max-width:62ch;margin:0 0 34px;">Once the UX research phase was complete, the project moved into development with a scrum team. Design focused on the user interface of the three main streams: Events, Roadworks and Alarms.</p>
+    <div class="csd-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);align-items:start;margin-bottom:clamp(14px,2vw,22px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">eventi · lista</span><span data-l="en">events · list</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-events.webp" alt="SIV · lista degli eventi attivi con filtri per autostrada" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span data-l="it">EVENTI · LISTA</span><span data-l="en">EVENTS · LIST</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Eventi attivi, in galleria, di viabilità e chiusi, con filtri per autostrada e ricerca.</span><span data-l="en">Active, tunnel, traffic and closed events, with motorway filters and search.</span></span></figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">eventi · dettaglio</span><span data-l="en">events · detail</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-event-detail.webp" alt="SIV · dettaglio di un evento con telecamera, dati e azioni" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span data-l="it">EVENTI · DETTAGLIO</span><span data-l="en">EVENTS · DETAIL</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Il dettaglio apre in linea: telecamera, dati dell'evento e azioni Videowall, Modifica, Chiudi.</span><span data-l="en">The detail opens inline: camera, event data and the Videowall, Edit and Close actions.</span></span></figcaption></figure>
+    </div>
+    <div class="csd-pair" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);align-items:start;margin-bottom:clamp(32px,4vw,48px);">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">allarmi · gallerie</span><span data-l="en">alarms · tunnels</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-alarms.webp" alt="SIV · allarmi per galleria con telecamera e azioni" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span data-l="it">ALLARMI · GALLERIE</span><span data-l="en">ALARMS · TUNNELS</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Gli allarmi per galleria: telecamera, inserimento di un evento SIV, chiusura dell'allarme, note.</span><span data-l="en">Tunnel alarms: camera, insertion of a SIV event, alarm closure, notes.</span></span></figcaption></figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:14px;"><div style="container-type:inline-size;width:100%;"><div style="background:linear-gradient(180deg,#22262E,#15181D);border:1px solid #262A33;border-radius:clamp(8px,1.2cqw,14px);padding:clamp(6px,0.9cqw,10px);box-shadow:0 30px 60px rgba(0,0,0,.45);"><div style="display:flex;align-items:center;gap:clamp(4px,0.66cqw,7px);padding:0 clamp(2px,0.3cqw,4px) clamp(6px,0.9cqw,10px);"><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3FC9D2;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#FF9A4A;"></span><span style="flex:none;width:clamp(5px,0.83cqw,9px);height:clamp(5px,0.83cqw,9px);border-radius:999px;background:#3A3F49;"></span><span style="margin-left:clamp(5px,0.9cqw,10px);font-family:'IBM Plex Mono',monospace;font-size:clamp(7px,1.02cqw,11px);color:#8A93A0;letter-spacing:.06em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">siv · <span data-l="it">eventi · pmv</span><span data-l="en">events · vms</span></span></div><div style="position:relative;aspect-ratio:1440/1024;overflow:hidden;border-radius:clamp(3px,0.62cqw,8px);background:#0B0D11;"><img src="assets/sivcase2/siv-pmv.webp" alt="SIV · pannelli a messaggio variabile di un evento" loading="lazy" data-zoom style="position:absolute;left:0;top:0;width:100%;height:auto;"></div></div></div><figcaption style="display:flex;flex-direction:column;gap:6px;"><span style="display:inline-flex;align-self:flex-start;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;"><span style="width:8px;height:8px;border-radius:999px;background:#FF9A4A;"></span><span data-l="it">EVENTI · PMV</span><span data-l="en">EVENTS · VMS</span></span><span style="font-size:14px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Dallo stesso evento, i pannelli lungo la tratta.</span><span data-l="en">From the same event, the signs along the stretch.</span></span></figcaption></figure>
+    </div>
+    <div class="csd-dec" style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:1000px;">
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">01 · <span data-l="it">ACCESSIBILITÀ COME PRIORITÀ</span><span data-l="en">ACCESSIBILITY AS A PRIORITY</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Standard WCAG ai livelli AA e AAA per tipografia, colori e contrasti: un sistema utilizzabile da tutti gli operatori, e un'interfaccia più chiara e leggibile anche in condizioni di stress o scarsa illuminazione.</span><span data-l="en">WCAG standards at AA and AAA levels for typography, colours and contrast: a system usable by every operator, and an interface that stays clear and legible even under stress or poor lighting.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">02 · <span data-l="it">FIGMA E DEV MODE</span><span data-l="en">FIGMA AND DEV MODE</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">L'interfaccia è stata realizzata in Figma, con accesso alla dev mode per i developer: un flusso di lavoro più efficiente e una comunicazione più chiara tra design e sviluppo.</span><span data-l="en">The interface was built in Figma, with dev-mode access for developers: a more efficient workflow and clearer communication between design and development.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">03 · <span data-l="it">DESIGN SYSTEM MOVYON</span><span data-l="en">MOVYON DESIGN SYSTEM</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Basato sul design system ufficiale di Movyon, su griglia a base 8px e con approccio atomico: token, atomi, molecole, sistemi, pagine. I nuovi componenti sempre conformi a WCAG AA e, quando possibile, AAA.</span><span data-l="en">Based on Movyon's official design system, on an 8px grid and with an atomic approach: tokens, atoms, molecules, systems, pages. New components always WCAG AA compliant and, where possible, AAA.</span></div></div>
+      <div style="border:1px solid #262A33;border-radius:12px;background:#14171C;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">04 · <span data-l="it">SPECIFICHE TECNICHE</span><span data-l="en">TECHNICAL SPECIFICATIONS</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Mockup a 1440px su griglia a 12 colonne basata su Bootstrap: fruibili dagli schermi da 13&quot; in su, nelle diverse postazioni operative delle sale radio.</span><span data-l="en">Mockups at 1440px on a 12-column Bootstrap grid: usable on screens from 13&quot; up, across the different workstations of the radio rooms.</span></div></div>
+    </div>
+  </section>
+
+  <section id="deep" style="padding:clamp(48px,7vw,88px) clamp(20px,6vw,88px);">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:28px;">
+      <div style="max-width:58ch;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;color:#3FC9D2;font-weight:600;margin-bottom:20px;"><span data-l="it">DIETRO AL PROGETTO</span><span data-l="en">BEHIND THE WORK</span></div>
+        <h2 data-wsplit style="font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(24px,3.2vw,36px);line-height:1.12;margin:0 0 12px;"><span data-l="it">Processo, risultati e artefatti: apri solo ciò che ti interessa</span><span data-l="en">Process, results and artefacts: open only what interests you</span></h2>
+        <p data-l="it" style="font-size:16px;line-height:1.65;color:#8A93A0;margin:0;">Quattro capitoli: come il design si è integrato con lo scrum, cosa dicono le metriche, dove vivono gli artefatti, cosa resta del progetto.</p>
+        <p data-l="en" style="font-size:16px;line-height:1.65;color:#8A93A0;margin:0;">Four chapters: how design was integrated with scrum, what the metrics say, where the artefacts live, what the project leaves behind.</p>
+      </div>
+      <button type="button" data-acc-all style="display:inline-flex;align-items:center;gap:9px;background:#14171C;border:1px solid #262A33;border-radius:10px;padding:11px 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;font-weight:600;color:#F2F4F7;cursor:pointer;">
+        <i data-lucide="chevrons-down-up" style="width:16px;height:16px;color:#3FC9D2;"></i><span data-l="it">APRI TUTTO</span><span data-l="en">EXPAND ALL</span>
+      </button>
+    </div>
+
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3FC9D2;min-width:22px;">01</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Processo di design iterativo e integrazione con lo sviluppo</span><span data-l="en">Iterative design process and integration with development</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Allineamento con la metodologia scrum</span><span data-l="en">Alignment with the scrum methodology</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3FC9D2;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">È stato implementato un processo di design iterativo integrato con il flusso di lavoro scrum del team di sviluppo. Mentre il designer lavora sulla progettazione dell'interfaccia, gli sviluppatori sono impegnati nella risoluzione del debito tecnico e nella code review, creando un ciclo virtuoso di miglioramento continuo. Il processo è stato documentato in un diagramma di flusso che ne illustra le fasi e le interconnessioni, per chiarezza e trasparenza verso tutto il team.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">An iterative design process was implemented, integrated with the development team's scrum workflow. While the designer works on the interface, developers resolve technical debt and do code review, creating a virtuous cycle of continuous improvement. The process was documented in a flow diagram illustrating its phases and interconnections, for clarity and transparency across the team.</p>
+        <ul style="margin:0 0 22px;padding:0 0 0 20px;font-size:15px;line-height:1.75;color:#B9C0CC;max-width:70ch;"><li data-l="it">Mantenere un ritmo costante di rilasci</li><li data-l="en">Keep a steady release rhythm</li><li data-l="it">Adattare rapidamente il design in base ai feedback</li><li data-l="en">Adapt the design quickly to feedback</li><li data-l="it">Risolvere i problemi di implementazione in modo collaborativo</li><li data-l="en">Solve implementation problems collaboratively</li><li data-l="it">Garantire coerenza tra la visione di design e l'implementazione tecnica</li><li data-l="en">Ensure consistency between the design vision and the technical implementation</li></ul>
+        <figure style="margin:0;max-width:520px;display:flex;flex-direction:column;gap:12px;">
+          <div style="border:1px solid #262A33;border-radius:10px;overflow:hidden;background:#fff;padding:18px;">
+            <img src="assets/sivcase2/siv-process-flow.webp" alt="SIV · diagramma di flusso del processo di design: define, ideate, prototype, test, implement" loading="lazy" data-zoom style="display:block;width:100%;height:auto;">
+          </div>
+          <figcaption style="display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.6;color:#B9C0CC;"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.4;letter-spacing:.1em;color:#3FC9D2;"><span data-l="it">IL DIAGRAMMA DI FLUSSO</span><span data-l="en">THE FLOW DIAGRAM</span></span><span><span data-l="it">Define, ideate, prototype, test, implement: le fasi del processo e i loro ritorni.</span><span data-l="en">Define, ideate, prototype, test, implement: the phases of the process and their loops.</span></span></figcaption>
+        </figure>
+      </div></div>
+    </div>
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3FC9D2;min-width:22px;">02</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Risultati e metriche</span><span data-l="en">Results and metrics</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Miglioramenti misurabili</span><span data-l="en">Measurable improvements</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3FC9D2;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">L'approccio user-centered e il processo iterativo hanno portato a miglioramenti misurabili nelle metriche di usabilità, un indicatore oggettivo del successo dell'approccio adottato.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">The user-centred approach and the iterative process led to measurable improvements in usability metrics, an objective indicator of the success of the approach.</p>
+        <div class="csd-prov" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin-bottom:22px;">
+          <div style="border:1px solid #262A33;border-radius:10px;background:#0B0D11;padding:20px;"><div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1;color:#3FC9D2;margin-bottom:10px;">−80%</div><div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">tempi di entrata in azione dell'operatore, grazie alla dashboard</span><span data-l="en">operator time-to-action, thanks to the dashboard</span></div></div>
+          <div style="border:1px solid #262A33;border-radius:10px;background:#0B0D11;padding:20px;"><div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.02em;line-height:1;color:#3FC9D2;margin-bottom:10px;">+60%</div><div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">nella visualizzazione dell'applicativo a sinottico / mappa</span><span data-l="en">in the application's switch to synoptic / map view</span></div></div>
+          <div style="border:1px dashed #3A3F49;border-radius:10px;background:#0B0D11;padding:20px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF9A4A;margin-bottom:10px;"><span data-l="it">COSA È STATO MISURATO</span><span data-l="en">WHAT WAS MEASURED</span></div><div style="font-size:14.5px;line-height:1.6;color:#B9C0CC;"><span data-l="it">Numero di click per completare un task · tempo impiegato · numero di errori durante le operazioni</span><span data-l="en">Number of clicks to complete a task · time taken · number of errors during operations</span></div></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3FC9D2;min-width:22px;">03</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Artefatti di design</span><span data-l="en">Design artefacts</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Architettura dell'informazione, prototipi, interfaccia</span><span data-l="en">Information architecture, prototypes, interface</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3FC9D2;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">Il processo ha prodotto diversi artefatti che documentano l'evoluzione del progetto: non solo il risultato finale, ma anche l'evoluzione delle soluzioni attraverso le diverse iterazioni.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">The process produced several artefacts documenting the project's evolution: not only the final result, but also how the solutions evolved across the iterations.</p>
+        <div class="csd-prov" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;">
+          <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">01 · <span data-l="it">ARCHITETTURA</span><span data-l="en">ARCHITECTURE</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Architettura dell'informazione in FigJam. Accesso riservato.</span><span data-l="en">Information architecture in FigJam. Restricted access.</span></div></div>
+          <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">02 · <span data-l="it">PROTOTIPI</span><span data-l="en">PROTOTYPES</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Prototipi interattivi in Adobe XD.</span><span data-l="en">Interactive prototypes in Adobe XD.</span> <a href="https://xd.adobe.com/view/b874f10c-a810-4a6a-874b-5ae3e95107b4-ed27/?fullscreen" target="_blank" rel="noopener" style="color:#3FC9D2;"><span data-l="it">Apri il prototipo →</span><span data-l="en">Open the prototype →</span></a></div></div>
+          <div style="border:1px solid #262A33;border-radius:12px;background:#0B0D11;padding:22px;"><div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><span style="width:8px;height:8px;border-radius:999px;background:#3FC9D2;"></span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#3FC9D2;">03 · <span data-l="it">INTERFACCIA</span><span data-l="en">INTERFACE</span></span></div><div style="font-size:15px;line-height:1.65;color:#B9C0CC;"><span data-l="it">Interfaccia utente in Figma. Accesso riservato.</span><span data-l="en">User interface in Figma. Restricted access.</span></div></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="acc" data-acc>
+      <button class="acc-head" data-acc-head type="button" aria-expanded="false">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;color:#3FC9D2;min-width:22px;">04</span>
+        <span style="flex:1;min-width:0;">
+          <span style="display:block;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(16px,1.9vw,19px);"><span data-l="it">Conclusioni</span><span data-l="en">Conclusions</span></span>
+          <span class="acc-meta" style="display:block;margin-top:4px;font-size:13px;color:#8A93A0;"><span data-l="it">Cosa resta del progetto</span><span data-l="en">What the project leaves behind</span></span>
+        </span>
+        <span class="acc-chev" style="width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #262A33;display:grid;place-items:center;color:#3FC9D2;"><i data-lucide="chevron-down" style="width:17px;height:17px;"></i></span>
+      </button>
+      <div class="acc-body" data-acc-body><div class="acc-inner">
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">Il progetto «Ammodernamento - SIV» mostra come un approccio user-centered possa trasformare radicalmente l'usabilità e l'efficacia di un sistema complesso. La combinazione di ricerca approfondita, progettazione iterativa e costante validazione con gli utenti ha permesso di sviluppare una soluzione che risponde realmente alle esigenze degli operatori delle sale radio di ASPI.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">The “Ammodernamento - SIV” project shows how a user-centred approach can radically transform the usability and effectiveness of a complex system. The combination of in-depth research, iterative design and constant validation with users produced a solution that truly answers the needs of ASPI's radio-room operators.</p>
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">L'innovazione del sinottico ispirato alle mappe metropolitane ha rappresentato un cambio di paradigma nella visualizzazione delle informazioni, mentre l'attenzione all'accessibilità ha garantito che il sistema fosse utilizzabile da tutti gli operatori in qualsiasi condizione.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">The metro-map-inspired synoptic was a paradigm shift in information visualisation, while the focus on accessibility ensured the system is usable by every operator in any condition.</p>
+        <p data-l="it" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">Il processo ha portato a risultati tangibili nelle metriche di usabilità e ha stabilito un modello di collaborazione tra design e sviluppo che potrà essere replicato in futuri progetti di Movyon e ASPI. L'integrazione del design thinking nella metodologia agile ha dimostrato come i due approcci possano rafforzarsi a vicenda, in un ciclo di miglioramento continuo che beneficia sia gli sviluppatori che gli utenti finali.</p>
+    <p data-l="en" style="font-size:16px;line-height:1.75;color:#B9C0CC;max-width:70ch;margin:0 0 18px;">The process delivered tangible results in usability metrics and established a model of collaboration between design and development that can be replicated in future Movyon and ASPI projects. Integrating design thinking into the agile methodology showed how the two approaches reinforce each other, in a cycle of continuous improvement that benefits developers and end users alike.</p>
+      </div></div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,5vw,56px) clamp(56px,8vw,90px);">
-    <div style="background:var(--dark);border-radius:18px;padding:clamp(32px,5vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden;">
+  <section style="padding:clamp(28px,4vw,48px) clamp(20px,6vw,88px) 0;">
+    <div style="background:#14171C;border:1px solid #262A33;border-radius:16px;padding:clamp(28px,4vw,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;position:relative;overflow:hidden;">
       <div style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle at 85% 0%, rgba(63,201,210,0.18), transparent 55%);"></div>
       <div style="position:relative;">
-        <h2 style="margin:0 0 8px;font-size:clamp(22px,2.6vw,30px);font-weight:700;letter-spacing:-0.02em;color:#fff;"><span data-l="it">Parliamo del tuo prodotto.</span><span data-l="en">Let's talk about your product.</span></h2>
-        <p style="margin:0;font-size:16px;color:rgba(255,255,255,0.6);">info@omaramato.com</p>
+        <h2 style="margin:0 0 8px;font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(22px,2.6vw,30px);letter-spacing:-0.02em;color:#fff;"><span data-l="it">Parliamo del tuo prodotto.</span><span data-l="en">Let's talk about your product.</span></h2>
+        <p style="margin:0;font-size:16px;color:#8A93A0;">info@omaramato.com</p>
       </div>
       <div style="position:relative;display:flex;flex-wrap:wrap;gap:12px;">
-        <a href="/portfolio" class="backlink" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:rgba(255,255,255,0.8);font-weight:600;font-size:15px;padding:14px 22px;border:1px solid rgba(255,255,255,0.16);border-radius:10px;"><i data-lucide="arrow-left" style="width:17px;height:17px;"></i><span data-l="it">Torna ai lavori</span><span data-l="en">Back to work</span></a>
-        <a href="https://calendly.com/omaramato-info/30min" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#0E7F8C;color:#fff;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;"><i data-lucide="calendar" style="width:17px;height:17px;"></i><span data-l="it">Prenota una call</span><span data-l="en">Book a call</span></a>
+        <a href="/portfolio" class="backlink" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:rgba(255,255,255,0.8);font-weight:600;font-size:15px;padding:14px 22px;border:1px solid rgba(255,255,255,0.16);border-radius:10px;"><i data-lucide="arrow-left" style="width:17px;height:17px;"></i><span data-l="it">Tutti i lavori</span><span data-l="en">All work</span></a>
+        <a href="https://calendly.com/omaramato-info/30min" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:#3FC9D2;color:#0B0D11;font-weight:600;font-size:15px;padding:14px 24px;border-radius:10px;"><i data-lucide="calendar" style="width:17px;height:17px;"></i><span data-l="it">Prenota una call</span><span data-l="en">Book a call</span></a>
       </div>
     </div>
-    <p style="margin:26px 0 0;text-align:center;font-size:13px;color:var(--faint);">© {{ year }} Antonino Omar Amato · SIV, <span data-l="it">Ammodernamento per ASPI × Movyon</span><span data-l="en">Modernization for ASPI × Movyon</span></p>
+  </section>
+
+  <!-- FOOTER -->
+  <section style="padding:clamp(40px,6vw,64px) clamp(20px,6vw,88px);background:#0B0D11;color:#8A93A0;display:flex;flex-direction:column;gap:24px;">
+    <p data-l="it" style="font-size:13.5px;line-height:1.7;color:#8A93A0;max-width:680px;margin:0;">Progetto svolto come consulente design per Movyon, per Autostrade per l'Italia, con il supporto consulenziale di BCG e PwC. Le schermate sono i mockup di progetto.</p>
+    <p data-l="en" style="font-size:13.5px;line-height:1.7;color:#8A93A0;max-width:680px;margin:0;">Project carried out as design consultant for Movyon, for Autostrade per l'Italia, with advisory support from BCG and PwC. The screens are the project mockups.</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid #262A33;padding-top:24px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;">© {{ year }} Antonino Omar Amato · Product Design</div>
+      <a href="/portfolio" data-cursor="" style="text-decoration:none;color:#3FC9D2;font-family:'IBM Plex Mono',monospace;font-size:13px;"><span data-l="it">Tutti i lavori →</span><span data-l="en">All work →</span></a>
+    </div>
   </section>
 
 </div>
@@ -5425,83 +5440,32 @@ class Component extends DCLogic {
   }
 
 _data_siv(){
-    const it = this.state.lang==="it";
-    const T=(i,e)=>it?i:e;
-    const setLang=l=>{ this._p(l); this.setState({lang:l}); };
-
-    const problems=[
-      {icon:"layout-grid", title:T("Finestre a mosaico","Tiled windows"), body:T("A inizio turno gli operatori aprono diverse pagine del browser, una per categoria, e le dispongono a mosaico su un monitor.","At shift start operators open several browser pages, one per category, and tile them across a single monitor.")},
-      {icon:"eye-off", title:T("Nessuna visione d'insieme","No holistic overview"), body:T("Mancava un colpo d'occhio unico su eventi, allarmi ed emergenze: il quadro andava ricostruito a mano, ogni volta.","There was no single glance over events, alarms and emergencies: the picture had to be rebuilt by hand, every time.")},
-      {icon:"unlink", title:T("Dati frammentati","Fragmented data"), body:T("Liste, sinottici e grafici vivevano in viste separate, senza un modello mentale spaziale condiviso tra gli operatori.","Lists, synoptics and charts lived in separate views, with no spatial mental model shared across operators.")},
-      {icon:"timer", title:T("Reazione lenta","Slow reaction"), body:T("Ricomporre il contesto rallentava l'entrata in azione proprio nei momenti critici di gestione di un evento.","Recomposing context slowed down taking action exactly in the critical moments of handling an event.")},
+    const T = (it, en) => (this.state.lang === "en" ? en : it);
+    const sivLoop = [
+      {n:"1", name:T("Raccolta dei requisiti attraverso interviste","Requirements gathering through interviews")},
+      {n:"2", name:T("Wireframe collaborativi durante gli incontri","Collaborative wireframes during meetings")},
+      {n:"3", name:T("Sviluppo di prototipi interattivi","Development of interactive prototypes")},
+      {n:"4", name:T("Test con gli utenti finali","Testing with end users")},
+      {n:"5", name:T("Raccolta di feedback e identificazione dei problemi","Feedback collection and problem identification")},
+      {n:"6", name:T("Raffinamento delle soluzioni e nuova iterazione","Refinement of solutions and a new iteration")},
     ];
-
-    const pillars=[
-      {icon:"users", title:T("Utenti dal giorno uno","Users from day one"), body:T("Coinvolgimento diretto degli operatori finali fin dalle prime fasi del progetto.","Direct involvement of end operators from the earliest project phases.")},
-      {icon:"refresh-cw", title:T("Processi iterativi","Iterative process"), body:T("Cicli rapidi di progettazione e test, ogni iterazione un miglioramento tangibile.","Fast design-and-test cycles, each iteration a tangible improvement.")},
-      {icon:"check-check", title:T("Validazione continua","Continuous validation"), body:T("Soluzioni verificate sul campo con chi userà davvero il sistema, gli operatori di sala radio.","Solutions validated in the field with the people who will actually use the system, the radio-room operators.")},
-      {icon:"bar-chart-3", title:T("Misura oggettiva","Objective measurement"), body:T("Click, tempi ed errori misurati per dimostrare i miglioramenti di usabilità.","Clicks, times and errors measured to prove usability improvements.")},
+    const sivSteps = [
+      {n:"01", kicker:T("ALLA LAVAGNA · DURANTE L'INCONTRO","AT THE WHITEBOARD · DURING THE MEETING"),
+        title:T("Le ipotesi prendono forma mentre si parla","Hypotheses take shape as we talk"),
+        body:T("Durante le interviste le ipotesi emerse dalle conversazioni venivano schematizzate in tempo reale alla lavagna: wireframe a bassa fedeltà disegnati subito, per verificare con gli utenti la comprensione dei requisiti.","During the interviews, the hypotheses emerging from the conversations were sketched in real time on the whiteboard: low-fidelity wireframes drawn on the spot, to check with users that the requirements were understood."),
+        bullets:[T("Brainstorming collettivo e partecipativo","Collective, participatory brainstorming"),T("Feedback immediati sulle prime ipotesi di design","Immediate feedback on the first design hypotheses"),T("Co-creazione: soluzioni allineate alle necessità degli operatori","Co-creation: solutions aligned with operators' needs")]},
+      {n:"02", kicker:T("NEI GIORNI SUCCESSIVI · ADOBE XD","IN THE FOLLOWING DAYS · ADOBE XD"),
+        title:T("Dalle ipotesi ai prototipi interattivi","From hypotheses to interactive prototypes"),
+        body:T("Le ipotesi raccolte venivano trasformate in prototipi interattivi in Adobe XD e presentate agli utenti nell'incontro successivo, per essere testate, valutate e raffinate. Qui il prototipo della dashboard, usato per l'analisi UX/UI.","The hypotheses were turned into interactive prototypes in Adobe XD and presented to users at the next meeting, to be tested, evaluated and refined. Here, the dashboard prototype used for the UX/UI analysis."),
+        bullets:[T("Test con gli utenti finali","Testing with end users"),T("Raccolta di feedback e identificazione dei problemi","Feedback collection and problem identification"),T("Widget per allarmi, eventi, cantieri, soccorsi, mappa e to-do list","Widgets for alarms, events, roadworks, assistance, map and to-do list")]},
+      {n:"03", kicker:T("ITERAZIONE · IL SINOTTICO","ITERATION · THE SYNOPTIC"),
+        title:T("Iterato più volte, con chi lo userà","Iterated several times, with the people who will use it"),
+        body:T("Il prototipo del sinottico è stato iterato più volte insieme al product owner, agli utenti e ai consulenti business: ogni iterazione un miglioramento tangibile rispetto alla precedente.","The synoptic prototype was iterated several times together with the product owner, users and business consultants: every iteration a tangible improvement on the previous one."),
+        bullets:[T("Raffinamento delle soluzioni e nuova iterazione","Refinement of solutions and a new iteration"),T("Dalle liste a una lettura spaziale delle informazioni","From lists to a spatial reading of information"),T("Una svolta nella gestione visiva delle informazioni stradali","A turning point in the visual handling of road information")]},
     ];
-
-    const cities=["Roma","Firenze","Pescara","Milano","Genova"];
-
-    const loop=[
-      {n:"01", label:T("Interviste","Interviews"), desc:T("Requisiti semi-strutturati","Semi-structured requirements")},
-      {n:"02", label:T("Wireframe","Wireframes"), desc:T("Schizzi alla lavagna, live","Live whiteboard sketches")},
-      {n:"03", label:T("Prototipi","Prototypes"), desc:T("Interattivi in Adobe XD","Interactive in Adobe XD")},
-      {n:"04", label:T("Test","Testing"), desc:T("Validazione con operatori","Validation with operators")},
-      {n:"05", label:T("Feedback","Feedback"), desc:T("Problemi e insight","Issues and insight")},
-      {n:"06", label:T("Raffinamento","Refinement"), desc:T("Nuova iterazione","New iteration")},
-    ];
-
-    const areas=[
-      {icon:"layout-dashboard", name:"Dashboard"},
-      {icon:"alert-triangle", name:T("Eventi","Events")},
-      {icon:"bell-ring", name:T("Allarmi","Alarms")},
-      {icon:"construction", name:T("Cantieri","Roadworks")},
-      {icon:"ambulance", name:T("Soccorsi","Rescue")},
-      {icon:"truck", name:T("Trasporti ecc.","Abnormal loads")},
-      {icon:"message-square", name:T("Piano messaggi","Message plan")},
-      {icon:"snowflake", name:T("Emergenze neve","Snow events")},
-      {icon:"users-round", name:T("Squadre viabili","Road crews")},
-      {icon:"route", name:T("Corsia dinamica","Dynamic lane")},
-      {icon:"cloud-sun", name:T("Previsioni","Forecasts")},
-      {icon:"flag", name:T("Segnalazioni","Reports")},
-      {icon:"mountain-snow", name:T("Punti neve","Snow points")},
-      {icon:"siren", name:T("Emergenze","Emergencies")},
-    ];
-
-    const streams=[
-      {img:"assets/sivcase/siv-events.q.jpg", url:"siv.movyon / eventi", tag:T("Stream · Eventi","Stream · Events"), title:T("Eventi attivi","Active events"), body:T("Listato gerarchico di eventi e cause, con localizzazione chilometrica, stato e azioni rapide in riga.","Hierarchical list of events and causes, with kilometric location, status and quick in-row actions.")},
-      {img:"assets/sivcase/siv-cantieri.q.jpg", url:"siv.movyon / cantieri", tag:T("Stream · Cantieri","Stream · Roadworks"), title:T("Cantieri","Roadworks"), body:T("Dettaglio cantiere con mappa, direzione, km di scambio e rientro, ordinanza e stato di installazione.","Roadwork detail with map, direction, swap and return km, ordinance and installation status.")},
-      {img:"assets/sivcase/siv-alarms.q.jpg", url:"siv.movyon / allarmi / gallerie", tag:T("Stream · Allarmi","Stream · Alarms"), title:T("Allarmi galleria","Tunnel alarms"), body:T("Gestione allarmi per galleria con video live e chip d'azione per inserire o chiudere un evento SIV.","Per-tunnel alarm handling with live video and action chips to open or close a SIV event.")},
-    ];
-
-    const dsLadder=[
-      {level:"01", name:"Token", desc:T("Colori, tipografia, spaziature","Colors, type, spacing")},
-      {level:"02", name:T("Atomi","Atoms"), desc:T("Componenti base","Base components")},
-      {level:"03", name:T("Molecole","Molecules"), desc:T("Combinazioni di atomi","Combinations of atoms")},
-      {level:"04", name:T("Sistemi","Systems"), desc:T("Pattern ricorrenti","Recurring patterns")},
-      {level:"05", name:T("Pagine","Pages"), desc:T("Composizioni complete","Complete compositions")},
-    ];
-
-    const benefits=[
-      {icon:"repeat-2", title:T("Ritmo costante","Steady cadence"), body:T("Un flusso continuo di rilasci allineato agli sprint del team di sviluppo.","A continuous release flow aligned to the dev team's sprints.")},
-      {icon:"git-pull-request-arrow", title:T("Adattamento rapido","Fast adaptation"), body:T("Il design si adatta in fretta sulla base dei feedback raccolti nei test.","Design adapts quickly based on feedback gathered in testing.")},
-      {icon:"git-merge", title:T("Risolti insieme","Solved together"), body:T("Le criticità di implementazione affrontate in modo collaborativo, design e dev.","Implementation issues tackled collaboratively, design and dev.")},
-      {icon:"link", title:T("Coerenza garantita","Guaranteed consistency"), body:T("Allineamento costante tra la visione di design e l'implementazione tecnica.","Constant alignment between design vision and technical implementation.")},
-    ];
-
-    const results=[
-      {value:"−80%", label:T("Tempo di entrata in azione","Time to take action"), note:T("La dashboard a widget elimina il mosaico di finestre del browser.","The widget dashboard removes the mosaic of browser windows.")},
-      {value:"+60%", label:T("Usabilità del sinottico","Synoptic usability"), note:T("La mappa geo-localizzata rende la gestione più pratica e intuitiva.","The geo-located map makes handling more practical and intuitive.")},
-      {value:"AA · AAA", label:T("Conformità WCAG","WCAG compliance"), note:T("Tipografia, colori e contrasti accessibili in ogni condizione operativa.","Accessible type, colors and contrast in every operating condition.")},
-    ];
-
-    const measured=[ T("Numero di click per task","Clicks per task"), T("Tempo di esecuzione","Time on task"), T("Numero di errori","Error count") ];
-
-    return { lang:this.state.lang, year:new Date().getFullYear(), setIt:()=>setLang("it"), setEn:()=>setLang("en"),
-      problems, pillars, cities, loop, areas, streams, dsLadder, benefits, results, measured };
+    const names = [T("Dashboard (homepage)","Dashboard (homepage)"),T("Eventi","Events"),T("Allarmi","Alarms"),T("Cantieri","Roadworks"),T("Soccorsi","Assistance"),T("Trasporti eccezionali","Exceptional transports"),T("Piano messaggi","Message plan"),T("Emergenze neve","Snow emergencies"),T("Squadre viabili","Road crews"),T("Corsia dinamica","Dynamic lane"),T("Previsioni","Forecasts"),T("Segnalazioni","Reports"),T("Punti neve","Snow points"),T("Emergenze","Emergencies")];
+    const sivAreas = names.map((name, i) => ({ n: (i + 1 < 10 ? "0" : "") + (i + 1), name }));
+    return { sivLoop, sivSteps, sivAreas };
   }
 
 _data_bsb(){
